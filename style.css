@@ -87,6 +87,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+table
+{ 
+	margin-left: auto;
+	margin-right: auto;
+}
+
 table.sample {
 	border-width: 1px;
 	border-spacing: 0px;
