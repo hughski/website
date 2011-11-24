@@ -44,8 +44,8 @@ and burn it to a new CDR or CDRW.
 
 <h2>Client code</h2>
 </p>
-If you are not running Fedora 16 you may need to compile and build the
-client tools tarball.
+If you are not running Fedora 16 or Ubuntu you may need to compile and
+build the client tools tarball.
 </p>
 <p>
 The client tools are required if you want to test or flash new firmware
@@ -58,6 +58,11 @@ on your ColorHug.</p>
  <td><a href="http://people.freedesktop.org/~hughsient/releases/colorhug-client-0.1.0.tar.xz">colorhug-client-0.1.0.tar.xz</a></td>
 </tr>
 </table>
+<p>
+Packages for Ubuntu can be found
+<a href="https://launchpad.net/~pmjdebruijn/+archive/gcm-colorhug/">here</a>
+courtesy of Pascal de Bruijn.
+</p>
 
 <h2>Firmware</h2>
 </p>
@@ -65,23 +70,19 @@ Unlike proprietary devices the firmware may be updated as new versions
 are released.
 Firmware releases will add features, fix bugs and improve accuracy.
 The client tools can be used to update the firmware easily.
-The firmware is available to download free from this website.
+The firmware will always be available to download for free.
 </p>
 <p>
-You can check your firmware version by typing:
+You can check and update your firmware version by running <code>colorhug-flash</code>.
 </p>
-<pre>
-/usr/libexec/colorhug get-firmware-version
-</pre>
-<p></p>
-<table class="sample" width="80%">
-<tr><td>Version</td><td>Released</td><td>Download</td></tr>
-<tr>
- <td>0.1.0</td>
- <td>10th November 2011</td>
- <td><a href="http://people.freedesktop.org/~hughsient/releases/colorhug-firmware-0.1.0.bin">colorhug-firmware-0.1.0.bin</a></td>
-</tr>
-</table>
+<center>
+<img src="img/colorhug-flash.png" alt="flash program"/>
+</center>
+<p>
+If you want to play with different versions of the flash code, all the
+past versions are archived <a href="http://www.hughski.com/downloads/colorhug/">here</a>
+and can be written to the ColorHug using <code>/usr/libexec/colorhug flash-firmware</code>.
+</p>
 
 <!--
 <p>
