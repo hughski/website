@@ -42,6 +42,28 @@ Lost the CD? You can download an ISO image of the disc <a href="">here</a>
 and burn it to a new CDR or CDRW.
 </p>
 
+<h2>Calibration</h2>
+</p>
+Unlike expensive photospectrometer devices the ColorHug is a colorimeter
+and measures a single set of primaries.
+Different displays have very different primaries and we can use user
+contributed matrices to better adapt the ColorHug sensor to a particular
+display technology.
+</p>
+<p>
+Using the factory supplied matrices you can get pretty accurate color
+readings without actually changing anthing.
+To more accurately measure colors from a display, ccmx files are used.
+These specific to a particular display make and model combination.
+</p>
+<p>
+You can update the list of calibration matrices and load new data on to
+the ColorHug device by running <code>colorhug-ccmx</code>.
+</p>
+<center>
+<img src="img/colorhug-ccmx.png" alt="ccmx program"/>
+</center>
+
 <h2>Client code</h2>
 </p>
 If you are not running Fedora 16 or Ubuntu you may need to compile and
