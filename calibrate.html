@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="hughsie Richard Hughes Hughski Limited ColorHug" />
+<meta name="description" content="Hughski Limited" />
+<meta name="author" content="Richard Hughes" />
+<title>Hughski - ColorHug</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="shortcut icon" href="favicon.ico"/>
+<style type="text/css" media="screen">
+ body { background: url("img/kubrickbgcolor.jpg"); } 
+ #page { background: url("img/kubrickbgwide.jpg") repeat-y top; border: none; } 
+ #header { background: url("img/kubrickheader.jpg") no-repeat bottom center; }
+ #footer { background: url("img/kubrickfooter.jpg") no-repeat bottom; border: none;}
+</style>
+</head>
+<body>
+<div id="page">
+<div id="header">
+ <div id="headerimg">
+  <h1 class="title"><a href="http://www.hughsie.com/">Hughski Limited</a></h1>
+  <div class="description">Open source color management hardware</div>
+ </div>
+</div>
+<hr />
+ <div id="content" class="widecolumn">
+  <div class="navigation">
+   <div class="alignleft"><a href="owner.html">Introduction</a></div>
+   <div class="alignleft">&nbsp;&laquo; <a href="calibrate.html">Calibration</a></div>
+   <div class="alignleft">&nbsp;&laquo; <a href="faq.html">FAQ</a></div>
+   <div class="alignright"></div>
+  </div>
+  <div class="post">
+
+<h1>Calibrating the ColorHug</h1>
+
+<p>
+To calibrate the ColorHug against your screen technology you need a
+photospectrometer, e.g. a ColorMunki and the xcalib software installed.
+</p>
+
+<h2>Caclulating the dark offsets</h2>
+<p>
+Ensure your screen has been turned on for at least 30 minutes and the
+ColorHug is attached to the screen.
+We turn off the screen and do a raw measurement using:
+</p>
+<pre>
+$ /usr/libexec/colorhug set-dark-offsets 0 0 0
+$ xset dpms force off && sleep 5 && /usr/libexec/colorhug take-readings && xset dpms force on
+R:0.0008 G:0.0004 B:0.0004
+</pre>
+<p>
+These can then be programmed into the ColorHug using:
+</p>
+<pre>
+$ /usr/libexec/colorhug set-dark-offsets 0.0003 0.0004 0.0002
+$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
+</pre>
+
+<h2>Working out the calibration matrix</h2>
+<p>
+We then generate a ti1 file containing a list of patches to measure:
+</p>
+<pre>
+$ targen -d3 patches
+</pre>
+
+<p>
+Then we measure the patches using the photospectrometer which creates a
+ti3 file from the ti1 file.
+For this bit you have to attach your photospectrometer to the computer
+and disconnect the ColorHug.
+Note, you <b>need</b> to use the <code>-s</code> flag to ensure that
+the spectral data is saved.
+</p>
+<pre>
+$ dispread -d1 -yl -s patches
+$ mv patches.ti3 colormunki-hp-lp240zx-srgb.ti3
+</pre>
+
+<p>
+Then we measure the reset the screen and device to default, and
+measure the spectral response using the ColorHug.
+So, remove the photospectrometer and attach the ColorHug.
+<!--
+Note, we can use gcm-calibrate-helper if argyllcms does has not been
+patched to support the ColorHug hardware.
+-->
+</p>
+<pre>
+$ xcalib -c
+$ /usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
+$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
+
+$ dispread -d1 -yl patches
+$ mv patches.ti3 colorhug-hp-lp240zx-srgb.ti3
+</pre>
+<!--
+$ gcm-calibrate-helper patches.ti1 colorhug-hp-lp240zx-srgb.ti3
+-->
+
+<p>
+With the two .ti3 files, we can generate a colorimeter calibration matrix:
+</p>
+<pre>
+$ export ccxx_desc="HP-LP2480zx-sRGB"
+$ export ccxx_ref="colormunki-hp-lp240zx-srgb.ti3"
+$ export ccxx_src="colorhug-hp-lp240zx-srgb.ti3"
+$ export ccxx_mat="colorhug-hp-lp240zx-srgb.ccmx"
+$ ccxxmake -I $ccxx_desc -T LCD -D$ccxx_desc -f $ccxx_ref,$ccxx_src $ccxx_mat
+</pre>
+<!--
+export ccxx_desc="Lenovo-T510"
+export ccxx_ref="colormunki-lenovo-t510.ti3"
+export ccxx_src="colorhug-lenovo-t510.ti3"
+export ccxx_mat="colorhug-lenovo-t510.ccmx"
+ccxxmake -I $ccxx_desc -T LCD -D$ccxx_desc -f $ccxx_ref,$ccxx_src $ccxx_mat
+-->
+
+<p>
+This ccmx file is the calibration matrix that best fits the display and
+your specific ColorHug.
+The calibration matrix may be useful to people who have not got a
+photospectrometer, and so we're asking people who got the developer
+discount to
+<a href="mailto:colorhug@hughski.com?subject=ccmx">send the ccmx file</a>
+to us so we can incorporate it in future versions of the hardware.
+</p>
+
+<p>
+To set the calibration matrix to the ColorHug, you first need to discover
+a spare calibration slot on the device.
+By default, slot 0 is the factory calibration, which you can verify with:
+</p>
+<pre>
+$ /usr/libexec/colorhug get-calibration 0
+description: Factory Calibration
+( 1.21	0.18	0.96	)
+( 0.46	2.75	-0.50	)
+( -0.66	-1.68	6.36	)
+$ /usr/libexec/colorhug get-calibration 1
+Invalid read: retval=0x0c [No calibration] cmd=0x09 (expected 0x9 [get-calibration]) len=2 (expected 62)
+</pre>
+
+<p>
+So, we want to write our calibration matrix to slot 1, which we do with:
+</p>
+<pre>
+$ /usr/libexec/colorhug set-calibration-ccmx 1 colorhug-hp-lp240zx-srgb.ccmx
+</pre>
+
+<p>
+We want to assign this calibration to be used by default for any
+sample which is identified as an LCD screen, and use the factory default
+for the other modes.
+</p>
+<pre>
+$ /usr/libexec/colorhug set-calibration-map 1 0 0 0 0 0
+</pre>
+<p>
+If you want a GUI tool to load and switch the CCMX matrices, try <code>colorhug-ccmx</code>.
+</p>
+<center>
+<img src="img/colorhug-ccmx.png" alt="ccmx program"/>
+</center>
+
+<p>
+Now we can test the device on unknown color swatches, using:
+</p>
+<pre>
+$ /usr/libexec/colorhug take-readings-xyz 1
+R:114.1115 G:90.0162 B:105.0156
+</pre>
+
+<h2>Creating a display profile</h2>
+<p>
+Now you can either create a display profile using gnome-color-manager
+or using the following commands.
+</p>
+<pre>
+$ targen -d3 lp2480zx
+$ dispcal -v -ql -m -d1 -yl -P 0.5,0.5,1.2 lp2480zx
+$ dispread -v -d1 -yl -k lp2480zx.cal -P 0.5,0.5,1.2 lp2480zx
+$ colprof -v -A"HP" -M"LP2480zx" -D"HP LP2480zx" -C"Copyright Richard Hughes 2011" -qm -as lp2480zx
+$ gcm-import lp2480zx.icc
+</pre>
+
+<!--
+targen -d3 ch-thinkpad
+dispcal -v -ql -m -d1 -yl -P 0.5,0.5,1.2 lp2480zx
+dispread -v -d1 -yl -k ch-thinkpad.cal -P 0.5,0.5,1.2 ch-thinkpad
+colprof -v -A"IBM" -M"Thinkpad T510" -D"IBM Thinkpad T510" -C"Copyright Richard Hughes 2011" -qm -as ch-thinkpad
+gcm-import ch-thinkpad.icc
+-->
+
+  </div><!-- end post -->
+ </div>
+<hr />
+<div id="footer">
+ <p>
+  Hughski.com is managed by
+  <a href="mailto:richard@hughsie.com">Richard Hughes</a><br/>
+  <a href="http://validator.w3.org/check/referer">Optimized</a>
+  for <a href="http://www.w3.org/">standards</a>.
+ </p>
+</div>
+</div>
+</body>
+</html>

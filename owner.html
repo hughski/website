@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="hughsie Richard Hughes Hughski Limited ColorHug" />
+<meta name="description" content="Hughski Limited" />
+<meta name="author" content="Richard Hughes" />
+<title>Hughski - ColorHug</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="shortcut icon" href="favicon.ico"/>
+<style type="text/css" media="screen">
+ body { background: url("img/kubrickbgcolor.jpg"); } 
+ #page { background: url("img/kubrickbgwide.jpg") repeat-y top; border: none; } 
+ #header { background: url("img/kubrickheader.jpg") no-repeat bottom center; }
+ #footer { background: url("img/kubrickfooter.jpg") no-repeat bottom; border: none;}
+</style>
+</head>
+<body>
+<div id="page">
+<div id="header">
+ <div id="headerimg">
+  <h1 class="title"><a href="http://www.hughsie.com/">Hughski Limited</a></h1>
+  <div class="description">Open source color management hardware</div>
+ </div>
+</div>
+<hr />
+ <div id="content" class="widecolumn">
+  <div class="navigation">
+   <div class="alignleft"><a href="owner.html">Introduction</a></div>
+   <div class="alignleft">&nbsp;&laquo; <a href="buy.html">Calibration</a></div>
+   <div class="alignleft">&nbsp;&laquo; <a href="faq.html">FAQ</a></div>
+   <div class="alignright"></div>
+  </div>
+  <div class="post">
+
+<h1>You bought a ColorHug!</h1>
+<p>
+First, thanks. I really appreciate you giving Open Hardware a try.
+Second, please join the <a href="https://groups.google.com/group/colorhug-users">colorhug-users group</a> and tell us what you think.
+All announcements about new firmware updates and new client code will also be
+done on the mailing list.
+</p>
+<p>
+Things you might want to do now:
+</p>
+<ul>
+<li><a href="#start">Check everything is working correctly</a></li>
+<li><a href="calibrate.html">Calibrate your device</a> if you have a photospectrometer</li>
+<li><a href="#versions">Make sure you have new enough versions</a> of all the software if you don't want to use the LiveCD</li>
+<li><a href="faq.html">Check any frequently asked questions</a></li>
+</ul>
+
+<a name="start"><h1>Check the hardware</h1></a>
+<h3>Low level access</h3>
+<p>
+First, we check the hardware can be accessed.
+Insert the LiveCD and reboot, making sure you boot the CD when the BIOS screen shows.
+Then, connect the ColorHug and run:
+</p>
+<pre>
+$ /usr/libexec/colorhug set-leds 1 5 200 200
+</pre>
+<p>
+This should flash the green LED 5 times.
+</p>
+
+<h3>Get latest firmware</h3>
+<pre>
+$ /usr/bin/colorhug-flash
+</pre>
+<center>
+<img src="img/colorhug-flash.png" alt="flash program"/>
+</center>
+
+<h3>Get up to date calibration matrices</h3>
+<pre>
+$ /usr/bin/colorhug-ccmx
+</pre>
+<center>
+<img src="img/colorhug-ccmx.png" alt="ccmx program"/>
+</center>
+<p>
+Then click <code>Refresh</code> and select calibration matrices for each
+display type that match your display kind (using the default calibration
+is usually good enough for most people).
+</p>
+
+<h3>Measuring a test patch</h3>
+<pre>
+$ /usr/bin/gcm-picker
+</pre>
+<p>
+Hold the device against the screen and click the <code>Sample</code> button.
+Hopefully the color on the screen will roughtly match the sample color.
+</p>
+
+<p>
+Then we can create a ICC profile.
+</p>
+<pre>
+$ /usr/bin/gnome-control-center color
+</pre>
+<p>
+<b>Success!</b>
+</p>
+
+<a name="versions"><h1>Check the software</h1></a>
+<p>
+If you're not using the LiveCD you need at least:
+</p>
+<ul>
+<li><code>argyllcms</code> >= 1.3.5-4.fc16 or vanilla 1.3.5 with <a href="downloads/0001-Add-an-experimental-ColorHug-sensor-driver.patch">this patch</a> applied</li>
+<li><code>colord</code> >= 0.1.15</li>
+<li><code>colorhug-client</code> >= 0.1.2</li>
+<li><code>gusb</code> >= 0.1.2</li>
+</ul>
+
+  </div><!-- end post -->
+ </div>
+<hr />
+<div id="footer">
+ <p>
+  Hughski.com is managed by
+  <a href="mailto:richard@hughsie.com">Richard Hughes</a><br/>
+  <a href="http://validator.w3.org/check/referer">Optimized</a>
+  for <a href="http://www.w3.org/">standards</a>.
+ </p>
+</div>
+</div>
+</body>
+</html>
