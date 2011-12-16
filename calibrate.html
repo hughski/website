@@ -36,32 +36,13 @@
 <h1>Calibrating the ColorHug</h1>
 
 <p>
-To calibrate the ColorHug against your screen technology you need a
+To calibrate the ColorHug against a new screen technology you need a
 photospectrometer, e.g. a ColorMunki and the xcalib software installed.
 </p>
 
-<h2>Caclulating the dark offsets</h2>
-<p>
-Ensure your screen has been turned on for at least 30 minutes and the
-ColorHug is attached to the screen.
-We turn off the screen and do a raw measurement using:
-</p>
-<pre>
-$ /usr/libexec/colorhug set-dark-offsets 0 0 0
-$ xset dpms force off && sleep 5 && /usr/libexec/colorhug take-readings && xset dpms force on
-R:0.0008 G:0.0004 B:0.0004
-</pre>
-<p>
-These can then be programmed into the ColorHug using:
-</p>
-<pre>
-$ /usr/libexec/colorhug set-dark-offsets 0.0003 0.0004 0.0002
-$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
-</pre>
-
 <h2>Working out the calibration matrix</h2>
 <p>
-We then generate a ti1 file containing a list of patches to measure:
+We first generate a ti1 file containing a list of patches to measure:
 </p>
 <pre>
 $ targen -d3 patches
