@@ -37,6 +37,8 @@
 
 <ul>
 <li><a href="#leds">What do the LEDs mean?</a></li>
+<li><a href="#suckers">Why do I have to hold the device against the screen?</a></li>
+<li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
 </ul>
 
 <hr/>
@@ -52,6 +54,43 @@ The LEDs are used in the following way:
 <li>The red LED displays morse code in the event of a fatal device error.</li>
 </ul>
 
+<hr/>
+<a name="suckers"><h2>Why do I have to hold the device against the screen</h2></a>
+<p>
+Suckers have been known to damage LCD screens by lifting off the top layer
+of glass.
+I can't risk this kind of damage, as there's simply not enough profit in
+each ColorHug to refund the repair costs of displays.
+When calibrating each ColorHug I use a large rubber band to hold the device
+to the screen. This works suprisingly well.
+If you've got a good idea that doesn't involve suckers, please let us know!
+</p>
+
+<hr/>
+<a name="crapcal"><h2>Why is my screen "wrong" after calibrating</h2></a>
+<p>
+If your screen differs much from the idealized sRGB that the ColorHug
+is calibrated against then the calibration result may be far from ideal.
+This may happen if you are using an expensive LED display, or a
+minature embedded LCD with low bit depth DAC.
+</p>
+<p>
+To fix this, you just need to load a correction matrix that's close to
+your display technology using the <code>colorhug-ccmx</code> GUI program.
+At the moment there are not many display types, but this will increase
+when those in the ColorHug community with a photospectrometer start
+contributing matrices. It's a typical chicken and egg problem, although
+if you join the <a href="https://groups.google.com/forum/#!forum/colorhug-users">colorhug-users</a>
+google group I'll announce new matrices when they are uploaded.
+</p>
+<p>
+If you've already got a photospectrometer (or can borrow one for a few
+hours) then please follow the directions <a href="calibrate.html">here</a>.
+If you contribute the resuling CCMX file back to us, we can share it with
+other users and improve their calibration result too.
+I'm especially interested in odd display types, as these will be very
+different from the calibration target.
+</p>
   </div><!-- end post -->
  </div>
 <hr />
