@@ -76,7 +76,7 @@ Note, you <b>need</b> to use the <code>-s</code> flag to ensure that
 the spectral data is saved.
 </p>
 <pre>
-dispread -d1 -yl -s patches
+dispread -d2 -yl -s patches
 mv patches.ti3 colormunki-hp-lp240zx-srgb.ti3
 </pre>
 
@@ -91,7 +91,7 @@ xcalib -c
 /usr/libexec/colorhug set-calibration-ccmx 0 unity.ccmx
 /usr/libexec/colorhug write-eeprom "Un1c0rn2"
 
-dispread -d1 -yl patches
+dispread -d2 -yl patches
 mv patches.ti3 calibration.ti3
 </pre>
 
