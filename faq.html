@@ -39,6 +39,8 @@
 <li><a href="#leds">What do the LEDs mean?</a></li>
 <li><a href="#suckers">Why do I have to hold the device against the screen?</a></li>
 <li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
+<li><a href="#remote-disable">What is lost-or-stolen mode?</a></li>
+<li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
 </ul>
 
 <hr/>
@@ -91,6 +93,48 @@ other users and improve their calibration result too.
 I'm especially interested in odd display types, as these will be very
 different from the calibration target.
 </p>
+
+<hr/>
+<a name="remote-disable"><h2>What is lost-or-stolen mode?</h2></a>
+<p>
+When we send the ColorHug device to you, we give you the choice of
+postage methods, as we understand a lot of people don't want to pay
+&pound;9 postage for an item that only costs &pound;48.
+Using untracked postage means that packages can get lost during tracking,
+and due to the distance selling regulations of the UK, any lost packages
+have to be refunded by the seller to the buyer.
+</p>
+<p>
+In order to deter unscrupulous buyers, any packages that
+are registered as lost or stolen will have the ColorHug devices added
+to a blacklist.
+This means that anybody trying to update the firmware on a device that
+is registered as lost or stolen will have the hardware disabled.
+Serial numbers will not be added to this list for any other reason.
+</p>
+
+<hr/>
+<a name="firmware-update-data"><h2>What data is transmitted to hughski.com?</h2></a>
+<p>
+If you choose to update the firmware on your device, the <code>colorhug-flash</code>
+program contacts <code>hughski.com</code> and downloads the list of all
+the firmware updates. When it does that, the following data is sent to
+the server:
+</p>
+<ul>
+<li>Your IP address</li>
+<li>The serial number of the device (e.g. #000337)</li>
+</ul>
+<p>
+We don't actually use this data for anything and it is automatically
+overwritten after 30 days.
+</p>
+<p>
+The <b>only</b> time any data is transfered to the server is when you
+update the firmware or download new CCMX matrices, and certainly not
+for each calibration or sample!
+</p>
+
   </div><!-- end post -->
  </div>
 <hr />
