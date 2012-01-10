@@ -43,6 +43,7 @@
 <li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
 <li><a href="#remote-disable">What is lost-or-stolen mode?</a></li>
 <li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
+<li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
 </ul>
 
 <hr/>
@@ -139,6 +140,30 @@ The <b>only</b> time any data is transfered to the server is when you
 update the firmware or download new CCMX matrices, and certainly not
 for each calibration or sample!
 </p>
+
+<hr/>
+<a name="erase-factory-cal"><h2>I've erased my factory calibration!</h2></a>
+<p>
+If you're got colorhug-client 0.1.4 or newer installed, just run
+<code>colorhug-ccmx</code> and you should be presented with the following
+dialog:
+</p>
+<img src="img/colorhug-ccmx-fix.png" class="centered"/>
+<p>
+Then just click <code>Repair</code> and the device will be back to normal.
+</p>
+<p>
+If you're running an older version of the colorhug tools, simply
+find the correct ccmx file from the <a href="http://www.hughski.com/downloads/colorhug/archive/">archive</a>
+and perform the following steps:
+</p>
+<pre>
+[user@localhost ~]$ /usr/libexec/colorhug get-serial-number
+000043
+[user@localhost ~]$ /usr/libexec/colorhug set-calibration-ccmx 0 ./calibration-000043.ccmx
+[user@localhost ~]$ /usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
+[user@localhost ~]$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
+</pre>
 
   </div><!-- end post -->
  </div>
