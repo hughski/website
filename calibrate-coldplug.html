@@ -38,23 +38,26 @@
 To factory calibrate the ColorHug you need a
 photospectrometer, e.g. a ColorMunki and the xcalib software installed.
 </p>
+<p>
+Ensure your screen has been turned on for at least 30 minutes.
+</p>
 
 <h2>Calculating the dark offsets</h2>
 <p>
-Ensure your screen has been turned on for at least 30 minutes and the
-ColorHug is attached to the screen.
-We turn off the screen and do a raw measurement using:
+Place the ColorHug on a black dark surface and press down to ensure
+no light leaks into the aperture.
+Do a raw measurement using:
 </p>
 <pre>
 /usr/libexec/colorhug set-dark-offsets 0 0 0
 xset dpms force off && sleep 5 && /usr/libexec/colorhug take-readings && xset dpms force on
-R:0.0008 G:0.0004 B:0.0004
+R:0.0002 G:0.0001 B:0.0001
 </pre>
 <p>
 These can then be programmed into the ColorHug using:
 </p>
 <pre>
-/usr/libexec/colorhug set-dark-offsets 0.0003 0.0004 0.0002
+/usr/libexec/colorhug set-dark-offsets 0.0002 0.0001 0.0001
 /usr/libexec/colorhug write-eeprom "Un1c0rn2"
 </pre>
 
