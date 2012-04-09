@@ -46,6 +46,8 @@
 <li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
 <li><a href="#payment-methods">What payment methods are accepted?</a></li>
 <li><a href="#bugzilla">I've found a bug or missing feature, what do I do?</a></li>
+<li><a href="#shipping">I sent money for a device over two weeks ago, where is it?</a></li>
+<li><a href="#flashing-failed">Flashing failed, is my device now a brick!?</a></li>
 </ul>
 
 <hr/>
@@ -184,7 +186,66 @@ Just file a bug in our <a href="bugzilla/">bugzilla</a> issue tracker.
 Be sure to write as much detail as possible in the bug report.
 </p>
 
+<hr/>
+<a name="shipping"><h2>I sent money for a device over two weeks ago, where is it?</h2></a>
+<p>
+Normally shipping parcels to Europe takes about 4 working days, but has
+been known to take up to two weeks, especially to Italy for some reason.
+Shipping to Africa, Brazil and Russia is meant to take about one week,
+but it seems parcels seem to get lost for weeks at a time and then turn
+up without explaination.
+If the destination is the United States, then make sure you're not got
+a letter from the post office about a held package that has to pay some
+kind of customs charge or sales tax.
+</p>
+<p>
+If you've been waiting over two weeks then email me and I can confirm
+the date I sent the parcel and the serial number.
+Our policy on lost or missing parcels is this (which is based on how
+quickly I can file a claim with the UK post office):
+</p>
+<ul>
+<li>If the package was <i>signed-for</i> then we have to wait 6 weeks from the sent date</li>
+<li>If the package was not <i>signed-for</i> then we have to wait 12 weeks from the sent date</li>
+</ul>
+<p>
+If the parcel has not arrived up in the durations above, then I can either
+(at your choice) offer you a refund of the full amount via paypal or
+send another parcel <b>to a different address</b>.
+If this second delivery also fails, then I can't attempt to send any more,
+and only a refund will be offered.
+</p>
+<p>
+If a refund is issued, or a replacement sent, then the original device
+will be disabled to stop any unscrupulous postal workers from putting
+the device on ebay. :)
+</p>
 
+<hr/>
+<a name="flashing-failed"><h2>Flashing failed, is my device now a brick!?</h2></a>
+<p>
+No.
+If the flashing failed (of if the new firmware is bad), the ColorHug
+device reverts to a safe startup mode.
+The bootloader is always loaded at every startup, and the firmware is
+only bootstrapped if it is marked as valid.
+The easiest way to tell if you are in bootloader mode is to
+<a href="#leds">look at the LEDs</a> or search for a line like this in
+<code>dmesg</code>:
+</p>
+<pre>
+[  276.933714] generic-usb 0003:04D8:F8DA.0003:
+  hiddev0,hidraw0: USB HID v1.11 Device [Hughski Ltd. ColorHug (bootloader)]
+</pre>
+<p>
+The easiest thing to do is just to reattempt to update the flash, by
+running <code>colorhug-flash</code> again.
+If this again fails, just manually boot the firmware like this:
+</p>
+<pre>
+$ /usr/libexec/colorhug boot-flash
+$ /usr/libexec/colorhug set-flash-success 1
+</pre>
   </div><!-- end post -->
  </div>
 <hr />
