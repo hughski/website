@@ -1,9 +1,26 @@
 <?php
-// In PHP versions earlier than 4.1.0, $HTTP_POST_FILES should be used instead
-// of $_FILES.
+
+/*
+ * Copyright (C) 2012 Richard Hughes <richard@hughsie.com>
+ *
+ * Licensed under the GNU General Public License Version 2
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
 
 $uploaddir = '/home/hughsiec/public_html/uploads/';
-$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
 // perform some checks before opening the file
 $size = $_FILES['upload']['size'];
@@ -24,7 +41,7 @@ if ($size > 10240) {
 	} else {
 		// copy the profile and return the URL
 		$sha1 = sha1($data);
-		$destination = '/home/hughsiec/public_html/uploads/' . $sha1 . '.icc';
+		$destination = $uploaddir . $sha1 . '.icc';
 		$handle = fopen($destination, "w");
 		fwrite($handle, $data);
 		fclose($handle);
