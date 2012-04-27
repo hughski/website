@@ -49,6 +49,8 @@
 <li><a href="#shipping">I sent money for a device over two weeks ago, where is it?</a></li>
 <li><a href="#flashing-failed">Flashing failed, is my device now a brick!?</a></li>
 <li><a href="#price-increase">Why are the devices now &pound;60?</a></li>
+<li><a href="#windows-and-osx">Does the device work on Windows or OSX?</a></li>
+<li><a href="#solaris-and-bsds">Does the device work on Solaris and FreeBSD?</a></li>
 </ul>
 
 <hr/>
@@ -266,6 +268,27 @@ bugs.
 We've had some fantastic feedback from people who purchased the device,
 and we've had some really nice patches from community members, and
 now we're confident that the device works well for most people.
+</p>
+
+<hr/>
+<a name="windows-and-osx"><h2>Does the device work on Windows or OSX?</h2></a>
+<p>
+ The ColorHug can be used on Windows and Apple computers using the LiveCD
+ and then copying the icc profile to the destination operating system.
+ I can't do native drivers myself, although a few people have said
+ informally they wanted to work on them.
+ The device uses the HID protocol, so no <i>signed</i> drivers should
+ be required at all.
+</p>
+
+<hr/>
+<a name="solaris-and-bsds"><h2>Does the device work on Solaris and FreeBSD?</h2></a>
+<p>
+ There are no plans to support this device on any version of UXIX or
+ any of the BSD variants.
+ If somebody needs this then it would be quite easy for them to port the
+ <a href="https://gitorious.org/colorhug/client/blobs/master/contrib/ch-usb.c">libusb-0.1 demo</a>
+ to another Linux-like operating system although it would not be supported by us.
 </p>
 
   </div><!-- end post -->
