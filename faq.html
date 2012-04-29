@@ -49,7 +49,7 @@
 <li><a href="#shipping">I sent money for a device over two weeks ago, where is it?</a></li>
 <li><a href="#flashing-failed">Flashing failed, is my device now a brick!?</a></li>
 <li><a href="#price-increase">Why are the devices now &pound;60?</a></li>
-<li><a href="#windows-and-osx">Does the device work on Windows or OSX?</a></li>
+<li><a href="#windows-and-osx">Does the device work on Windows or OS&nbsp;X?</a></li>
 <li><a href="#solaris-and-bsds">Does the device work on Solaris and FreeBSD?</a></li>
 </ul>
 
@@ -84,7 +84,8 @@ If you've got a good idea that doesn't involve suckers, please let us know!
 If your screen differs much from the idealized sRGB that the ColorHug
 is calibrated against then the calibration result may be far from ideal.
 This may happen if you are using an expensive LED display, or a
-minature embedded LCD with low bit depth DAC.
+minature embedded LCD with low bit depth
+<acronym title="Digital-to-analog converter">DAC</acronym>.
 </p>
 <p>
 To fix this, you just need to load a correction matrix that's close to
@@ -98,7 +99,8 @@ google group I'll announce new matrices when they are uploaded.
 <p>
 If you've already got a photospectrometer (or can borrow one for a few
 hours) then please follow the directions <a href="calibrate.html">here</a>.
-If you contribute the resuling CCMX file back to us, we can share it with
+If you contribute the resulting
+<acronym title="colorimeter correction matrix">CCMX</acronym> file back to us, we can share it with
 other users and improve their calibration result too.
 I'm especially interested in odd display types, as these will be very
 different from the calibration target.
@@ -175,18 +177,29 @@ and perform the following steps:
 <hr/>
 <a name="payment-methods"></a><h2>What payment methods are accepted?</h2>
 <p>
-The preferred way of paying for a device is using Paypal as it's easy
+The preferred way of paying for a device is using PayPal as it's easy
 for me to track payments and issue refunds.
-If you've got ideological problems with Paypal, or would rather not
+If you've got ideological problems with PayPal, or would rather not
 use them, then email me when you get the offer to purchase a device
-and I'll give you my IBAN and BIC numbers for a direct bank transfer.
+and I'll give you my <acronym title="International Bank Account Number">IBAN</acronym>
+and <acronym title="Bank Identifier Code">BIC</acronym> numbers for a
+direct bank transfer.
 </p>
 
 <hr/>
 <a name="bugzilla"></a><h2>I've found a bug or missing feature, what do I do?</h2>
 <p>
-Just file a bug in our <a href="bugzilla/">bugzilla</a> issue tracker.
-Be sure to write as much detail as possible in the bug report.
+Just file a bug in our <a href="bugzilla/">Bugzilla</a> issue tracker.
+Be sure to write as much detail as possible in the bug report, for instance:
+<ul>
+<li><code>lsusb -v</code></li>
+<li><code>uname -r</code></li>
+<li><code>/usr/libexec/colorhug get-firmware-version</code></li>
+<li><code>/usr/libexec/colorhug get-hardware-version</code></li>
+<li><code>/usr/libexec/colorhug get-serial-number</code></li>
+<li><code>/usr/libexec/colorhug get-calibration-map</code></li>
+<li><code>/usr/libexec/colorhug list-calibration</code></li>
+</ul>
 </p>
 
 <hr/>
@@ -197,7 +210,7 @@ been known to take up to two weeks, especially to Italy for some reason.
 Shipping to Africa, Brazil and Russia is meant to take about one week,
 but it seems parcels seem to get lost for weeks at a time and then turn
 up without explaination.
-If the destination is the United States, then make sure you're not got
+If the destination is the United States, then double check you've not got
 a letter from the post office about a held package that has to pay some
 kind of customs charge or sales tax.
 </p>
@@ -213,15 +226,15 @@ quickly I can file a claim with the UK post office):
 </ul>
 <p>
 If the parcel has not arrived up in the durations above, then I can either
-(at your choice) offer you a refund of the full amount via paypal or
+(at your choice) offer you a refund of the full amount via PayPal or
 send another parcel <b>to a different address</b>.
 If this second delivery also fails, then I can't attempt to send any more,
 and only a refund will be offered.
 </p>
 <p>
 If a refund is issued, or a replacement sent, then the original device
-will be disabled to stop any unscrupulous postal workers from putting
-the device on ebay. :)
+can be disabled to stop any unscrupulous postal workers from putting
+the device on eBay. :)
 </p>
 
 <hr/>
@@ -257,7 +270,7 @@ ColorHug has been very successful, and we've now sold over 350 devices
 all around the world.
 Although we've not made much of a profit yet (I'm still working for free!)
 the <b>turnover</b> has reached a point where we will soon have to start
-charging VAT on all purchases.
+charging <acronym title="Value added tax">VAT</acronym> on all purchases.
 The new price will apply to any pre-orders made after 16th April 2012.
 Any pre-orders made before this date will pay the old price.
 </p>
@@ -271,20 +284,21 @@ now we're confident that the device works well for most people.
 </p>
 
 <hr/>
-<a name="windows-and-osx"><h2>Does the device work on Windows or OSX?</h2></a>
+<a name="windows-and-osx"><h2>Does the device work on Windows or OS&nbsp;X?</h2></a>
 <p>
  The ColorHug can be used on Windows and Apple computers using the LiveCD
- and then copying the icc profile to the destination operating system.
- I can't do native drivers myself, although a few people have said
+ and then copying the <code>.icc</code> profile to the destination operating system.
+ I can't do native device drivers myself, although a few people have said
  informally they wanted to work on them.
- The device uses the HID protocol, so no <i>signed</i> drivers should
- be required at all.
+ The device uses the USB <acronym title="Human interface device">HID</acronym>
+ protocol, so no <i>digitally signed</i> device drivers should be
+ required at all.
 </p>
 
 <hr/>
 <a name="solaris-and-bsds"><h2>Does the device work on Solaris and FreeBSD?</h2></a>
 <p>
- There are no plans to support this device on any version of UXIX or
+ There are no plans to support this device on any version of Unix or
  any of the BSD variants.
  If somebody needs this then it would be quite easy for them to port the
  <a href="https://gitorious.org/colorhug/client/blobs/master/contrib/ch-usb.c">libusb-0.1 demo</a>
