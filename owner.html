@@ -40,18 +40,13 @@ All announcements about new firmware updates and new client code will also be
 done on the mailing list.
 </p>
 <p style="background-color:#ffdddd; padding:25px;">
-There was a bug discovered in the colorhug-ccmx program on the CDs that
-were included with devices #000003 to #000040,
-so please update to colorhug 0.1.4 before trying out new CCMX calibration
-matrices.
-If you choose to use the CD, before you start colorhug-ccmx, you
-have to download <a href="http://koji.fedoraproject.org/koji/getfile?taskID=3637000&name=colorhug-client-0.1.4-1.fc16.i686.rpm">this package</a> and then open a terminal and type:
-<code>su -l</code> followed by <code>rpm -Uvh /home/liveuser/Downloads/*.rpm</code>
-<br>
-<br>
-If you've got a serial number greater than #000040, or you are using
-distro packages then this does not affect you.
-<a href="https://groups.google.com/group/colorhug-users/msg/651e58f455f7ebb0?">More details...</a>
+If you are using CD version 20120424 or older (or your own packages)
+then make sure that you choose <i>Native whitepoint</i> when choosing
+the screen target temperature.
+Newer versions of gnome-color-manager have been patched to use only the
+native whitepoint when colorimeter devices such as the ColorHug are
+detected.
+LiveCD versions 20120510 and newer are not affected.
 </p>
 <p>
 Things you might want to do now:
@@ -103,7 +98,7 @@ is usually good enough for most people).
 $ /usr/bin/gcm-picker
 </pre>
 <p>
-Hold the device against the screen and click the <code>Sample</code> button.
+Hold the device against the screen and click the <code>Measure</code> button.
 Hopefully the color on the screen will roughtly match the sample color.
 </p>
 
@@ -122,7 +117,7 @@ $ /usr/bin/gnome-control-center color
 If you're not using the LiveCD you need at least:
 </p>
 <ul>
-<li><code>argyllcms</code> >= 1.3.6</li>
+<li><code>argyllcms</code> >= 1.4.0</li>
 <li><code>colord</code> >= 0.1.15</li>
 <li><code>colorhug-client</code> >= 0.1.4</li>
 <li><code>gusb</code> >= 0.1.2</li>
