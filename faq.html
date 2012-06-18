@@ -53,12 +53,14 @@
 <li><a href="#solaris-and-bsds">Does the device work on Solaris and FreeBSD?</a></li>
 <li><a href="#old-mac">The LiveCD doesn't work on my old Mac!</a></li>
 <li><a href="#projector">How do I use the ColorHug with a projector?</a></li>
+<li><a href="#need-env-var">Why does the ColorHug not work with ArgyllCMS?</a></li>
+<li><a href="#software-versions">What are the minimum software versions?</a></li>
 </ul>
 
 <hr/>
 <a name="leds"></a><h2>What do the LEDs mean?</h2>
 <p>
-There are two leds in the ColorHug, one green and one red.
+There are two LEDs in the ColorHug, one green and one red.
 The LEDs are used in the following way:
 </p>
 <ul>
@@ -76,7 +78,7 @@ of glass.
 I can't risk this kind of damage, as there's simply not enough profit in
 each ColorHug to refund the repair costs of displays.
 When calibrating each ColorHug I use a large rubber band to hold the device
-to the screen. This works suprisingly well.
+to the screen. This works surprisingly well.
 If you've got a good idea that doesn't involve suckers, please let us know!
 </p>
 
@@ -86,7 +88,7 @@ If you've got a good idea that doesn't involve suckers, please let us know!
 If your screen differs much from the idealized sRGB that the ColorHug
 is calibrated against then the calibration result may be far from ideal.
 This may happen if you are using an expensive LED display, or a
-minature embedded LCD with low bit depth
+miniature embedded LCD with low bit depth
 <acronym title="Digital-to-analog converter">DAC</acronym>.
 </p>
 <p>
@@ -163,18 +165,6 @@ dialog:
 <p>
 Then just click <code>Repair</code> and the device will be back to normal.
 </p>
-<p>
-If you're running an older version of the colorhug tools, simply
-find the correct ccmx file from the <a href="http://www.hughski.com/downloads/colorhug/archive/" target="_blank">archive</a>
-and perform the following steps:
-</p>
-<pre>
-[user@localhost ~]$ /usr/libexec/colorhug get-serial-number
-000043
-[user@localhost ~]$ /usr/libexec/colorhug set-calibration-ccmx 0 ./calibration-000043.ccmx
-[user@localhost ~]$ /usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
-[user@localhost ~]$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
-</pre>
 
 <hr/>
 <a name="payment-methods"></a><h2>What payment methods are accepted?</h2>
@@ -211,7 +201,7 @@ Normally shipping parcels to Europe takes about 4 working days, but has
 been known to take up to two weeks, especially to Italy for some reason.
 Shipping to Africa, Brazil and Russia is meant to take about one week,
 but it seems parcels seem to get lost for weeks at a time and then turn
-up without explaination.
+up without explanation.
 If the destination is the United States, then double check you've not got
 a letter from the post office about a held package that has to pay some
 kind of customs charge or sales tax.
@@ -227,7 +217,7 @@ quickly I can file a claim with the UK post office):
 <li>If the package was not <i>signed-for</i> then we have to wait 12 weeks from the sent date</li>
 </ul>
 <p>
-If the parcel has not arrived up in the durations above, then I can either
+If the parcel has not arrived in the durations above, then I can either
 (at your choice) offer you a refund of the full amount via PayPal or
 send another parcel <b>to a different address</b>.
 If this second delivery also fails, then I can't attempt to send any more,
@@ -278,7 +268,7 @@ Any pre-orders made before this date will pay the old price.
 </p>
 <p>
 The price of the device was &pound;60, and there was a 20% discount
-for early adoptors who were willing to try test firmware and help fix
+for early adopters who were willing to try test firmware and help fix
 bugs.
 We've had some fantastic feedback from people who purchased the device,
 and we've had some really nice patches from community members, and
@@ -315,7 +305,7 @@ now we're confident that the device works well for most people.
  You can not upgrade this and normal Linux distribution CDs will not work.
  Some distributions have been specially modified to work with this type
  of system.
- A special Ubuntu distro exists for this hardware called
+ A special Ubuntu distribution exists for this hardware called
  <a href="http://cdimage.ubuntu.com/daily-live/current/">Ubuntu x64_mac</a>
  and you can use the
  <a href="https://launchpad.net/~pmjdebruijn/+archive/gcm-colorhug/">Ubuntu PPA</a>
@@ -327,11 +317,39 @@ now we're confident that the device works well for most people.
 <p>
 Shine the projector onto the ColorHug in a dark room from about
 1-2&nbsp;meters away so there is no shadow.
-Ensure the colorhug's aperture is pointing straight towards the center
+Ensure the ColorHug's aperture is pointing straight towards the center
 of the colored patches.
 To increase the sensitivity of the ColorHug, you can remove the aperture
-hole assembly using a fingernail tucked between the two rubber grommits.
+hole assembly using a fingernail tucked between the two rubber grommits,
+although then the room will have to be completely dark.
 </p>
+
+<hr/>
+<a name="need-env-var"></a><h2>Why does the ColorHug not work with ArgyllCMS?</h2>
+<p>
+To use the ColorHug with the ArgyllCMS tools on the command line ensure
+you have set <code>ENABLE_COLORHUG=1</code> as an environment variable.
+This is required because the ColorHug currently doesn't work reliably
+across all platforms ArgyllCMS supports.
+</p>
+<p>
+This is of course set automatically when using the graphical tools.
+</p>
+
+<hr/>
+<a name="software-versions"></a><h2>What are the minimum software versions?</h2>
+<p>
+<p>
+If you're not using the LiveCD you need at least:
+</p>
+<ul>
+<li><code>argyllcms</code> >= 1.4.0</li>
+<li><code>colord</code> >= 0.1.15</li>
+<li><code>colorhug-client</code> >= 0.1.4</li>
+<li><code>gusb</code> >= 0.1.2</li>
+<li><code>gnome-color-manager</code> >= 3.2.4</li>
+<li><code>gnome-control-center</code> >= 3.2.2</li>
+</ul>
 
   </div><!-- end post -->
  </div>
