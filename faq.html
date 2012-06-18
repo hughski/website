@@ -55,6 +55,7 @@
 <li><a href="#projector">How do I use the ColorHug with a projector?</a></li>
 <li><a href="#need-env-var">Why does the ColorHug not work with ArgyllCMS?</a></li>
 <li><a href="#software-versions">What are the minimum software versions?</a></li>
+<li><a href="#red-shift">Why has my display got an obvious color shift after calibration?</a></li>
 </ul>
 
 <hr/>
@@ -339,7 +340,6 @@ This is of course set automatically when using the graphical tools.
 <hr/>
 <a name="software-versions"></a><h2>What are the minimum software versions?</h2>
 <p>
-<p>
 If you're not using the LiveCD you need at least:
 </p>
 <ul>
@@ -350,6 +350,20 @@ If you're not using the LiveCD you need at least:
 <li><code>gnome-color-manager</code> >= 3.2.4</li>
 <li><code>gnome-control-center</code> >= 3.2.2</li>
 </ul>
+
+<hr/>
+<a name="red-shift"></a><h2>Why has my display got an obvious color shift after calibration?</h2>
+<p>
+Calibrating to a warmer temperature of D65 is going to look a lot more
+blue than is native for some displays.
+If the color shift is obviously really wrong, take a look at this
+<a href="http://blog.pcode.nl/2012/06/15/colorhug-red-shift-workaround/">
+excellent blog post</a> by Pascal.
+Usually selecting a closer CCMX in <code>colorhug-ccmx</code> is the solution.
+We're working on the firmware design, and the device accuracy for low
+light is going up all the time, but this is a problem that affects all
+colorimeter devices.
+</p>
 
   </div><!-- end post -->
  </div>
