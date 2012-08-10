@@ -56,6 +56,7 @@
 <li><a href="#need-env-var">Why does the ColorHug not work with ArgyllCMS?</a></li>
 <li><a href="#software-versions">What are the minimum software versions?</a></li>
 <li><a href="#red-shift">Why has my display got an obvious color shift after calibration?</a></li>
+<li><a href="#measure-modes">What's the difference between the measurement modes?</a></li>
 </ul>
 
 <hr/>
@@ -364,6 +365,62 @@ We're working on the firmware design, and the device accuracy for low
 light is going up all the time, but this is a problem that affects all
 colorimeter devices.
 </p>
+
+<hr/>
+<a name="measure-modes"></a><h2>What's the difference between measurement modes?</h2>
+<p>
+There are only two ways of measuring the output of a light-to-frequency
+device, measuring the pulse width or measuring the number of pulses over
+a set time.
+</p>
+<p>
+The simplest way is to measure the number of pulses in a set time interval.
+This works well when the light level is high so that the quantisation
+noise is small but does not work well for very dark patches.
+Although an adaptive algarithm is used (giving dark patches more time),
+this sample speed is typically half of the pulse width mode.
+This mode is the only available mode on firmware versions 1.1.x.
+</p>
+<p>
+Averaging several pulse durations has the advantage that it can work
+down to 0.5Hz, but as the reading gets high (0.5KHz and above) the
+measured readings begin to have small aliasing errors introduced.
+This mode is default on firmware 1.2.0 and newer, although the modes can
+be switched at runtime.
+In all tests so far, the 'duration' mode has outperformed the 'frequency'
+mode when building profiles.
+</p>
+<p>
+The two modes produce the same absolute readings and should not alter
+the reported absolute XYZ readings.
+</p>
+<p>
+<table>
+ <tr>
+  <td>
+   <a href="img/measure-0-256-large.png">
+    <img src="img/measure-0-256.png" class="centered" alt="[measure graph 0-256]"/>
+   </a>
+  </td>
+  <td>
+   <a href="img/measure-0-32-large.png">
+    <img src="img/measure-0-32.png" class="centered" alt="[measure graph 0-32]"/>
+   </a>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="img/measure-228-256-large.png">
+    <img src="img/measure-228-256.png" class="centered" alt="[measure-graph 228-256]"/>
+   </a>
+  </td>
+  <td>
+   <a href="img/measure-sample-speed-large.png">
+    <img src="img/measure-sample-speed.png" class="centered" alt="[sample speed graph]"/>
+   </a>
+  </td>
+ </tr>
+</table>
 
   </div><!-- end post -->
  </div>
