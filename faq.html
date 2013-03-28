@@ -38,6 +38,7 @@
 <h1>Frequently Asked Questions</h1>
 
 <ul>
+<li><a href="#openhardware">Is the ColorHug OpenHardware?</a></li>
 <li><a href="#leds">What do the LEDs mean?</a></li>
 <li><a href="#suckers">Why do I have to hold the device against the screen?</a></li>
 <li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
@@ -56,8 +57,43 @@
 <li><a href="#need-env-var">Why does the ColorHug not work with ArgyllCMS?</a></li>
 <li><a href="#software-versions">What are the minimum software versions?</a></li>
 <li><a href="#red-shift">Why has my display got an obvious color shift after calibration?</a></li>
+<li><a href="#hugstrap">How can I buy a HugStrap?</a></li>
 <li><a href="#measure-modes">What's the difference between the measurement modes?</a></li>
 </ul>
+
+<hr/>
+<a name="openhardware"></a><h2>Is the ColorHug OpenHardware?</h2>
+<p>
+We consider ColorHug an OpenHardware project, although there's no formal
+definition of what makes an 'official' OpenHardware project at the moment.
+</p>
+<p>
+The licences chosen for the different parts of the project allow you to copy,
+remix, redesign or repurpose the hardware or even build a device from scratch
+from the hardware plans and the freely downloadable firmware.
+There are no patents or design registrations, nor any intellectual property
+that has to be licenced.
+</p>
+<p>
+There is one small limitation. You can build your own ColorHug device
+and call it a <i>ColorHug</i>, but you cannot use the three color logo as it is a
+trademark of Hughski Limited.
+This was done after taking legal advice to help preserve the community, and to
+stop a company selling a substandard <i>official</i> device that would tarnish
+the brand and make Hughski Limited look bad.
+</p>
+<p>
+The Licences used in the project are thus:
+</p>
+<table class="sample">
+<tr><td>Schematic:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
+<tr><td>PCB:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
+<tr><td>Housing:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
+<tr><td>Documentation:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
+<tr><td>Firmware:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.htmlq">GPLv2+</a></td></tr>
+<tr><td>Client tools:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2+</a></td></tr>
+<tr><td>Connectors:</td><td>Royalty free</td></tr>
+</table>
 
 <hr/>
 <a name="leds"></a><h2>What do the LEDs mean?</h2>
@@ -344,13 +380,31 @@ This is of course set automatically when using the graphical tools.
 If you're not using the LiveCD you need at least:
 </p>
 <ul>
-<li><code>argyllcms</code> >= 1.4.0</li>
+<li><code>argyllcms</code> (Fedora) or <code>argyll</code> (Ubuntu) >= 1.4.0</li>
 <li><code>colord</code> >= 0.1.15</li>
 <li><code>colorhug-client</code> >= 0.1.4</li>
 <li><code>gusb</code> >= 0.1.2</li>
+</ul>
+<p>
+If you're using GNOME, also add:
+</p>
+<ul>
 <li><code>gnome-color-manager</code> >= 3.2.4</li>
 <li><code>gnome-control-center</code> >= 3.2.2</li>
 </ul>
+<p>
+If you're using KDE, also add:
+</p>
+<ul>
+<li><code>colord-kde</code></li>
+</ul>
+<p>
+If you're using XFCE or another desktop environment then you can of
+course just install <code>colorhug-client</code> to update firmware
+and load CCMX files. If you want to use the calibration wizard you can
+either install the GNOME dependencies or install the very advanced
+program dispcalGUI, although we can't support that ourselves.
+</p>
 
 <hr/>
 <a name="red-shift"></a><h2>Why has my display got an obvious color shift after calibration?</h2>
@@ -364,6 +418,15 @@ Usually selecting a closer CCMX in <code>colorhug-ccmx</code> is the solution.
 We're working on the firmware design, and the device accuracy for low
 light is going up all the time, but this is a problem that affects all
 colorimeter devices.
+</p>
+
+<hr/>
+<a name="hugstrap"></a><h2>How can I buy a HugStrap?</h2>
+<p>
+HugStraps are only available to customers with order numbers less than
+1567 and can be purchased <a href="buy-hugstrap.html">here</a>.
+Order numbers over 1567 (or devices with serial numbers larger than 1598)
+have a free HugStrap included in the package.
 </p>
 
 <hr/>
@@ -383,8 +446,8 @@ This mode is the only available mode on firmware versions 1.1.x.
 </p>
 <p>
 Averaging several pulse durations has the advantage that it can work
-down to 0.5&nbsp;Hz, but as the reading gets high (0.5KHz and above) the
-measured readings begin to have small aliasing errors introduced.
+down to 0.5&nbsp;Hz, but as the reading gets high (0.5&nbsp;KHz and above)
+the measured readings begin to have small aliasing errors introduced.
 This mode is default on firmware 1.2.0 and newer, although the modes can
 be switched at runtime.
 In all tests so far, the 'duration' mode has outperformed the 'frequency'
