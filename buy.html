@@ -1,225 +1,183 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
-<meta name="description" content="Hughski Limited" />
-<meta name="author" content="Richard Hughes" />
-<title>Hughski - ColorHug</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<link rel="shortcut icon" href="favicon.ico"/>
-<style type="text/css" media="screen">
- body { background: url("img/kubrickbgcolor.jpg"); }
- #page { background: url("img/kubrickbgwide.jpg") repeat-y top; border: none; }
- #header { background: url("img/kubrickheader.jpg") no-repeat bottom center; }
- #footer { background: url("img/kubrickfooter.jpg") no-repeat bottom; border: none;}
-</style>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
+ <meta name="description" content="Hughski Limited" />
+ <meta name="author" content="Richard Hughes" />
+ <title>Hughski - ColorHug</title>
+ <link rel="shortcut icon" href="favicon.ico"/>
+ <link href="css/reset.css" rel="stylesheet" type="text/css" />
+ <link href="css/master.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<div id="page">
-<div id="header">
- <div id="headerimg">
-  <h1 class="title"><a href="http://www.hughsie.com/">Hughski Limited</a></h1>
-  <div class="description">Open source color management hardware</div>
- </div>
-</div>
-<hr />
- <div id="content" class="widecolumn">
-  <div class="navigation">
-   <div class="alignleft"><a href="index.html">What is ColorHug?</a></div>
-   <div class="alignleft">&nbsp;&laquo; Buy</div>
-   <div class="alignleft">&nbsp;&laquo; <a href="downloads.html">Downloads</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="faq.html">FAQ</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="about.html">About Us</a></div>
-   <div class="alignright"></div>
+  <a name="top" id="top"></a>
+
+ <div id="header">
+  <div id="headercont">
+   <div id="logo">
+    <a href="index.html"><img src="img/logo.png" alt="tooltip" title="[Logo]" /></a>
+   </div>
+   <div id="contactdetails" style="padding:45px 0 0 10px;">
+    <p>Get in touch: info@hughski.com</p>
+   </div>
+   <div class="clear"></div>
+   <div id="nav">
+    <a href="index.html">Home</a>
+    <a href="buy.html">Buy</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="faq.html">FAQ</a>
+    <a href="news.html">ColorHug in the News</a>
+    <a href="about.html">About Us</a>
+    <div class="clear"></div>
+   </div>
   </div>
-  <div class="post">
-
-<h1>Buy your own ColorHug</h1>
-
-<p></p>
-<table class="sample" width="80%">
-<tr>
- <td>Current status:</td>
- <td bgcolor="#8ade8a"><center>ACCEPTING ORDERS</center></td>
-<!--
- <td bgcolor="#ff4444"><center><b>OUT OF STOCK</b></center></td>
--->
-</tr>
-<tr>
- <td>Stock:</td>
- <td bgcolor="#8ade8a"><center><b>34</b></center></td>
-<!--
- <td bgcolor="#ff4444"><center><b>0!</b></center></td>
--->
-</tr>
-</table>
-
-<!--
-<p>
- <b>
-  We've run out of stock, and we're really sorry.
-  We've expecting a new batch of PCBs from the fabricators on the 4th
-  February and it'll take us a couple of days after that to complete all
-  the assembly and testing.
-  If you <a href="mailto:info@hughsie.com">send us an email</a> with
-  <i>ColorHug Order</i> as the subject we'll email you when the next
-  batch is ready to ship.
-  Sorry for the inconvenience.
- </b>
-</p>
-
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
--->
-
-<p>
- We are a small company and unfortunately we don't directly accept
- credit cards, checks, bankers drafts or cash.
- Please use PayPal to complete the purchase.
-</p>
-<p>
- There is no long legal terms and conditions pages to read.
- Instead I've tried to cover the basics here.
- Please <b>only</b> order this product if:
-</p>
-<ul>
-<li>
-You agree Hughski Ltd. can't be held responsible if your computer is
-damaged or stops working after using the LiveCD or ColorHug.
-Note: The ColorHug is a 5 Volt USB dongle with no screen suckers, so it is
-highly unlikely to cause damage of any kind.
-The LiveCD also deliberately has no installer, so should be very safe.
-</li>
-<li>
-You accept that it's not quite finished for a plug and play experience.
-The hardware is finished and the design isn't going to change, but you
-will have to update the firmware in the future to fix bugs and add
-features.
-</li>
-<li>
-The device comes with only one general purpose calibration matrix,
-although you can profile the ColorHug with a photospectrometer to get
-a perfect calibration result.
-As other CCMX matrices are contributed by users you can of course use the
-<code>colorhug-ccmx</code> GTK program to automatically load on updated and
-new calibration matrices to the device to make your calibration result more
-accurate.
-</li>
-<li>
-You will have to pay any applicable customs charges or import taxes when
-I send the ColorHug to any country which is outside of Europe.
-The label will state the value of the object is £60 and is described as
-<i>Color calibration hardware</i>.
-</li>
-<li>
-You agree that if packages are returned to me due to unpaid customs
-charges, underpaid postage, incorrect address given or any other reason
-then you are only entitled to a refund minus the charges it costs me
-to accept the returned parcel.
-</li>
-<li>
-The address the device is posted to must be a normal domestic or
-business address.
-We can't post Colorhug devices to any <i>Packstation</i> outlets in
-Germany or <i>PO Box</i> addresses in the UK as packets have frequently
-gone missing.
-</li>
-</ul>
-
-<p>
- <b>
-  PLEASE NOTE: We do not take your contact and shipping details directly
-  from you, because we get them from PayPal.
-  During the Payment process, PayPal will ask you to confirm this information.
-  Please remember to check the shipping address that PayPal shows you
-  during the payment process.
- </b>
-</p>
-
-<p style="color:red">
- <b>
-  IMPORTANT: Please note any orders recieved now will be dispatched on the
-  2nd April due to the Easter holiday.
-  Sorry for the inconvenience.
- </b>
-</p>
-
-<center>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="JRFWLHXZ7ZHDL">
-<table>
-<tr><td><input type="hidden" name="on0" value="1 ColorHug, plus">1 ColorHug, plus</td></tr><tr><td><select name="os0">
-<option value="Postage to United Kingdom">Postage to United Kingdom [£62.00 GBP]</option>
-<option value="Postage to Europe">Postage to Europe [£63.00 GBP]</option>
-<option value="Postage to rest of world">Postage to rest of world [£64.00 GBP]</option>
-<option value="Postage to United Kingdom (signed for)">Postage to United Kingdom (signed for) [£67.00 GBP]</option>
-<option value="Postage to Europe (signed for)">Postage to Europe (signed for) [£68.00 GBP]</option>
-<option value="Postage to rest of world (signed for)">Postage to rest of world (signed for) [£69.00 GBP]</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="GBP">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
-</center>
-
-<p>
-To purchase the device using PayPal please ensure you enable
-JavaScript if disabled and enable cross-requests to <code>paypal.com</code> and
-<code>paypalobjects.com</code> if you have manually disabled these.
-</p>
-
-<p>
-If you want to buy multiple devices, email us before ordering and we can
-reduce the amount of postage.
-</p>
-
-<h2>How much is shipping?</h2>
-<p></p>
-<table class="sample">
-<tr>
-<th>Destination</th>
-<th>Untracked</th>
-<th>Signed For</th>
-</tr>
-<tr>
-<td>UK</td>
-<td>&pound;2</td>
-<td>&pound;7</td>
-</tr>
-<tr>
-<td>Europe (includes EU countries, Eastern Europe and Russia)</td>
-<td>&pound;3</td>
-<td>&pound;8</td>
-</tr>
-<tr>
-<td>Rest of the world</td>
-<td>&pound;4</td>
-<td>&pound;9</td>
-</tr>
-</table>
-<p>
-Packages normally arrive in the UK and western Europe within three days
-and eastern Europe within five working days.
-Delivery to the rest of the world usually takes between five to seven
-working days although it can take a lot longer than this for some counties.
-</p>
-
-  </div><!-- end post -->
  </div>
-<hr />
-<div id="footer">
- <p>
-  Hughski.com is managed by
-  <a href="mailto:richard@hughsie.com">Richard Hughes</a><br/>
-  <a href="http://validator.w3.org/check/referer">Optimized</a>
-  for <a href="http://www.w3.org/">standards</a>.
- </p>
-</div>
-</div>
+ <div id="wrapper">
+  <div id="container">
+   <div class="content">
+    <div id="centercol">
+     <div class="roundedbox">
+      <h1 class="headerlineunder">Buy your own ColorHug</h1>
+
+      <!--
+      <table class="sample" width="80%">
+      <tr>
+       <td>Current status:</td>
+       <td bgcolor="#ff4444"><center><b>OUT OF STOCK</b></center></td>
+      </tr>
+      <tr>
+       <td>Stock:</td>
+       <td bgcolor="#ff4444"><center><b>0!</b></center></td>
+      </tr>
+      </table>
+      -->
+
+      <!--
+      <p>
+       <b>
+        We've run out of stock, and we're really sorry.
+        We've expecting a new batch of PCBs from the fabricators on the 4th
+        February and it'll take us a couple of days after that to complete all
+        the assembly and testing.
+        If you <a href="mailto:info@hughsie.com">send us an email</a> with
+        <i>ColorHug Order</i> as the subject we'll email you when the next
+        batch is ready to ship.
+        Sorry for the inconvenience.
+       </b>
+      </p>
+
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      -->
+
+      <p>
+       We are a small company and unfortunately we don't directly accept
+       credit cards, checks, bankers drafts or cash.
+       Please use PayPal to complete the purchase.
+      </p>
+      <p>
+       There is no long legal terms and conditions pages to read.
+       Please <b>only</b> order this product if:
+      </p>
+      <ul class="fancylist">
+      <li>
+      You agree Hughski Ltd. can't be held responsible if your computer is
+      damaged or stops working after using the LiveCD or ColorHug.
+      Note: The ColorHug is a 5 Volt USB device, so it is highly unlikely to cause damage of any kind.
+      The LiveCD also deliberately has no installer, so should be very safe.
+      </li>
+      <li>
+      You will have to pay any applicable customs charges or import taxes when
+      we send the ColorHug to any country which is outside of Europe.
+      The label will state the value of the object is £60 and is described as
+      <i>Color calibration hardware</i>.
+      </li>
+      <li>
+      You understans there are <b>no Microsoft Windows or Apple OS&nbsp;X native drivers</b> included with
+      this product.
+      You can use the Linux LiveCD sent with the device on any modern PC.
+      The <code>display.icc</code> file can then be saved and used with Linux,
+      Mac or Windows.
+      </li>
+      </ul>
+
+      <p>
+       <b>
+        PLEASE NOTE: We do not take your contact and shipping details directly
+        from you, because we get them from PayPal.
+        During the Payment process, PayPal will ask you to confirm this information.
+        Please remember to check the shipping address that PayPal shows you
+        during the payment process.
+       </b>
+      </p>
+
+      <center>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="M43LYMJEVMX96">
+      <table>
+      <tr><td><input type="hidden" name="on0" value="1 ColorHug, plus">1 ColorHug, plus</td></tr><tr><td><select name="os0">
+        <option value="Postage to United Kingdom">Postage to United Kingdom £62.20 GBP</option>
+        <option value="Postage to Europe">Postage to Europe £63.50 GBP</option>
+        <option value="Postage to rest of world">Postage to rest of world £64.70 GBP</option>
+        <option value="Postage to United Kingdom (signed for)">Postage to United Kingdom (signed for) £64.60 GBP</option>
+        <option value="Postage to Europe (signed for)">Postage to Europe (signed for) £68.80 GBP</option>
+        <option value="Postage to rest of world (signed for)">Postage to rest of world (signed for) £69.90 GBP</option>
+      </select> </td></tr>
+      </table>
+      <input type="hidden" name="currency_code" value="GBP">
+      <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+      </form>
+      </center>
+     </div>
+    </div>
+    <div id="rightcol">
+     <div class="roundedbox">
+      <h3 class="blueback">What's included</h3>
+      <div class="standardlist">
+       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug device</a>
+       <a href="buy.html" class="inclivecd" title="tooltip">Linux LiveCD</a>
+       <a href="buy.html" class="incusbcable" title="tooltip">1.8 meter USB cable</a>
+       <a href="buy.html" class="inchugstrap" title="tooltip">Elasticated velcro strap</a>
+       <div class="clear"></div>
+      </div>
+     </div>
+     <div class="roundedbox">
+      <h3 class="blueback">Already have a ColorHug?</h3>
+      <p>
+       Get some <strong>free</strong> stuff to upgrade your device to the latest design.
+      </p>
+      <p>&nbsp;</p>
+      <div class="standardlist">
+       <a href="buy-hugstrap.html" class="inchugstrap" title="tooltip">Elastic strap upgrade</a>
+       <a href="buy-gasket.html" class="incgasket" title="tooltip">Gasket upgrade</a>
+       <div class="clear"></div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="clear"></div>
+  </div>
+ </div>
+
+ <div id="footer">
+  <div class="content">
+   <div id="backtotop">
+    <a href="index.html#top" title="Back To The Top"><span>Back To Top</span></a>
+   </div>
+   <div class="footercol">
+    <p>
+     Hughski.com is managed by <a href="mailto:richard@hughsie.com">Richard Hughes</a>
+     and is <a href="http://validator.w3.org/check/referer" target="_blank">optimized</a>
+     for <a href="http://www.w3.org/" target="_blank">standards</a>.
+    </p>
+   </div>
+  </div>
+ </div>
 </body>
 </html>

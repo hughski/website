@@ -20,15 +20,15 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-$uploaddir = '/home/hughsiec/public_html/uploads/';
+$uploaddir = '/home/hughsiec/public_html/hughski/uploads/';
 
 // perform some checks before opening the file
 $size = $_FILES['upload']['size'];
-if ($size > 10240) {
-	header('HTTP/1.0 403 Forbidden');
+if ($size > 102400) {
+	header('HTTP/1.0 413 Request Entity Too Large');
 	echo 'File size too large';
 } elseif ($size < 128) {
-	header('HTTP/1.0 403 Forbidden');
+	header('HTTP/1.0 411 Length Required');
 	echo 'File size too small';
 } else {
 	// open the file and read the contents
@@ -36,19 +36,19 @@ if ($size > 10240) {
 
 	// check the file is really an icc profile
 	if (strcmp(substr($data,36,4), "acsp") != 0) {
-		header('HTTP/1.0 403 Forbidden');
+		header('HTTP/1.0 415 Unsupported Media Type');
 		echo 'Not an ICC profile';
 	} else {
 		// copy the profile and return the URL
-		$sha1 = sha1($data);
-		$destination = $uploaddir . $sha1 . '.icc';
+		$id = hash("crc32", $data);
+		$destination = $uploaddir . $id . '.icc';
 		$handle = fopen($destination, "w");
 		fwrite($handle, $data);
 		fclose($handle);
 
 		// return the created path in the location
 		header('HTTP/1.0 201 Created');
-		header('Location: http://www.hughski.com/uploads/' . $sha1 . '.icc'); 
+		header('Location: http://www.hughski.com/uploads/' . $id . '.icc'); 
 	}
 }
 

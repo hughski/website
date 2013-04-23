@@ -1,279 +1,169 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, open hardware" />
-<meta name="description" content="ColorHug is an affordable open source display colorimeter by Hughski Limited. It allows you to calibrate your screen for accurate color matching." />
-<meta name="author" content="Richard Hughes" />
-<title>Hughski - ColorHug</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<link rel="shortcut icon" href="favicon.ico"/>
-<style type="text/css" media="screen">
- body { background: url("img/kubrickbgcolor.jpg"); } 
- #page { background: url("img/kubrickbgwide.jpg") repeat-y top; border: none; } 
- #header { background: url("img/kubrickheader.jpg") no-repeat bottom center; }
- #footer { background: url("img/kubrickfooter.jpg") no-repeat bottom; border: none;}
-</style>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, open hardware" />
+ <meta name="description" content="ColorHug is an affordable open source display colorimeter by Hughski Limited. It allows you to calibrate your screen for accurate color matching." />
+ <meta name="author" content="Richard Hughes" />
+ <title>Hughski - ColorHug</title>
+ <link rel="shortcut icon" href="favicon.ico"/>
+ <link href="css/reset.css" rel="stylesheet" type="text/css" />
+ <link href="css/master.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<div id="page">
-<div id="header">
- <div id="headerimg">
-  <h1 class="title"><a href="http://www.hughsie.com/">Hughski Limited</a></h1>
-  <div class="description">Open source color management hardware</div>
- </div>
-</div>
-<hr />
- <div id="content" class="widecolumn">
-  <div class="navigation">
-   <div class="alignleft">What is ColorHug?</div>
-   <div class="alignleft">&nbsp;&laquo; <a href="buy.html">Buy</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="downloads.html">Downloads</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="faq.html">FAQ</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="news.html">ColorHug in the News</a></div>
-   <div class="alignleft">&nbsp;&laquo; <a href="about.html">About Us</a></div>
-   <div class="alignright"></div>
+ <a name="top" id="top"></a>
+
+ <div id="header">
+  <div id="headercont">
+   <div id="logo">
+    <a href="index.html"><img src="img/logo.png" alt="tooltip" title="[Logo]" /></a>
+   </div>
+   <div id="contactdetails" style="padding:45px 0 0 10px;">
+    <p>Get in touch: info@hughski.com</p>
+   </div>
+   <div class="clear"></div>
+   <div id="nav">
+    <a href="index.html">Home</a>
+    <a href="buy.html">Buy</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="faq.html">FAQ</a>
+    <a href="news.html">ColorHug in the News</a>
+    <a href="about.html">About Us</a>
+    <div class="clear"></div>
+   </div>
   </div>
-  <div class="post">
-
-<h1>Introducing the ColorHug</h1>
-
-<table>
- <tr>
-  <td><img src="img/logo.png" alt="[ColorHug Logo]"/></td>
-  <td>
-   <p>
-    The ColorHug is an open source display colorimeter.
-    It allows you to calibrate your screen for accurate color matching.
-   </p>
-   </td>
- </tr>
-</table>
-
-<table>
-<tr>
-<td><a href="img/colorhug1-large.jpg"><img src="img/colorhug1.jpg" alt="[Picture 1]"/></a></td>
-<td><a href="img/colorhug3-large.jpg"><img src="img/colorhug3.jpg" alt="[Picture 3]"/></a></td>
-</tr>
-<tr>
-<td><a href="img/colorhug4-large.jpg"><img src="img/colorhug4.jpg" alt="[Picture 4]"/></a></td>
-<td><a href="img/colorhug5-large.jpg"><img src="img/colorhug5.jpg" alt="[Picture 5]"/></a></td>
-</tr>
-</table>
-
-<a name="what-is"></a>
-<p>
-The ColorHug is a small accessory that measures displayed colors very accurately.
-It is held on your display and plugged into a spare
-<acronym title="Universal Serial Bus">USB</acronym> port on the computer
-for the duration of the calibration.
-</p>
-
-<table>
-<tr>
- <td><img src="img/color-camera.png" alt="[Camera image of robin]"/></td>
- <td><img src="img/color-display.png" alt="[Display image of robin]"/></td>
-</tr>
-</table>
-<p>
- Have you ever taken a photo and wondered why it does not look the same
- on your screen as it did the camera?
-</p>
-
-<p>
-It's probably because the LCD display on your computer has never been
-calibrated. This means colors can look washed-out, tinted with certain shades
-or with different color casts.
-</p>
-
-<p>
-About 2 years ago I began working on color management in Linux.
-It soon became apparent that there was no integrated color management system.  
-The color management support which did exist was often disabled by default in many applications.
-I have worked hard to make calibrating displays easy ever since.
-It is my goal to make color management accessible to end users.
-The hardware for color managing screens was bulky, slow and expensive.
-With a background in electronics, I thought I could create a device which was smaller, faster and cheaper.
-</p>
-
-<p>
-Using the ColorHug it takes about a minute to take several hundred
-measurements from which the client software creates an <acronym title="International Color Consortium">ICC</acronym> color profile.
-This color profile file can then be saved and used to make colors look
-correct on your monitor.
-</p>
-
-<a name="how-compare"></a>
-<h2>Competitor Comparison</h2>
-<p>
-How do other products compare?
-</p>
-<table class="sample">
-<tr>
- <th>&nbsp;</th>
- <th>Hughski ColorHug</th>
- <th>Datacolor Spyder Pro</th>
- <th>Pantone Huey</th>
- <th>X-Rite ColorMunki</th>
-</tr>
-<tr>
- <td>Screen calibration</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-</tr>
-<tr>
- <td>Printer calibration</td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-</tr>
-<tr>
- <td>Self calibration mode</td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-no.png" alt="[no]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-</tr>
-<tr>
- <td>Ambient capture</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
-</tr>
-<tr>
- <td>Supported calibration matrices</td>
- <td>64 flash (LCD, CRT, Projector + 5 reserved types)</td>
- <td>2 fixed (LCD and CRT)</td>
- <td>2 fixed (LCD and CRT)</td>
- <td>n/a</td>
-</tr>
-<tr>
- <td>Compatible display technologies</td>
- <td>LCD, LED</td>
- <td>LCD, LED, CRT</td>
- <td>LCD, LED, CRT</td>
- <td>LCD, LED, CRT, Projector</td>
-</tr>
-<tr>
- <td>IR filtered</td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
- <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-</tr>
-<tr>
- <td>Licencing</td>
- <td>Open source</td>
- <td>Proprietary</td>
- <td>Proprietary</td>
- <td>Proprietary</td>
-</tr>
-<tr>
- <td>Speed to measure 200 samples</td>
- <td>6 minutes</td>
- <td>5 minutes</td>
- <td>5 minutes</td>
- <td>3 minutes</td>
-</tr>
-<tr>
- <td>Client software support</td>
- <td>Linux</td>
- <td>Microsoft Windows</td>
- <td>Microsoft Windows, Apple OS&nbsp;X</td>
- <td>Microsoft Windows, Apple OS&nbsp;X</td>
-</tr>
-<tr>
- <td>Price (including tax)</td>
- <td>&pound;60</td>
- <td>&pound;90</td>
- <td>&pound;115</td>
- <td>&pound;280</td>
-</tr>
-</table>
-<p>
-The above table demonstrates how the Hughski ColorHug compares to other
-similar products on the market.
-The key advantages are the speed at which it measures samples, the open
-source licence which means you can access and change the code, and the
-lower price.
-The low price is achieved from using commercial off-the-shelf components
-and free software.
-</p>
-<p>
- The Hughski ColorHug packs a huge amount of functionality into such a
- small size.
- It's just 32&nbsp;mm wide, 43&nbsp;mm tall and 21&nbsp;mm deep.
-</p>
-
-<a name="how-it-works"></a>
-<h2>How it works</h2>
-<p>
-The ColorHug contains a color sensor with 64 pixels - 16 red, 16 blue,
-16 green, and 16 clear.
-Each different color sensor effectively counts photons, and so by
-counting the number of photons there are for each sensor we can work out
-the true color shown on the screen.
-This photon count is converted to an XYZ color value by the processor on
-the ColorHug and the set of measurements can be processed into an
-<acronym title="International Color Consortium">ICC</acronym> file.
-</p>
-
-<a href="img/frequency-response-large.png">
-<img src="img/frequency-response.png" class="centered" alt="freq response"/>
-</a>
-
-<p>
-There are <b>no Microsoft Windows or Apple OS&nbsp;X drivers</b> included with
-this product.
-You can use the LiveCD sent with the device on any modern PC or use the
-built in software available in Fedora 16 or newer.
-The <code>display.icc</code> file can then be saved and used with Linux,
-Mac or even Windows.
-<!--
-There are plans to get the ColorHug working with Argyllcms, and this
-project provides windows binaries.
--->
-</p>
-
-<h2>What do I get with my order?</h2>
-<ul>
-<li>ColorHug device with 5 year warranty</li>
-<li>Linux live CD with all required software</li>
-<li>1.8 meter USB cable</li>
-</ul>
-
-<h2>What if my ColorHug stops working?</h2>
-<ul>
- <li>Check the device is plugged in!</li>
- <li>Check <code>dmesg</code> to see if the device is detected, if so check the permissions on the USB device.</li>
- <li>Check the LEDs briefly flash when the device is plugged in.</li>
- <li>Use a different USB cable to the one supplied in order to check whether the cable is at fault.</li>
-</ul>
-<p>
- If the device does not work, or is otherwise faulty please
- <a href="mailto:colorhug@hughski.com">email us</a> for advice.
- If we agree that the ColorHug is faulty and you return it to us then you
- can request a full refund or a replacement device.
-</p>
-
-<g:plus href="https://plus.google.com/105567799795872309840" rel="publisher" width="300" height="69" theme="light"></g:plus>
-
-  </div><!-- end post -->
  </div>
-<hr />
-<div id="footer">
- <p>
-  Hughski.com is managed by
-  <a href="mailto:richard@hughsie.com">Richard Hughes</a><br/>
-  <a href="http://validator.w3.org/check/referer" target="_blank">Optimized</a>
-  for <a href="http://www.w3.org/" target="_blank">standards</a>.
- </p>
-</div>
-</div>
+
+ <div id="wrapper">
+  <div id="container">
+   <div class="content">
+    <div id="centercol">
+     <div class="roundedbox">
+      <h1 class="headerlineunder">The Problem</h1>
+      <p>
+       Have you ever taken a photo and wondered why it does not look the same on
+       your screen as it did on the camera?
+      </p>
+      <table>
+       <tr>
+        <td><img src="img/color-camera.png" alt="[Camera image of robin]" /></td>
+        <td><img src="img/color-display.png" alt="[Display image of robin]" /></td>
+       </tr>
+       <tr>
+        <td>Picture shown on the <strong>Camera</strong></td>
+        <td>Picture shown on the <strong>Display</strong></td>
+       </tr>
+      </table>
+      <p>
+       It's probably because the LCD display on your computer has never been
+       calibrated. This means colors can look washed-out, tinted with certain shades
+       or with different color casts.
+      </p>
+      <p>
+       Using the ColorHug it takes about a minute to take several hundred
+       measurements from which the client software creates an
+       <acronym title="International Color Consortium">ICC</acronym> color profile.
+       This color profile file can then be saved and used to make colors look
+       correct on your monitor.
+      </p>
+      <div class="clear"></div>
+     </div>
+     <div class="roundedbox">
+      <h1 class="headerlineunder">Introducing the ColorHug</h1>
+      <p>
+       The ColorHug is an open source display colorimeter. It allows you to
+       calibrate your screen so it can display accurate colors.
+      </p>
+      <table>
+       <tr>
+        <td><a href="img/colorhug1-large.jpg"><img src="img/colorhug1.jpg" alt="[Picture 1]" /></a></td>
+        <td><a href="img/colorhug3-large.jpg"><img src="img/colorhug3.jpg" alt="[Picture 3]" /></a></td>
+       </tr>
+       <tr>
+        <td><a href="img/colorhug4-large.jpg"><img src="img/colorhug4.jpg" alt="[Picture 4]" /></a></td>
+        <td><a href="img/colorhug5-large.jpg"><img src="img/colorhug5.jpg" alt="[Picture 5]" /></a></td>
+       </tr>
+      </table>
+     <p>
+      The Hughski ColorHug packs a huge amount of functionality into such a
+      small size.
+      It's just 32&nbsp;mm wide, 43&nbsp;mm tall and 21&nbsp;mm deep.
+      <strong>And the best bit? It's only £60 plus postage and packing.</strong>
+     </p>
+      <div class="button fr" style="margin-left:5px;">
+       <a href="buy.html">Find out more</a>
+      </div>
+      <div class="button2 fr">
+       <a href="faq.html">Common questions and answers</a>
+      </div>
+      <div class="clear"></div>
+     </div>
+    </div>
+    <div id="rightcol">
+     <div class="roundedbox">
+      <h3 class="blueback">What's included</h3>
+      <div class="standardlist">
+       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug device</a>
+       <a href="buy.html" class="inclivecd" title="tooltip">Linux LiveCD</a>
+       <a href="buy.html" class="incusbcable" title="tooltip">1.8 meter USB cable</a>
+       <a href="buy.html" class="inchugstrap" title="tooltip">Elasticated velcro strap</a>
+       <div class="button fr" style="margin-left:5px;">
+        <a href="buy.html">Buy now!</a>
+       </div>
+       <div class="clear"></div>
+      </div>
+     </div>
+     <div class="roundedbox">
+      <h3 class="blueback">Already have a ColorHug?</h3>
+      <p>
+       Get some <strong>free</strong> stuff to upgrade your device to the latest design.
+      </p>
+      <p>&nbsp;</p>
+      <div class="standardlist">
+       <a href="buy-hugstrap.html" class="inchugstrap" title="tooltip">Elastic strap upgrade</a>
+       <a href="buy-gasket.html" class="incgasket" title="tooltip">Gasket upgrade</a>
+       <div class="clear"></div>
+      </div>
+     </div>
+<!--
+     <div class="roundedbox">
+      <h3 class="blueback">User Testimonials</h3>
+      <div class="testimonaials">
+       <ul id="testimonials">
+        <li>
+         <p>It just works.</p>
+         <p class="author">Joe Bloggs</p>
+        </li>
+       </ul>
+      </div>
+      <div class="button fr">
+       <a href="news.html">Find out more</a>
+      </div>
+      <div class="clear"></div>
+     </div>
+    </div>
+-->
+   </div>
+   <div class="clear"></div>
+  </div>
+ </div>
+
+ <div id="footer">
+  <div class="content">
+   <div id="backtotop">
+    <a href="index.html#top" title="Back To The Top"><span>Back To Top</span></a>
+   </div>
+   <div class="footercol">
+    <p>
+     Hughski.com is managed by <a href="mailto:richard@hughsie.com">Richard Hughes</a>
+     and is <a href="http://validator.w3.org/check/referer" target="_blank">optimized</a>
+     for <a href="http://www.w3.org/" target="_blank">standards</a>.
+    </p>
+   </div>
+  </div>
+ </div>
 </body>
 </html>

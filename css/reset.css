@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,h1,h2,h3,h4,h5,p,form,textarea
+{padding:0px; margin:0px;}
+img
+{border:none;}
+.dottedline
+{border-top:1px dotted #ccc;}
+.clear
+{clear:both;}
+a:active
+{outline: none;}
+:focus
+{-moz-outline-style: none;}
+.fl
+{float:left;}
+.fr
+{float:right;}
+textarea
+{font-family:Arial, Helvetica, sans-serif;}
+
+

@@ -3,12 +3,13 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
- <meta name="description" content="Learn how to use calibration matrix to adjust factory calibration of ColorHug for your devices." />
+ <meta name="description" content="Hughski Limited" />
  <meta name="author" content="Richard Hughes" />
- <title>How to use calibration matrix - ColorHug</title>
+ <title>About Hughski - ColorHug</title>
  <link rel="shortcut icon" href="favicon.ico"/>
  <link href="css/reset.css" rel="stylesheet" type="text/css" />
  <link href="css/master.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 </head>
 
 <body>
@@ -39,84 +40,38 @@
    <div class="content">
     <div id="centercol">
      <div class="roundedbox">
-      <h1 class="headerlineunder">Introducing the ColorHug</h1>
-<h1 class="headerlineunder">Factory Calibrating the ColorHug</h1>
+      <h1 class="headerlineunder">ColorHug in the News</h1>
 
-<p>
-To factory calibrate the ColorHug you need a
-photospectrometer, e.g. a ColorMunki and the xcalib software installed.
-</p>
-<p>
-Ensure your screen has been turned on for at least 30 minutes.
-</p>
+      <h2>2013-03-14: Open Source Junction: Open Source Hardware meets Open Source Software</h2>
+      <p>
+       At OSJ I gave <a href="http://www.oss-watch.ac.uk/events/2013-03-14_Open_Source_Junction_4/programme">
+       a presentation about ColorHug</a> and participated in quite a few discussion panels.
+      </p>
+      <p>&nbsp;</p>
 
-<h2>Calculating the dark offsets</h2>
-<p>
-Place the ColorHug on a black dark surface and press down to ensure
-no light leaks into the aperture.
-Do a raw measurement using:
-</p>
-<pre>
-/usr/libexec/colorhug set-dark-offsets 0 0 0
-xset dpms force off && sleep 5 && /usr/libexec/colorhug take-readings && xset dpms force on
-R:0.0002 G:0.0001 B:0.0001
-</pre>
-<p>
-These can then be programmed into the ColorHug using:
-</p>
-<pre>
-/usr/libexec/colorhug set-dark-offsets 0.0002 0.0001 0.0001
-/usr/libexec/colorhug write-eeprom "Un1c0rn2"
-</pre>
+      <h2>2012-10-08: Oggcamp 2012</h2>
+      <p>
+       At <a href="http://lanyrd.com/2012/oggcamp/">Oggcamp 2012</a> I gave a presentation about ColorHug and also gave a small interview.
+      </p>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/AbnP7dRZZOs?rel=0" frameborder="0" allowfullscreen></iframe>
+      <p>&nbsp;</p>
 
-<h2>Working out the calibration matrix</h2>
-<p>
-We first generate a ti1 file containing a list of patches to measure:
-</p>
-<pre>
-targen -d3 patches
-</pre>
+      <h2>2012-07-20: HD Nation</h2>
+      <p>
+       A nice review from the guys at <a href="http://tv.revision3.com/hdnation/open-source-color-calibrator">HD Nation</a>.
+      </p>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/lh2JcCj1vik?rel=0" frameborder="0" allowfullscreen></iframe>
+      <p>&nbsp;</p>
 
-<p>
-Then we measure the patches using the photospectrometer which creates a
-ti3 file from the ti1 file.
-For this bit you have to attach your photospectrometer to the computer
-and disconnect the ColorHug.
-Note, you <b>need</b> to use the <code>-s</code> flag to ensure that
-the spectral data is saved.
-</p>
-<pre>
-dispread -d2 -yl -s patches
-mv patches.ti3 colormunki-hp-lp240zx-srgb.ti3
-</pre>
+      <h2>2012-06-10: LGM 2012</h2>
+      <p>At <a href="http://libregraphicsmeeting.org/2012/">LGM 2012</a> I gave a presentation about ColorHug progress.</p>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/GVH3ykJiNt0?rel=0" frameborder="0" allowfullscreen></iframe>
+      <p>&nbsp;</p>
 
-<p>
-Then we measure the reset the screen and device to default, and
-measure the spectral response using the ColorHug.
-So, remove the photospectrometer and attach the ColorHug.
-</p>
-<pre>
-xcalib -c
-/usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
-/usr/libexec/colorhug set-calibration-ccmx 0 unity.ccmx
-/usr/libexec/colorhug write-eeprom "Un1c0rn2"
-
-dispread -d2 -yl patches
-mv patches.ti3 calibration.ti3
-</pre>
-
-<p>
-With the two .ti3 files, we can generate a colorimeter calibration matrix:
-</p>
-<pre>
-export ccxx_desc="Factory-Calibration"
-export ccxx_ref="colormunki-hp-lp240zx-srgb.ti3"
-export ccxx_src="calibration.ti3"
-export ccxx_mat="calibration.ccmx"
-ccxxmake -I $ccxx_desc -T LCD -D$ccxx_desc -f $ccxx_ref,$ccxx_src $ccxx_mat
-/usr/libexec/colorhug set-calibration-ccmx 0 calibration.ccmx
-</pre>
-
+      <h2>2012-05-23: Review By Wolfgang Lonien</h2>
+      <p>
+       Lots of discussion from the blog of <a href="http://wolfgang.lonien.de/2012/05/hughski-colorhug-field-report-or-test-or-review/">Wolfgang Lonien</a>.
+      </p>
      </div>
     </div>
     <div id="rightcol">
@@ -130,6 +85,18 @@ ccxxmake -I $ccxx_desc -T LCD -D$ccxx_desc -f $ccxx_ref,$ccxx_src $ccxx_mat
        <div class="button fr" style="margin-left:5px;">
         <a href="buy.html">Buy now!</a>
        </div>
+       <div class="clear"></div>
+      </div>
+     </div>
+     <div class="roundedbox">
+      <h3 class="blueback">Already have a ColorHug?</h3>
+      <p>
+       Get some <strong>free</strong> stuff to upgrade your device to the latest design.
+      </p>
+      <p>&nbsp;</p>
+      <div class="standardlist">
+       <a href="buy-hugstrap.html" class="inchugstrap" title="tooltip">Elastic strap upgrade</a>
+       <a href="buy-gasket.html" class="incgasket" title="tooltip">Gasket upgrade</a>
        <div class="clear"></div>
       </div>
      </div>
