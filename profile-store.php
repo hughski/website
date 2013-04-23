@@ -46,6 +46,15 @@ if ($size > 102400) {
 		fwrite($handle, $data);
 		fclose($handle);
 
+		// send email
+		$to      = 'info@hughski.com';
+		$subject = 'Profile added';
+		$message = 'http://www.hughski.com/uploads/' . $id . '.icc';
+		$headers = 'From: richard@hughsie.com' . "\r\n" .
+		    'Reply-To: richard@hughsie.com' . "\r\n" .
+		    'X-Mailer: PHP/' . phpversion();
+		mail($to, $subject, $message, $headers);
+
 		// return the created path in the location
 		header('HTTP/1.0 201 Created');
 		header('Location: http://www.hughski.com/uploads/' . $id . '.icc'); 

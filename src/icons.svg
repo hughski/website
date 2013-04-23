@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.598901"
-     inkscape:cx="6.6930844"
-     inkscape:cy="-115.83355"
+     inkscape:zoom="11.197802"
+     inkscape:cx="6.9523183"
+     inkscape:cy="-51.110963"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -399,6 +399,25 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ssssssssssssss"
        inkscape:export-filename="/home/hughsie/Code/ColorHug/website-new/img/inc-gasket.png"
+       inkscape:export-xdpi="84.379997"
+       inkscape:export-ydpi="84.379997" />
+    <rect
+       style="opacity:0.97154475;fill:#427fcf;fill-opacity:1;stroke:none"
+       id="rect3844-1-9-8"
+       width="32"
+       height="32"
+       x="-32"
+       y="64"
+       ry="3"
+       inkscape:export-filename="/home/hughsie/Code/ColorHug/website/img/inc-usbcable.png"
+       inkscape:export-xdpi="84.379997"
+       inkscape:export-ydpi="84.379997" />
+    <path
+       id="path1334-3"
+       d="m -4.0828182,80.000245 -2.6477064,-1.529033 0,1.090736 -13.5331824,0 2.635065,-2.783966 c 0.224257,-0.179753 0.517669,-0.305847 0.819496,-0.312835 1.221014,0 1.946108,-3.12e-4 2.213012,-6.12e-4 0.180916,0.515445 0.666889,0.887489 1.244612,0.887489 0.730865,0 1.323992,-0.593066 1.323992,-1.324193 0,-0.731446 -0.593072,-1.32431 -1.323992,-1.32431 -0.577723,0 -1.063696,0.371835 -1.244612,0.886859 l -2.187085,-3.74e-4 c -0.592754,0 -1.213871,0.32522 -1.609196,0.706475 0.01078,-0.01133 0.02199,-0.0234 -6.12e-4,2.08e-4 -0.0084,0.0094 -2.795715,2.953399 -2.795715,2.953399 -0.223778,0.179489 -0.517032,0.304792 -0.818645,0.311989 l -1.530938,0 c -0.202931,-1.011365 -1.09603,-1.773342 -2.167352,-1.773342 -1.221435,0 -2.211529,0.990093 -2.211529,2.211161 0,1.221436 0.990094,2.211584 2.211529,2.211584 1.07153,0 1.96463,-0.762615 2.16756,-1.774825 l 1.504111,0 c 0.0037,0 0.0077,2.15e-4 0.01164,0 l 3.326821,0 c 0.301033,0.0076 0.593918,0.133136 0.817482,0.312835 0,0 2.786717,2.94377 2.795347,2.953295 0.02229,0.02364 0.01121,0.01132 2.08e-4,2.08e-4 0.39533,0.381204 1.016713,0.706206 1.60957,0.706206 l 2.107712,-4.71e-4 0,0.887751 2.6483994,0 0,-2.648135 -2.6483994,0 0,0.886595 c 0,0 -0.555134,-0.0012 -2.133535,-0.0012 -0.301877,-0.0069 -0.595614,-0.132873 -0.819759,-0.312626 l -2.635647,-2.784494 10.2236635,0 0,1.092483 2.6477064,-1.528819 z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.82565272;stroke-opacity:1"
+       inkscape:export-filename="/home/hughsie/Code/ColorHug/website/img/inc-usbcable.png"
        inkscape:export-xdpi="84.379997"
        inkscape:export-ydpi="84.379997" />
   </g>
