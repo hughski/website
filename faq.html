@@ -49,6 +49,7 @@
       <li><a href="#shipping-cost">How much is shipping?</a></li>
       <li><a href="#leds">What do the LEDs mean?</a></li>
       <li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
+      <li><a href="#locationicc">Where is the .icc file stored after I've calibrated?</a></li>
       <li><a href="#remote-disable">What is lost-or-stolen mode?</a></li>
       <li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
       <li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
@@ -65,6 +66,7 @@
       <li><a href="#red-shift">Why has my display got an obvious color shift after calibration?</a></li>
       <li><a href="#hugstrap">How can I buy a HugStrap?</a></li>
       <li><a href="#gasket">How can I buy the new gasket?</a></li>
+      <li><a href="#argyllcms-150">Since upgrading to ArgyllCMS 1.5.0 the device no longer works?</a></li>
       <li><a href="#measure-modes">What's the difference between the measurement modes?</a></li>
       </ul>
 
@@ -211,9 +213,9 @@
       <p>
       The above table demonstrates how the Hughski ColorHug compares to other
       similar products on the market.
-      The key advantages are the speed at which it measures samples, the open
-      source licence which means you can access and change the code, and the
-      low price.
+      The key advantages are the open source licences and open hardware design
+      which means you can review and modify all aspects of the product,
+      and of course the low price.
       </p>
 
       <hr/>
@@ -301,6 +303,20 @@
       other users and improve their calibration result too.
       I'm especially interested in odd display types, as these will be very
       different from the calibration target.
+      </p>
+
+      <hr/>
+      <a name="locationicc"></a><h2>Where is the .icc file stored after I've calibrated?</h2>
+      <p>
+      After calibrating with the GNOME wizard the file is saved in 
+      <code>/home/liveuser/.local/share/icc/</code> - in the next version of the
+      LiveCD we're backporting the new export window which will look like this:
+      </p>
+      <a href="img/export-icc-large.png"><img src="img/export-icc.png" class="centered" alt="[colorhug-export screenshot]"/></a>
+      <p>
+      This allows people to either upload the file to a USB drive or upload
+      it to our publicly accessible webspace where it can be stored for up to
+      7 days and then is automatically deleted.
       </p>
 
       <hr/>
@@ -416,11 +432,6 @@
       If this second delivery also fails, then I can't attempt to send any more,
       and only a refund will be offered.
       </p>
-      <p>
-      If a refund is issued, or a replacement sent, then the original device
-      can be disabled to stop any unscrupulous postal workers from putting
-      the device on eBay. :)
-      </p>
 
       <hr/>
       <a name="flashing-failed"></a><h2>Flashing failed, is my device now a brick!?</h2>
@@ -508,6 +519,10 @@
       <p>
       This is of course set automatically when using the graphical tools.
       </p>
+      <p>
+      If you are using ArgyllCMS 1.5.0 or 1.5.1, please also see
+      <a href="faq.html#argyllcms-150">this FAQ entry</a> about firmware versions.
+      </p>
 
       <hr/>
       <a name="software-versions"></a><h2>What are the minimum software versions?</h2>
@@ -562,6 +577,39 @@
       1567 and can be purchased <a href="buy-hugstrap.html">here</a>.
       Order numbers over 1567 (or devices with serial numbers larger than 1598)
       have a free HugStrap included in the package.
+      </p>
+
+      <hr/>
+      <a name="argyllcms-150"></a><h2>Since upgrading to ArgyllCMS 1.5.0 the device no longer works?</h2>
+      <p>
+      Due to miscommunication between myself and the ArgyllCMS maintainer,
+      ArgyllCMS 1.5.0 and 1.5.1 only works with newer versions of the firmware.
+      The 1.2.0 pre-release firmware adds Win32 and limited OS-X support to the
+      device, but to do this we had to slightly change the communication
+      protocol between the host and the device.
+      The <a href="http://www.argyllcms.com/Argyll_dev_src.zip">development release</a>
+      (what will become 1.6.0) of ArgyllCMS supports both old and new firmware
+      versions, but if you need to use the latest released version of ArgyllCMS
+      you need to do something like this:
+      </p>
+      <pre>
+wget http://hughski.com/downloads/colorhug/firmware/colorhug-1.2.0.bin
+colorhug-flash --filename colorhug-1.2.0.bin
+      </pre>
+      <table class="sample">
+      <tr><th>ArgyllCMS version</th><th>Required firmware version</th></tr>
+      <tr><td>&lt; <code>1.5.0</code></td><td><code>1.0.x</code></td></tr>
+      <tr><td><code>1.5.0</code> and <code>1.5.1</code></td><td><code>1.2.x</code></td></tr>
+      <tr><td>&gt;= <code>1.6.x</code></td><td>Any</td></tr>
+      </table>
+      <p>
+      The Fedora <code>argyllcms-1.5.1-1.fc19</code> package contains a backported fix,
+      and this means any version of firmware can be used.
+      </p>
+      <p>
+      The 1.2.0 firmware also changes the default device measure-mode of the device
+      (see <a href="faq.html#measure-modes">here</a> for more details, so we'd
+      love to hear any reports of results being more accurate or any problems.
       </p>
 
       <hr/>
