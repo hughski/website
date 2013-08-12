@@ -28,7 +28,7 @@
     <a href="buy.html">Buy</a>
     <a href="downloads.html">Downloads</a>
     <a href="faq.html">FAQ</a>
-    <a href="news.html">ColorHug in the News</a>
+    <a href="news.html">In The News</a>
     <a href="about.html">About Us</a>
     <div class="clear"></div>
    </div>
@@ -48,8 +48,11 @@
       <li><a href="#device-not-working">What do I do if the device stops working?</a></li>
       <li><a href="#shipping-cost">How much is shipping?</a></li>
       <li><a href="#leds">What do the LEDs mean?</a></li>
+      <li><a href="#matching-displays">Can I make my external display match my laptop screen?</a></li>
+      <li><a href="#display-printer">Can I make my display match what is printed?</a></li>
       <li><a href="#crapcal">Why is my screen "wrong" after calibrating?</a></li>
       <li><a href="#locationicc">Where is the .icc file stored after I've calibrated?</a></li>
+      <li><a href="#bootusbdrive">Is there a way to boot the Live CD from an USB drive?</a></li>
       <li><a href="#remote-disable">What is lost-or-stolen mode?</a></li>
       <li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
       <li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
@@ -278,6 +281,58 @@
       </ul>
 
       <hr/>
+      <a name="matching-displays"></a><h2>Can I make my external display match my laptop screen?</h2>
+      <p>
+      You can certainly get close, but you really don't want to if you don't have to.
+      Imagine buying a $45,000 Ferrari with a 2 liter engine, and another $70,000
+      Ferrari with a 4 liter engine.
+      You want <i>the performance to match between the two cars</i>.
+      The only way to do this would be to make the 4 liter car much less powerful
+      so that it matches the performance of the 2 liter car.
+      In the context of display calibration you would be limiting the better screen to the
+      range of colors the less expensive screen can display.
+      </p>
+      <p>
+      There are also other issues for making the displays "match".
+      Imagine if the laptop screen ouput approximately a red primary of 620nm,
+      and the external screen output a primary of 630nm.
+      You can't change the primary as it's due to the chemical composition of screen hardware.
+      You can emulate different XYZ colors using color mixed from other channels,
+      but you can mix colors to make a pink red a deep red.
+      </p>
+      <p>
+      What you can do with a colorimeter is give each screen a similar whitepoint value,
+      which gets you 90% the way there as your eyes are very sensitive to
+      whitepoint <i>differences</i> (but not absolute values).
+      The ColorHug software defauts to a D65 whitepoint, although you can choose
+      a custom whitepoint using dispcalGUI.
+      </p>
+
+      <hr/>
+      <a name="display-printer"></a><h2>Can I make my display match what is printed?</h2>
+      <p>
+      This is a complex problem indeed, and design companies pay tens of
+      thousands of pounds trying to make this a reality.
+      From a technical level, it's really really hard.
+      Screens are outputting photons (additive, emissive), and the color is affected by
+      things like the ambient level of lighting the room and even the color the
+      room is painted affects the color you see.
+      Paper depends on the color and spectra of the lighting you are using (subtractive, reflective) to
+      view the printed sheet, the ink, the paper color, the paper quality, and
+      many more things.
+      I would suggest any one more interested in this difficult problem reads
+      <a href="http://www.amazon.co.uk/Real-World-Color-Management-Industrial-Strength/dp/0321267222">Real World Color Management</a>
+      which explains a lot of these problems better than I ever can.
+      </p>
+      <p>
+      One thing the ColorHug can do is fix your display so that at least we're
+      more in control of the display side of the equation.
+      It's not going to make the resulting edited hardcopies any <i>less</i> accurate,
+      and will hopefully be more accurate. You can be sure of one thing,
+      it's certainly never going to match perfectly. :)
+      </p>
+
+      <hr/>
       <a name="crapcal"></a><h2>Why is my screen "wrong" after calibrating?</h2>
       <p>
       If your screen differs much from the idealized sRGB that the ColorHug
@@ -317,6 +372,20 @@
       This allows people to either upload the file to a USB drive or upload
       it to our publicly accessible webspace where it can be stored for up to
       7 days and then is automatically deleted.
+      </p>
+
+      <hr/>
+      <a name="bootusbdrive"></a><h2>Is there a way to boot the Live CD from an USB drive?</h2>
+      <p>
+      Just copy the CD image to the device, something like:
+      </p>
+<pre>
+sudo dd if=/dev/cdrom of=/dev/sdz bs=1024
+</pre>
+      <p>
+      The ISO in an isohybrid image and so should boot from pretty much any
+      kind of boot media.
+      Make sure <code>/dev/sdz</code> is the device you want to overwrite!
       </p>
 
       <hr/>
