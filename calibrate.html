@@ -91,8 +91,8 @@ So, remove the photospectrometer and attach the ColorHug.
 </p>
 <pre>
 $ xcalib -c
-$ /usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
-$ /usr/libexec/colorhug write-eeprom "Un1c0rn2"
+$ colorhug-cmd set-calibration-map 0 0 0 0 0 0
+$ colorhug-cmd write-eeprom "Un1c0rn2"
 
 $ ENABLE_COLORHUG=1 dispread -d1 -yl patches
 $ mv patches.ti3 colorhug-hp-lp240zx-srgb.ti3
@@ -133,12 +133,12 @@ a spare calibration slot on the device.
 By default, slot 0 is the factory calibration, which you can verify with:
 </p>
 <pre>
-$ /usr/libexec/colorhug get-calibration 0
+$ colorhug-cmd get-calibration 0
 description: Factory Calibration
 ( 1.21	0.18	0.96	)
 ( 0.46	2.75	-0.50	)
 ( -0.66	-1.68	6.36	)
-$ /usr/libexec/colorhug get-calibration 1
+$ colorhug-cmd get-calibration 1
 Invalid read: retval=0x0c [No calibration] cmd=0x09 (expected 0x9 [get-calibration]) len=2 (expected 62)
 </pre>
 
@@ -146,7 +146,7 @@ Invalid read: retval=0x0c [No calibration] cmd=0x09 (expected 0x9 [get-calibrati
 So, we want to write our calibration matrix to slot 1, which we do with:
 </p>
 <pre>
-$ /usr/libexec/colorhug set-calibration-ccmx 1 colorhug-hp-lp240zx-srgb.ccmx
+$ colorhug-cmd set-calibration-ccmx 1 colorhug-hp-lp240zx-srgb.ccmx
 </pre>
 
 <p>
@@ -155,7 +155,7 @@ sample which is identified as an LCD screen, and use the factory default
 for the other modes.
 </p>
 <pre>
-$ /usr/libexec/colorhug set-calibration-map 1 0 0 0 0 0
+$ colorhug-cmd set-calibration-map 1 0 0 0 0 0
 </pre>
 <p>
 If you want a GUI tool to load and switch the
@@ -168,7 +168,7 @@ If you want a GUI tool to load and switch the
 Now we can test the device on unknown color swatches, using:
 </p>
 <pre>
-$ /usr/libexec/colorhug take-readings-xyz 1
+$ colorhug-cmd take-readings-xyz 1
 R:114.1115 G:90.0162 B:105.0156
 </pre>
 
