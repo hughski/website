@@ -492,3 +492,9 @@ table.sample td {
 	border-color: white;
 	text-align: left;
 }
+
+sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
+ <meta name="description" content="We appreciate your support." />
+ <meta name="author" content="Richard Hughes" />
+ <title>ColorHug+ Specification</title>
+ <link rel="shortcut icon" href="favicon.ico"/>
+ <link href="css/reset.css" rel="stylesheet" type="text/css" />
+ <link href="css/master.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <a name="top" id="top"></a>
+
+ <div id="header">
+  <div id="headercont">
+   <div id="logo">
+    <a href="index.html"><img src="img/logo.png" alt="tooltip" title="[Logo]" /></a>
+   </div>
+   <div id="contactdetails" style="padding:45px 0 0 10px;">
+    <p>Get in touch: info@hughski.com</p>
+   </div>
+   <div class="clear"></div>
+   <div id="nav">
+    <a href="index.html">Home</a>
+    <a href="buy.html">Buy</a>
+    <a href="downloads.html">Downloads</a>
+    <a href="faq.html">FAQ</a>
+    <a href="news.html">In The News</a>
+    <a href="about.html">About Us</a>
+    <div class="clear"></div>
+   </div>
+  </div>
+ </div>
+ <div id="wrapper">
+  <div id="container">
+   <div class="content">
+    <div id="centercol">
+     <div class="roundedbox">
+      <h1 class="headerlineunder">ColorHug+ Introduction</h1>
+      <p>
+       For artists, photographers and animators it's often essential to be
+       working with an accurately color calibrated screen.
+       It's also important to be able to print accurate colors being sure the
+       hard copy matches what is shown on the display.
+      </p>
+      <p>
+       The original OpenHardware ColorHug device provided an inexpensive way
+       to calibrate some types of screen, and is now being used by over 2000 people.
+       Due to limitations because of the low cost hardware, it does not work
+       well on high-gamut or LED screen technologies which are now becoming more
+       common.
+       ColorHug+ is a new device designed as an upgrade to the original
+       ColorHug.
+       This new device features a mini-spectroraph with UV switched illuminants.
+       This means it can take spot measurements of paper or ink which allows us
+       to profile printers and ensure we have a complete story for color
+       management on Linux.
+      </p>
+      <p>
+       I've been working on-and-off on the ColorHug+ for the last year
+       in my spare time (and those with young children know why I'm so behind
+       schedule...).
+       I'm now at a point where the device specification is more-or-less defined,
+       sensors chosen, and I've got a space model <b>and</b> electrical prototype. 
+       We need to work out if there is significant demand for the ColorHug+.
+       If I don't get at least 100 pre-orders it's not going to be economically
+       viable to continue development.
+       I posted a longer cost analysis to the
+       <a href="https://groups.google.com/d/msg/colorhug-users/YkoPo5b05e0/fl1Khu2wq4gJ">mailing list</a>
+       if you're curious for the need of 100 pre-orders before proceeding.
+      </p>
+      <p>
+       We don't have any glossy renders of the finished designs but this will
+       hopefully come in due time.
+       I'll post a lot more photos of the prototypes when I'm not ashamed of
+       how hacky everything looks, but the device is likely to look very similar
+       to the original ColorHug albeit twice the size.
+      </p>
+
+      <br/>
+      <h1 class="headerlineunder">Specification so far</h1>
+      <ul class="fancylist">
+      <li>5nm optical resolution</li>
+      <li>2nm electrical resolution</li>
+      <li>High CRI user-replaceable "burnt-in" tungsten illuminant</li>
+      <li>DAC controlled UV LED user-replaceable illuminant (for FWA measurements)</li>
+      <li>0.125 degree temperature compensation</li>
+      <li>Fixed slit size (exact specification tbd)</li>
+      <li>Black ABS box with gaskets suitable for display, paper and printer calibration (ambient add-on to be designed later)</li>
+      <li>Individually calibrated CT spectrograph with spectral peak data and wavelength absorption</li>
+      <li>A RGB status LED that shows status and optionally the approximate color of the measured sample (for a visual indication only)</li>
+      <li>A USB protocol that allows you to access the realtime spectra, or just a simple absolute XYZ value for a swatch</li>
+      <li>Support in libcolorhug and colord, and hopefully also ArgyllCMS</li>
+      <li>HugStrap for display measurements</li>
+      <li>LiveCD with updates</li>
+      <li>Bi-monthly firmware updates with new features and bugfixes</li>
+      <li>Access to upgrades for early adopters like before. (This is likely to involve "better" illuminants, perhaps an upgraded PCB, case etc.)</li>
+      <li>A cardboard shipping box with free worldwide signed-for shipping</li>
+      </ul>
+
+      <br/>
+      <h1 class="headerlineunder">A chance to preorder</h1>
+      <p>
+       At this point I am asking people to preorder for the ColorHug+
+       with a suggested RRP of maximum £300.
+      </p>
+      <p>
+       So, if you are fairly sure you'll want to buy a ColorHug+ in about
+       9 months time (although it's not legally binding, and you can cancel whenever)
+       then could you please send an email to
+       <code><a href="mailto:info@hughski.com?subject=[preorder]">info@hughski.com</a></code>
+       with <code>[preorder]</code> in the subject.
+       Please note if you preorder - we DO NOT want any payment or your
+       address/phone number.
+       If you've got any questions, concerns or are just delighted beyond words,
+       please send an email to the <a href="https://groups.google.com/forum/#!forum/colorhug-users">colorhug-users mailing list</a>.
+      </p>
+
+      <br/>
+      <h1 class="headerlineunder">How do the different devices compare?</h1>
+      <table class="sample">
+      <tr>
+       <th>&nbsp;</th>
+       <th>ColorHug</td>
+       <th>ColorHug+</th>
+      </tr>
+      <tr>
+       <td>Display Calibration</td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/><sup>[1]</sup></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Printer Calibration</td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Spot Measurements</td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Output</td>
+       <td>deviceRGB, absXYZ</td>
+       <td>Full 400-780nm spectra, absXYZ</td>
+      </tr>
+      <tr>
+       <td>Technology</td>
+       <td>Tristimulus colorimeter</td>
+       <td>Czerny-Turner spectrograph</td>
+      </tr>
+      <tr>
+       <td>Price</td>
+       <td>£60 + postage</td>
+       <td>£300 (free worldwide signed-for postage included)</td>
+      </tr>
+      <tr>
+       <td>Size</td>
+       <td>32x43x21mm</td>
+       <td>70x70x25mm</td>
+      </tr>
+      <tr>
+       <td>Expected User</td>
+       <td>Semi-professional artists and photographers</td>
+       <td>Professional artists, prosumer photographers and color scientists</td>
+      </tr>
+      <tr>
+       <td>Availability</td>
+       <td>Over 2200 sold with stable firmware</td>
+       <td>A prototype exists</td>
+      </tr>
+      <tr>
+       <td>Free updates for early-adoptors</td>
+       <td>Firmware, new screen gasket, HugStrap</td>
+       <td>Nothing yet, but likely Firmware, PCB, illuminants, case</td>
+      </tr>
+      </table>
+      <p>
+      <sup>[1]</sup> Only devices with primaries close to sRGB, or with a CCMX file.
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="clear"></div>
+  </div>
+ </div>
+
+ <div id="footer">
+  <div class="content">
+   <div id="backtotop">
+    <a href="index.html#top" title="Back To The Top"><span>Back To Top</span></a>
+   </div>
+   <div class="footercol">
+    <p>
+     Hughski.com is managed by <a href="mailto:richard@hughsie.com">Richard Hughes</a>
+     and is <a href="http://validator.w3.org/check/referer" target="_blank">optimized</a>
+     for <a href="http://www.w3.org/" target="_blank">standards</a>.
+    </p>
+   </div>
+  </div>
+ </div>
+</body>
+</html>
