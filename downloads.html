@@ -40,16 +40,91 @@
     <div id="centercol">
      <div class="roundedbox">
       <h1 class="headerlineunder">Downloads</h1>
-      <h2>Live CD</h2>
       <p>
-      You can <a href="http://dl.ambiweb.de/mirrors/www.hughski.com/" target="_blank">download an ISO image</a>
-      of the disc and burn it to a CD.
-      The download bandwidth is provided by AmbiWeb GmbH, many thanks.
+       ColorHug is a 100% Open Source and Open Hardware product.
+       All the project resources can be downloaded, hacked, remixed and shared.
       </p>
       <p>
-      Pascal de Bruijn has also
-      <a href="https://encrypted.pcode.nl/mirror/colorhug/" target="_blank">mirrored the ISO</a> which may
-      be faster than the official download site.
+       Content available on this page:
+      </p>
+      <ul>
+       <li>
+        <b>Official LiveCD or LiveUSB</b>:
+        Used to calibrate your screen and update your ColorHug without modifying
+        your computer.
+       </li>
+       <li>
+        <b>Linux Client Tools</b>:
+        Can be installed on your existing Linux system to to update and modify
+        your ColorHug.
+       </li>
+       <li>
+        <b>Windows Client Tools</b>:
+        Can be installed on your existing Linux system to to update and modify
+        your ColorHug.
+       </li>
+       <li>
+        <b>Device Firmware</b>:
+        The code running on the ColorHug itself.
+       </li>
+       <li>
+        <b>Device Correction Matrices</b>:
+        The calibration in the ColorHug itself.
+       </li>
+      </ul>
+      <p>
+      Stay tuned about new firmware and client code updates by
+      <a href="https://groups.google.com/group/colorhug-users">subscribing
+      to our mailing list</a>.
+      </p>
+
+      <h2 name="livecd">Live CD</h2>
+      <p>
+      You can <a href="http://dl.ambiweb.de/mirrors/www.hughski.com/" target="_blank">download an ISO image</a>
+      of the disc and burn it to a CD or USB Storage.
+      Using the live image means you do not have to make any modifications to your
+      existing system.
+      The calibration files can be saved to a network or USB device and then used on
+      all operating systems.
+      The download bandwidth is provided by AmbiWeb GmbH, many thanks.
+      </p>
+
+      <h2>Linux Client</h2>
+      <p>
+      The client tools are required if you want to test or flash new firmware
+      on your ColorHug, or test new calibration correction files.
+      If you are not running an up-to-date Linux distro you may need to compile and
+      build the <a href="http://people.freedesktop.org/~hughsient/releases/colorhug-client-0.2.4.tar.xz">
+      client tools tarball</a>.
+      </p>
+      <p>
+      Packages for Ubuntu can be found
+      <a href="https://launchpad.net/~pmjdebruijn/+archive/gnome-color-manager-release">here</a>
+      courtesy of Pascal de Bruijn.
+      </p>
+
+      <h2>Windows Client</h2>
+      <p>
+       The Windows version of the client tools is currently experimental, but
+       has been tested on Windows XP and Windows Vista (32bit).
+       Both an <a href="http://people.freedesktop.org/~hughsient/releases/ColorHug-Client-0.2.4-Win32.exe">
+      installer</a> and removal tool are provided.
+      </p>
+
+      <h2>Firmware</h2>
+      <p>
+      Firmware releases will add features, fix bugs and improve accuracy.
+      The client tools can be used to update the firmware easily.
+      The firmware will always be available to download for free.
+      </p>
+      <p>
+      You can check and update your firmware version by running <code>colorhug-flash</code>.
+      </p>
+      <img class="centered" src="img/colorhug-flash.png" alt="flash program"/>
+      <p>
+      If you want to play with different versions of the flash code, all the
+      past versions are <a href="http://www.hughski.com/downloads/colorhug/" target="_blank">archived</a>
+      and can be written to the ColorHug using <code>/usr/libexec/colorhug flash-firmware</code>.
       </p>
 
       <h2>Calibration</h2>
@@ -71,52 +146,6 @@
       the ColorHug device by running <code>colorhug-ccmx</code>.
       </p>
       <img class="centered" src="img/colorhug-ccmx.png" alt="ccmx program"/>
-
-      <h2>Client code</h2>
-      <p>
-      If you are not running Fedora 16 or Ubuntu you may need to compile and
-      build the <a href="http://people.freedesktop.org/~hughsient/releases/colorhug-client-0.1.8.tar.xz">
-      client tools tarball</a>.
-      </p>
-      <p>
-      The client tools are required if you want to test or flash new firmware
-      on your ColorHug.</p>
-      <p>
-      Packages for Ubuntu can be found
-      <a href="https://launchpad.net/~pmjdebruijn/+archive/gnome-color-manager-release">here</a>
-      courtesy of Pascal de Bruijn.
-      </p>
-
-      <h2>Firmware</h2>
-      <p>
-      Unlike proprietary devices the firmware may be updated as new versions
-      are released.
-      Firmware releases will add features, fix bugs and improve accuracy.
-      The client tools can be used to update the firmware easily.
-      The firmware will always be available to download for free.
-      </p>
-      <p>
-      You can check and update your firmware version by running <code>colorhug-flash</code>.
-      </p>
-      <img class="centered" src="img/colorhug-flash.png" alt="flash program"/>
-      <p>
-      If you want to play with different versions of the flash code, all the
-      past versions are <a href="http://www.hughski.com/downloads/colorhug/" target="_blank">archived</a>
-      and can be written to the ColorHug using <code>/usr/libexec/colorhug flash-firmware</code>.
-      </p>
-
-      <!--
-      <p>
-      There will be some Microsoft Windows and Apple OS&nbsp;X support when Arygllcms
-      includes the ColorHug driver.
-      </p>
-      -->
-
-      <p>
-      Stay tuned about new firmware and client code updates by
-      <a href="https://groups.google.com/group/colorhug-users">subscribing
-      to our mailing list</a>.
-      </p>
 
       <h2>Getting the source</h2>
       <p>
