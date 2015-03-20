@@ -459,17 +459,17 @@ sudo dd if=/dev/cdrom of=/dev/sdz bs=1024
       <hr/>
       <a name="bugzilla"></a><h2>I've found a bug or missing feature, what do I do?</h2>
       <p>
-      Just file a bug in our <a href="bugzilla/">Bugzilla</a> issue tracker.
+      Just file a bug in the correct <a href="https://github.com/hughski">issue tracker</a>.
       Be sure to write as much detail as possible in the bug report, for instance:
       </p>
       <ul>
       <li><code>lsusb -v</code></li>
       <li><code>uname -r</code></li>
-      <li><code>/usr/libexec/colorhug get-firmware-version</code></li>
-      <li><code>/usr/libexec/colorhug get-hardware-version</code></li>
-      <li><code>/usr/libexec/colorhug get-serial-number</code></li>
-      <li><code>/usr/libexec/colorhug get-calibration-map</code></li>
-      <li><code>/usr/libexec/colorhug list-calibration</code></li>
+      <li><code>colorhug-cmd get-firmware-version</code></li>
+      <li><code>colorhug-cmd get-hardware-version</code></li>
+      <li><code>colorhug-cmd get-serial-number</code></li>
+      <li><code>colorhug-cmd get-calibration-map</code></li>
+      <li><code>colorhug-cmd list-calibration</code></li>
       </ul>
 
       <hr/>
@@ -524,8 +524,8 @@ sudo dd if=/dev/cdrom of=/dev/sdz bs=1024
       If this again fails, just manually boot the firmware like this:
       </p>
       <pre>
-      $ /usr/libexec/colorhug boot-flash
-      $ /usr/libexec/colorhug set-flash-success 1
+      $ colorhug-cmd boot-flash
+      $ colorhug-cmd set-flash-success 1
       </pre>
 
       <hr/>

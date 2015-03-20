@@ -57,16 +57,16 @@ no light leaks into the aperture.
 Do a raw measurement using:
 </p>
 <pre>
-/usr/libexec/colorhug set-dark-offsets 0 0 0
-xset dpms force off && sleep 5 && /usr/libexec/colorhug take-readings && xset dpms force on
+colorhug-cmd set-dark-offsets 0 0 0
+xset dpms force off && sleep 5 && colorhug-cmd take-readings && xset dpms force on
 R:0.0002 G:0.0001 B:0.0001
 </pre>
 <p>
 These can then be programmed into the ColorHug using:
 </p>
 <pre>
-/usr/libexec/colorhug set-dark-offsets 0.0002 0.0001 0.0001
-/usr/libexec/colorhug write-eeprom "Un1c0rn2"
+colorhug-cmd set-dark-offsets 0.0002 0.0001 0.0001
+colorhug-cmd write-eeprom "Un1c0rn2"
 </pre>
 
 <h2>Working out the calibration matrix</h2>
@@ -97,9 +97,9 @@ So, remove the photospectrometer and attach the ColorHug.
 </p>
 <pre>
 xcalib -c
-/usr/libexec/colorhug set-calibration-map 0 0 0 0 0 0
-/usr/libexec/colorhug set-calibration-ccmx 0 unity.ccmx
-/usr/libexec/colorhug write-eeprom "Un1c0rn2"
+colorhug-cmd set-calibration-map 0 0 0 0 0 0
+colorhug-cmd set-calibration-ccmx 0 unity.ccmx
+colorhug-cmd write-eeprom "Un1c0rn2"
 
 dispread -d2 -yl patches
 mv patches.ti3 calibration.ti3
@@ -114,7 +114,7 @@ export ccxx_ref="colormunki-hp-lp240zx-srgb.ti3"
 export ccxx_src="calibration.ti3"
 export ccxx_mat="calibration.ccmx"
 ccxxmake -I $ccxx_desc -T LCD -D$ccxx_desc -f $ccxx_ref,$ccxx_src $ccxx_mat
-/usr/libexec/colorhug set-calibration-ccmx 0 calibration.ccmx
+colorhug-cmd set-calibration-ccmx 0 calibration.ccmx
 </pre>
 
      </div>
