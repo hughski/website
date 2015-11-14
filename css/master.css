@@ -364,10 +364,16 @@ a.incgasket
 	background: url(../img/inc-gasket.png) left center no-repeat;
 }
 
+a.incliveusb
+{
+	background: url(../img/inc-liveusb.png) left center no-repeat;
+}
+
 a.inclivecd,
 a.inchugstrap,
 a.inccolorhug,
 a.incgasket,
+a.incliveusb,
 a.incusbcable
 {
 	background-position: left center;

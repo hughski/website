@@ -42,7 +42,12 @@
       <h1 class="headerlineunder">Frequently Asked Questions</h1>
 
       <ul class="fancylist">
+      <li><a href="#ch1-ch2-what-changed">What was changed in ColorHug2?</a></li>
+      <li><a href="#buy-colorhug1">Can I still buy the original ColorHug?</a></li>
+      <li><a href="#upgrade-colorhug1">Can upgrade a ColorHug to a ColorHug2?</a></li>
+      <li><a href="#more-expensive">Why is the ColorHug2 more expensive than the original ColorHug?</a></li>
       <li><a href="#how-does-it-work">How does the device work?</a></li>
+      <li><a href="#compare">How do the different models compare?</a></li>
       <li><a href="#openhardware">Is the ColorHug OpenHardware?</a></li>
       <li><a href="#other-products">How other products compare?</a></li>
       <li><a href="#device-not-working">What do I do if the device stops working?</a></li>
@@ -53,7 +58,6 @@
       <li><a href="#colorcast">Why is my screen "wrong" after calibrating?</a></li>
       <li><a href="#locationicc">Where is the .icc file stored after I've calibrated?</a></li>
       <li><a href="#bootusbdrive">Is there a way to boot the Live CD from an USB drive?</a></li>
-      <li><a href="#remote-disable">What is lost-or-stolen mode?</a></li>
       <li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
       <li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
       <li><a href="#payment-methods">What payment methods are accepted?</a></li>
@@ -74,21 +78,195 @@
       </ul>
 
       <div class="faqlist">
+
+<!--
+      <hr/>
+      <a name="xxxxxxxxxxxxxx"></a><h2>xxxxxxxxxxxxxxxxxxxxxxxxxxxx?</h2>
+      <p>
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxx.
+      </p>
+-->
+
+      <hr/>
+      <a name="ch1-ch2-what-changed"></a><h2>What was changed in ColorHug2?</h2>
+      <p>
+       The new ColorHug2 is different from the original ColorHug in four main ways:
+      </p>
+      <center>
+       <a href="img/colorhug2-large.jpg">
+        <img src="img/colorhug2.jpg" style="margin: 20px 20px">
+       </a>
+      </center>
+      <ul>
+      <li>
+        The sensor has been upgraded from a $1 TAOS sensor to a $30
+        <a href="http://www.mazet.de/en/products/jencolor">JENCOLOR</a> sensor
+        from <a href="http://www.mazet.de/">MAZeT</a>.
+        This produces a true XYZ reading and typically doesn't need a CCMX to
+        get decent results on most consumer hardware.
+        This was the #1 stumbling block for the initial ColorHug device, as
+        anything outside <i>quite-close-to-sRGB</i> needed a correction matrix.
+      </li>
+      <li>
+        The PCB now contains on-board SRAM so it can do latency, rise-fall and
+        fall-rise measurements.
+        This means we can do things like measuring the <b>true</b> latency delays
+        on real CPU+GPU+display combinations.
+        I'm expecting to use the hi-speed acquisition and storage capabilities
+        for other exciting things in the future. 
+      </li>
+      <li>
+        The PCB contains a temperature sensor to be able to compensate outside
+        of the 20-40&deg;C calibrated range.
+        I've got this working in so much that it returns the right temperature,
+        but the compensation code needs work.
+        This will be addressed with future firmware updates.
+      </li>
+      <li>
+        Microsoft Windows is now a supported platform, with the flash, ccmx and
+        latency tools working as well there as they do in Linux.
+        Calibration still has to be done in Linux, although I'm hoping to make
+        that work 100% in Windows too.
+      </li>
+      </ul>
+
+      <hr/>
+      <a name="more-expensive"></a><h2>Why is the ColorHug2 more expensive than the original ColorHug?</h2>
+      <p>
+        The ColorHug2 is slightly more expensive than the original design.
+        This is due to the increased component costs in the last 2 years,
+        increased complexity of the design and also due to including free
+        signed-for/tracked shipping in the base price.
+        We're also shipping a 4GB LiveUSB to customers now, rather than the
+        space-limited and slow LiveCD.
+      </p>
+
+
+      <hr/>
+      <a name="buy-colorhug1"></a><h2>Can I still buy the original ColorHug?</h2>
+      <p>
+      Unfortunately no, we're a small company and can't afford to keep large
+      amounts of stock.
+      </p>
+
+      <hr/>
+      <a name="upgrade-colorhug1"></a><h2>Can upgrade a ColorHug to a ColorHug2?</h2>
+      <p>
+      Not really. Although the plstic casing is the same, the PCB contains many
+      more ICs than the first version and the optics interface is different.
+      Considering the PCB is the most expensive component to produce it wouldn't
+      be cost effective for us to upgrade a device.
+      Don't worry though, the original ColorHug devices are still supported as
+      they have a large number of people using them every day.
+      </p>
+
       <hr/>
       <a name="how-does-it-work"></a><h2>How does the device work?</h2>
       <p>
-      The ColorHug contains a color sensor with 64 pixels - 16 red, 16 blue,
-      16 green, and 16 clear.
-      Each different color sensor effectively counts photons, and so by
-      counting the number of photons there are for each sensor we can work out
-      the true color shown on the screen.
-      This photon count is converted to an XYZ color value by the processor on
-      the ColorHug and the set of measurements can be processed into an
+      The original ColorHug contained a simple color sensor with 64 pixels &mdash;
+      16 red, 16 blue, 16 green, and 16 clear.
+      The ColorHug2 device contains a much improved
+      <a href="http://www.mazet.de/en/products/jencolor">JENCOLOR</a> sensor
+      from <a href="http://www.mazet.de/">MAZeT</a> that returns true XYZ values.
+      This XYZ color values are sent from the ColorHug to the host and the set
+      of measurements are processed into an
       <acronym title="International Color Consortium">ICC</acronym> file.
+      The gamma mismatch problem was the #1 stumbling block for the original
+      ColorHug device, as anything outside <i>quite-close-to-sRGB</i> needed a
+      correction matrix.
       </p>
       <a href="img/frequency-response-large.png">
       <img class="centered" src="img/frequency-response.png" class="centered" alt="freq response"/>
       </a>
+
+      <hr/>
+      <a name="compare"></a><h2>How do the different models compare?</h2>
+      <table class="sample">
+      <tr>
+       <th>&nbsp;</th>
+       <th>ColorHug</td>
+       <th>ColorHug2</td>
+       <th>ColorHug+</th>
+      </tr>
+      <tr>
+       <td>Display Calibration</td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/><sup>[1]</sup></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Printer Calibration</td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Spot Measurements</td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+      </tr>
+      <tr>
+       <td>Latency Measurements</td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       <td><img src="img/emblem-no.png" alt="[no]"/></td>
+      </tr>
+      <tr>
+       <td>Output</td>
+       <td>deviceRGB, absXYZ</td>
+       <td>deviceRGB, absXYZ, temperature</td>
+       <td>Full 400-780nm spectra, absXYZ</td>
+      </tr>
+      <tr>
+       <td>Included accessories</td>
+       <td>LiveCD, USB cable, HugStrap<sup>[2]</sup></td>
+       <td>4G LiveUSB, USB cable, HugStrap</td>
+       <td>4G LiveUSB, USB cable, HugStrap</td>
+      </tr>
+      <tr>
+       <td>Technology</td>
+       <td>Tristimulus primary-adapted colorimeter</td>
+       <td>Tristimulus JENCOLOR colorimeter</td>
+       <td>Linear spectrograph</td>
+      </tr>
+      <tr>
+       <td>Price</td>
+       <td>£60 + postage</td>
+       <td>£75 (free worldwide signed-for postage included)</td>
+       <td>£300 (free worldwide signed-for postage included)</td>
+      </tr>
+      <tr>
+       <td>Size</td>
+       <td>32x43x21mm</td>
+       <td>32x43x21mm</td>
+       <td>75x75x32mm</td>
+      </tr>
+      <tr>
+       <td>Expected User</td>
+       <td>Consumer artists and photographers</td>
+       <td>Consumer artists and photographers</td>
+       <td>Professional artists, prosumer photographers and color scientists</td>
+      </tr>
+      <tr>
+       <td>Availability</td>
+       <td>Over 2200 sold with stable firmware</td>
+       <td>Over 30 sold with in-development firmware</td>
+       <td>A prototype exists</td>
+      </tr>
+      <tr>
+       <td>Free updates for early-adoptors</td>
+       <td>Firmware, new screen gasket, HugStrap</td>
+       <td>Nothing yet</td>
+       <td>Nothing yet</td>
+      </tr>
+      </table>
+      <p>
+      <sup>[1]</sup> Only devices with primaries close to sRGB, or with a CCMX file.
+      </p>
+      <p>
+      <sup>[2]</sup> Early devices did not include this, and can be upgraded for free.
+      </p>
 
       <hr/>
       <a name="openhardware"></a><h2>Is the ColorHug OpenHardware?</h2>
@@ -238,28 +416,10 @@
 
       <hr/>
       <a name="shipping-cost"></a><h2>How much is shipping?</h2>
-      <table class="sample">
-      <tr>
-      <th>Destination</th>
-      <th>Untracked</th>
-      <th>Signed For</th>
-      </tr>
-      <tr>
-      <td>UK</td>
-      <td>&pound;2.20</td>
-      <td>&pound;4.60</td>
-      </tr>
-      <tr>
-      <td>Europe (includes EU countries, Eastern Europe and Russia)</td>
-      <td>&pound;3.50</td>
-      <td>&pound;8.80</td>
-      </tr>
-      <tr>
-      <td>Rest of the world</td>
-      <td>&pound;4.60</td>
-      <td>&pound;9.90</td>
-      </tr>
-      </table>
+      <p>
+      For ColorHug2, ColorHugALS and ColorHug+ worldwide tracked/signed-for
+      postage is included in the cost of the device.
+      </p>
       <p>
       Packages normally arrive in the UK and western Europe within three days
       and eastern Europe within five working days.
@@ -386,25 +546,6 @@ sudo dd if=/dev/cdrom of=/dev/sdz bs=1024
       The ISO in an isohybrid image and so should boot from pretty much any
       kind of boot media.
       Make sure <code>/dev/sdz</code> is the device you want to overwrite!
-      </p>
-
-      <hr/>
-      <a name="remote-disable"></a><h2>What is lost-or-stolen mode?</h2>
-      <p>
-      When we send the ColorHug device to you, we give you the choice of
-      postage methods, as we understand a lot of people don't want to pay
-      &pound;9.90 postage for an item that only costs &pound;60.00.
-      Using untracked postage means that packages can get lost during tracking,
-      and due to the distance selling regulations of the UK, any lost packages
-      have to be refunded by the seller to the buyer.
-      </p>
-      <p>
-      In order to deter unscrupulous buyers, any packages that
-      are registered as lost or stolen will have the ColorHug devices added
-      to a blacklist.
-      This means that anybody trying to update the firmware on a device that
-      is registered as lost or stolen will have the hardware disabled.
-      Serial numbers will not be added to this list for any other reason.
       </p>
 
       <hr/>
@@ -752,8 +893,8 @@ colorhug-flash --filename colorhug-1.2.0.bin
      <div class="roundedbox">
       <h3 class="blueback">What's included</h3>
       <div class="standardlist">
-       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug device</a>
-       <a href="buy.html" class="inclivecd" title="tooltip">Linux LiveCD</a>
+       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug2 device</a>
+       <a href="buy.html" class="incliveusb" title="tooltip">Linux 4GB LiveUSB</a>
        <a href="buy.html" class="incusbcable" title="tooltip">1.8 meter USB cable</a>
        <a href="buy.html" class="inchugstrap" title="tooltip">Elasticated velcro strap</a>
        <div class="button fr" style="margin-left:5px;">
@@ -763,9 +904,9 @@ colorhug-flash --filename colorhug-1.2.0.bin
       </div>
      </div>
      <div class="roundedbox">
-      <h3 class="blueback">Already have a ColorHug?</h3>
+      <h3 class="blueback">Already have an original ColorHug?</h3>
       <p>
-       Get some <strong>free</strong> stuff to upgrade your device to the latest design.
+       Get some <strong>free</strong> stuff to upgrade your device with the latest accessories.
       </p>
       <p>&nbsp;</p>
       <div class="standardlist">

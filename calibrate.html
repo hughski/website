@@ -44,7 +44,7 @@
 <h1 class="headerlineunder">Calibrating the ColorHug</h1>
 
 <p>
-To calibrate the ColorHug against a new screen technology you need a
+To calibrate the ColorHug or ColorHug2 against a new screen technology you need a
 photospectrometer, e.g. a ColorMunki and the
 <a href="http://xcalib.sourceforge.net/">xcalib</a> software installed.
 </p>
@@ -94,7 +94,7 @@ $ xcalib -c
 $ colorhug-cmd set-calibration-map 0 0 0 0 0 0
 $ colorhug-cmd write-eeprom "Un1c0rn2"
 
-$ ENABLE_COLORHUG=1 dispread -d1 -yl patches
+$ dispread -d1 -yl patches
 $ mv patches.ti3 colorhug-hp-lp240zx-srgb.ti3
 </pre>
 
@@ -179,8 +179,8 @@ or using the following commands.
 </p>
 <pre>
 $ targen -d3 lp2480zx
-$ ENABLE_COLORHUG=1 dispcal -v -ql -m -d1 -yl -P 0.5,0.5,1.2 lp2480zx
-$ ENABLE_COLORHUG=1 dispread -v -d1 -yl -k lp2480zx.cal -P 0.5,0.5,1.2 lp2480zx
+$ dispcal -v -ql -m -d1 -yl -P 0.5,0.5,1.2 lp2480zx
+$ dispread -v -d1 -yl -k lp2480zx.cal -P 0.5,0.5,1.2 lp2480zx
 $ colprof -v -A"HP" -M"LP2480zx" -D"HP LP2480zx" -C"Copyright Richard Hughes 2011" -qm -as lp2480zx
 $ gcm-import lp2480zx.icc
 </pre>
@@ -190,8 +190,8 @@ $ gcm-import lp2480zx.icc
      <div class="roundedbox">
       <h3 class="blueback">What's included</h3>
       <div class="standardlist">
-       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug device</a>
-       <a href="buy.html" class="inclivecd" title="tooltip">Linux LiveCD</a>
+       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug2 device</a>
+       <a href="buy.html" class="incliveusb" title="tooltip">Linux 4GB LiveUSB</a>
        <a href="buy.html" class="incusbcable" title="tooltip">1.8 meter USB cable</a>
        <a href="buy.html" class="inchugstrap" title="tooltip">Elasticated velcro strap</a>
        <div class="button fr" style="margin-left:5px;">
