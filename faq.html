@@ -1,928 +1,644 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
- <meta name="description" content="Frequently asked questions about ColorHug colorimeter. See if your concern has already been addressed." />
- <meta name="author" content="Richard Hughes" />
- <title>Frequently Asked Questions - ColorHug</title>
- <link rel="shortcut icon" href="favicon.ico"/>
- <link href="css/reset.css" rel="stylesheet" type="text/css" />
- <link href="css/master.css" rel="stylesheet" type="text/css" />
-</head>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Hughski - ColorHug</title>
+  <meta charset="utf-8" />
+  <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <link rel="shortcut icon" href="favicon.ico"/>
+ </head>
+ <body class="no-sidebar">
+  <div id="page-wrapper">
 
-<body>
-  <a name="top" id="top"></a>
+   <!-- Header -->
+   <div id="header-wrapper">
+    <header id="header" class="container">
 
- <div id="header">
-  <div id="headercont">
-   <div id="logo">
-    <a href="index.html"><img src="img/logo.png" alt="tooltip" title="[Logo]" /></a>
-   </div>
-   <div id="contactdetails" style="padding:45px 0 0 10px;">
-    <p>Get in touch: info@hughski.com</p>
-   </div>
-   <div class="clear"></div>
-   <div id="nav">
-    <a href="index.html">Home</a>
-    <a href="buy.html">Buy</a>
-    <a href="downloads.html">Downloads</a>
-    <a href="faq.html">FAQ</a>
-    <a href="about.html">About Us</a>
-    <div class="clear"></div>
-   </div>
-  </div>
- </div>
- <div id="wrapper">
-  <div id="container">
-   <div class="content">
-    <div id="centercol">
-     <div class="roundedbox">
-      <h1 class="headerlineunder">Frequently Asked Questions</h1>
-
-      <ul class="fancylist">
-      <li><a href="#ch1-ch2-what-changed">What was changed in ColorHug2?</a></li>
-      <li><a href="#buy-colorhug1">Can I still buy the original ColorHug?</a></li>
-      <li><a href="#upgrade-colorhug1">Can upgrade a ColorHug to a ColorHug2?</a></li>
-      <li><a href="#more-expensive">Why is the ColorHug2 more expensive than the original ColorHug?</a></li>
-      <li><a href="#how-does-it-work">How does the device work?</a></li>
-      <li><a href="#compare">How do the different models compare?</a></li>
-      <li><a href="#openhardware">Is the ColorHug OpenHardware?</a></li>
-      <li><a href="#other-products">How other products compare?</a></li>
-      <li><a href="#device-not-working">What do I do if the device stops working?</a></li>
-      <li><a href="#shipping-cost">How much is shipping?</a></li>
-      <li><a href="#leds">What do the LEDs mean?</a></li>
-      <li><a href="#matching-displays">Can I make my external display match my laptop screen?</a></li>
-      <li><a href="#display-printer">Can I make my display match what is printed?</a></li>
-      <li><a href="#colorcast">Why is my screen "wrong" after calibrating?</a></li>
-      <li><a href="#locationicc">Where is the .icc file stored after I've calibrated?</a></li>
-      <li><a href="#bootusbdrive">Is there a way to boot the Live CD from an USB drive?</a></li>
-      <li><a href="#firmware-update-data">What data is transmitted to hughski.com?</a></li>
-      <li><a href="#erase-factory-cal">I've erased my factory calibration!</a></li>
-      <li><a href="#payment-methods">What payment methods are accepted?</a></li>
-      <li><a href="#bugzilla">I've found a bug or missing feature, what do I do?</a></li>
-      <li><a href="#shipping">I sent money for a device over two weeks ago, where is it?</a></li>
-      <li><a href="#flashing-failed">Flashing failed, is my device now a brick!?</a></li>
-      <li><a href="#windows-and-osx">Does the device work on Windows or OS&nbsp;X?</a></li>
-      <li><a href="#solaris-and-bsds">Does the device work on Solaris and FreeBSD?</a></li>
-      <li><a href="#old-mac">The LiveCD doesn't work on my old Mac!</a></li>
-      <li><a href="#projector">How do I use the ColorHug with a projector?</a></li>
-      <li><a href="#need-env-var">Why does the ColorHug not work with ArgyllCMS?</a></li>
-      <li><a href="#software-versions">What are the minimum software versions?</a></li>
-      <li><a href="#red-shift">Why has my display got an obvious color shift after calibration?</a></li>
-      <li><a href="#hugstrap">How can I buy a HugStrap?</a></li>
-      <li><a href="#gasket">How can I buy the new gasket?</a></li>
-      <li><a href="#argyllcms-150">Since upgrading to ArgyllCMS 1.5.0 the device no longer works?</a></li>
-      <li><a href="#measure-modes">What's the difference between the measurement modes?</a></li>
-      </ul>
-
-      <div class="faqlist">
-
-<!--
-      <hr/>
-      <a name="xxxxxxxxxxxxxx"></a><h2>xxxxxxxxxxxxxxxxxxxxxxxxxxxx?</h2>
-      <p>
-      xxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-      </p>
--->
-
-      <hr/>
-      <a name="ch1-ch2-what-changed"></a><h2>What was changed in ColorHug2?</h2>
-      <p>
-       The new ColorHug2 is different from the original ColorHug in four main ways:
-      </p>
-      <center>
-       <a href="img/colorhug2-large.jpg">
-        <img src="img/colorhug2.jpg" style="margin: 20px 20px">
-       </a>
-      </center>
-      <ul>
-      <li>
-        The sensor has been upgraded from a $1 TAOS sensor to a $30
-        <a href="http://www.mazet.de/en/products/jencolor">JENCOLOR</a> sensor
-        from <a href="http://www.mazet.de/">MAZeT</a>.
-        This produces a true XYZ reading and typically doesn't need a CCMX to
-        get decent results on most consumer hardware.
-        This was the #1 stumbling block for the initial ColorHug device, as
-        anything outside <i>quite-close-to-sRGB</i> needed a correction matrix.
-      </li>
-      <li>
-        The PCB now contains on-board SRAM so it can do latency, rise-fall and
-        fall-rise measurements.
-        This means we can do things like measuring the <b>true</b> latency delays
-        on real CPU+GPU+display combinations.
-        I'm expecting to use the hi-speed acquisition and storage capabilities
-        for other exciting things in the future. 
-      </li>
-      <li>
-        The PCB contains a temperature sensor to be able to compensate outside
-        of the 20-40 &deg;C calibrated range.
-        I've got this working in so much that it returns the right temperature,
-        but the compensation code needs work.
-        This will be addressed with future firmware updates.
-      </li>
-      <li>
-        Microsoft Windows is now a supported platform, with the flash, CCMX and
-        latency tools working as well there as they do in Linux.
-        Calibration still has to be done in Linux, although I'm hoping to make
-        that work in Windows too.
-      </li>
-      </ul>
-
-      <hr/>
-      <a name="more-expensive"></a><h2>Why is the ColorHug2 more expensive than the original ColorHug?</h2>
-      <p>
-        The ColorHug2 is slightly more expensive than the original design.
-        This is due to the increased component costs in the last 2 years,
-        increased complexity of the design and also due to including free
-        signed-for/tracked shipping in the base price.
-        We're also shipping a 4GB LiveUSB to customers now, rather than the
-        space-limited and slow LiveCD.
-      </p>
-
-
-      <hr/>
-      <a name="buy-colorhug1"></a><h2>Can I still buy the original ColorHug?</h2>
-      <p>
-      Unfortunately no, we're a small company and can't afford to keep large
-      amounts of stock.
-      </p>
-
-      <hr/>
-      <a name="upgrade-colorhug1"></a><h2>Can upgrade a ColorHug to a ColorHug2?</h2>
-      <p>
-      Not really. Although the plastic casing is the same, the PCB contains many
-      more ICs than the first version and the optics interface is different.
-      Considering the PCB is the most expensive component to produce it wouldn't
-      be cost effective for us to upgrade a device.
-      Don't worry though, the original ColorHug devices are still supported as
-      they have a large number of people using them every day.
-      </p>
-
-      <hr/>
-      <a name="how-does-it-work"></a><h2>How does the device work?</h2>
-      <p>
-      The original ColorHug contained a simple color sensor with 64 pixels &mdash;
-      16 red, 16 blue, 16 green, and 16 clear.
-      The ColorHug2 device contains a much improved
-      <a href="http://www.mazet.de/en/products/jencolor">JENCOLOR</a> sensor
-      from <a href="http://www.mazet.de/">MAZeT</a> that returns true XYZ values.
-      This XYZ color values are sent from the ColorHug to the host and the set
-      of measurements are processed into an
-      <acronym title="International Color Consortium">ICC</acronym> file.
-      The gamma mismatch problem was the #1 stumbling block for the original
-      ColorHug device, as anything outside <i>quite-close-to-sRGB</i> needed a
-      correction matrix.
-      </p>
-      <a href="img/frequency-response-large.png">
-      <img class="centered" src="img/frequency-response.png" class="centered" alt="freq response"/>
-      </a>
-
-      <hr/>
-      <a name="compare"></a><h2>How do the different models compare?</h2>
-      <table class="sample">
-      <tr>
-       <th>&nbsp;</th>
-       <th>ColorHug</td>
-       <th>ColorHug2</td>
-       <th>ColorHug+</th>
-      </tr>
-      <tr>
-       <td>Display Calibration</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/><sup>[1]</sup></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Printer Calibration</td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Spot Measurements</td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Latency Measurements</td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-      </tr>
-      <tr>
-       <td>Output</td>
-       <td>deviceRGB, absXYZ</td>
-       <td>deviceRGB, absXYZ, temperature</td>
-       <td>Full 400-780 nm spectra, absXYZ</td>
-      </tr>
-      <tr>
-       <td>Included accessories</td>
-       <td>LiveCD, USB cable, HugStrap<sup>[2]</sup></td>
-       <td>4G LiveUSB, USB cable, HugStrap</td>
-       <td>4G LiveUSB, USB cable, HugStrap</td>
-      </tr>
-      <tr>
-       <td>Technology</td>
-       <td>Tristimulus primary-adapted colorimeter</td>
-       <td>Tristimulus JENCOLOR colorimeter</td>
-       <td>Linear spectrograph</td>
-      </tr>
-      <tr>
-       <td>Price</td>
-       <td>&pound;60 + postage</td>
-       <td>&pound;85 (free worldwide signed-for postage included)</td>
-       <td>&pound;300 (free worldwide signed-for postage included)</td>
-      </tr>
-      <tr>
-       <td>Size</td>
-       <td>32x43x21 mm</td>
-       <td>32x43x21 mm</td>
-       <td>75x75x32 mm</td>
-      </tr>
-      <tr>
-       <td>Expected User</td>
-       <td>Consumer artists and photographers</td>
-       <td>Consumer artists and photographers</td>
-       <td>Professional artists, prosumer photographers and color scientists</td>
-      </tr>
-      <tr>
-       <td>Availability</td>
-       <td>Over 2200 sold with stable firmware</td>
-       <td>Over 30 sold with in-development firmware</td>
-       <td>A prototype exists</td>
-      </tr>
-      <tr>
-       <td>Free updates for early-adoptors</td>
-       <td>Firmware, new screen gasket, HugStrap</td>
-       <td>Nothing yet</td>
-       <td>Nothing yet</td>
-      </tr>
-      </table>
-      <p>
-      <sup>[1]</sup> Only devices with primaries close to sRGB, or with a CCMX file.
-      </p>
-      <p>
-      <sup>[2]</sup> Early devices did not include this, and can be upgraded for free.
-      </p>
-
-      <hr/>
-      <a name="openhardware"></a><h2>Is the ColorHug OpenHardware?</h2>
-      <p>
-      Yes! ColorHug is now officially certified open source hardware by
-      <a href="http://certificate.oshwa.org/certification-directory/">OSHWA</a>.
-      Our UID is <code>UK000001</code>.
-      </p>
-      <p>
-      The licences chosen for the different parts of the project allow you to copy,
-      remix, redesign or repurpose the hardware or even build a device from scratch
-      from the hardware plans and the freely downloadable firmware.
-      There are no patents or design registrations, nor any intellectual property
-      that has to be licenced.
-      </p>
-      <p>
-      There is one small limitation. You can build your own ColorHug device
-      and call it a <i>ColorHug</i>, but you cannot use the three color logo as it is a
-      trademark of Hughski Limited.
-      This was done after taking legal advice to help preserve the community, and to
-      stop a company selling a substandard <i>official</i> device that would tarnish
-      the brand and make Hughski Limited look bad.
-      </p>
-      <p>
-      The Licences used in the project are thus:
-      </p>
-      <table class="sample">
-      <tr><td>Schematic:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
-      <tr><td>PCB:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
-      <tr><td>Housing:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
-      <tr><td>Documentation:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
-      <tr><td>Firmware:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.htmlq">GPLv2+</a></td></tr>
-      <tr><td>Client tools:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2+</a></td></tr>
-      <tr><td>Connectors:</td><td>Royalty free</td></tr>
-      </table>
-
-      <hr/>
-      <a name="other-products"></a><h2>How other products compare?</h2>
-      <p></p>
-      <table class="sample">
-      <tr>
-       <th>&nbsp;</th>
-       <th>Hughski ColorHug</th>
-       <th>Datacolor Spyder Pro</th>
-       <th>Pantone Huey</th>
-       <th>X-Rite ColorMunki</th>
-      </tr>
-      <tr>
-       <td>Screen calibration</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Printer calibration</td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Self calibration mode</td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-no.png" alt="[no]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Ambient capture</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
-      </tr>
-      <tr>
-       <td>Supported calibration matrices</td>
-       <td>64 flash (LCD, CRT, Projector + 5 reserved types)</td>
-       <td>2 fixed (LCD and CRT)</td>
-       <td>2 fixed (LCD and CRT)</td>
-       <td>n/a</td>
-      </tr>
-      <tr>
-       <td>Compatible display technologies</td>
-       <td>LCD, LED</td>
-       <td>LCD, LED, CRT</td>
-       <td>LCD, LED, CRT</td>
-       <td>LCD, LED, CRT, Projector</td>
-      </tr>
-      <tr>
-       <td>IR filtered</td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-       <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
-      </tr>
-      <tr>
-       <td>Licencing</td>
-       <td>Open source</td>
-       <td>Proprietary</td>
-       <td>Proprietary</td>
-       <td>Proprietary</td>
-      </tr>
-      <tr>
-       <td>Speed to measure 200 samples</td>
-       <td>6 minutes</td>
-       <td>5 minutes</td>
-       <td>5 minutes</td>
-       <td>3 minutes</td>
-      </tr>
-      <tr>
-       <td>Client software support</td>
-       <td>Linux</td>
-       <td>Microsoft Windows</td>
-       <td>Microsoft Windows, Apple OS&nbsp;X</td>
-       <td>Microsoft Windows, Apple OS&nbsp;X</td>
-      </tr>
-      <tr>
-       <td>Price (including tax)</td>
-       <td>&pound;60</td>
-       <td>&pound;90</td>
-       <td>&pound;115</td>
-       <td>&pound;280</td>
-      </tr>
-      </table>
-      <p>
-      The above table demonstrates how the Hughski ColorHug compares to other
-      similar products on the market.
-      The key advantages are the open source licences and open hardware design
-      which means you can review and modify all aspects of the product,
-      and of course the low price.
-      </p>
-
-      <hr/>
-      <a name="device-not-working"></a><h2>What do I do if the device stops working?</h2>
-      <ul>
-       <li>Check the device is plugged in!</li>
-       <li>Check <code>dmesg</code> to see if the device is detected, if so check the permissions on the USB device.</li>
-       <li>Check the LEDs briefly flash when the device is plugged in.</li>
-       <li>Use a different USB cable to the one supplied in order to check whether the cable is at fault.</li>
-      </ul>
-      <p>
-       If the device does not work, or is otherwise faulty please
-       <a href="mailto:colorhug@hughski.com">email us</a> for advice.
-       If we agree that the ColorHug is faulty and you return it to us then you
-       can request a full refund or a replacement device.
-      </p>
-
-      <hr/>
-      <a name="shipping-cost"></a><h2>How much is shipping?</h2>
-      <p>
-      For ColorHug2, ColorHugALS and ColorHug+ worldwide tracked/signed-for
-      postage is included in the cost of the device.
-      </p>
-      <p>
-      Packages normally arrive in the UK and western Europe within three days
-      and eastern Europe within five working days.
-      Delivery to the rest of the world usually takes between five to seven
-      working days although it can take a lot longer than this for some counties.
-      </p>
-
-      <hr/>
-      <a name="leds"></a><h2>What do the LEDs mean?</h2>
-      <p>
-      There are two LEDs in the ColorHug, one green and one red.
-      The LEDs are used in the following way:
-      </p>
-      <ul>
-      <li>Both LEDs flash on then off for a split second when the hardware is plugged in.</li>
-      <li>The green LED flashes quickly three times when the sensor is locked.</li>
-      <li>The red and green LEDs flash slowly alternately when the device is in bootloader mode and needs reflashing with new firmware.</li>
-      <li>The red LED displays morse code in the event of a fatal device error.</li>
-      </ul>
-
-      <hr/>
-      <a name="matching-displays"></a><h2>Can I make my external display match my laptop screen?</h2>
-      <p>
-      You can certainly get close, but you really don't want to if you don't have to.
-      Imagine buying a $45,000 Ferrari with a 2 liter engine, and another $70,000
-      Ferrari with a 4 liter engine.
-      You want <i>the performance to match between the two cars</i>.
-      The only way to do this would be to make the 4 liter car much less powerful
-      so that it matches the performance of the 2 liter car.
-      In the context of display calibration you would be limiting the better screen to the
-      range of colors the less expensive screen can display.
-      </p>
-      <p>
-      There are also other issues for making the displays "match".
-      Imagine if the laptop screen ouput approximately a red primary of 620nm,
-      and the external screen output a primary of 630nm.
-      You can't change the primary as it's due to the chemical composition of screen hardware.
-      You can emulate different XYZ colors using color mixed from other channels,
-      but you can mix colors to make a pink red a deep red.
-      </p>
-      <p>
-      What you can do with a colorimeter is give each screen a similar whitepoint value,
-      which gets you 90% the way there as your eyes are very sensitive to
-      whitepoint <i>differences</i> (but not absolute values).
-      The ColorHug software defauts to a D65 whitepoint, although you can choose
-      a custom whitepoint using dispcalGUI.
-      </p>
-
-      <hr/>
-      <a name="display-printer"></a><h2>Can I make my display match what is printed?</h2>
-      <p>
-      This is a complex problem indeed, and design companies pay tens of
-      thousands of pounds trying to make this a reality.
-      From a technical level, it's really really hard.
-      Screens are outputting photons (additive, emissive), and the color is affected by
-      things like the ambient level of lighting the room and even the color the
-      room is painted affects the color you see.
-      Paper depends on the color and spectra of the lighting you are using (subtractive, reflective) to
-      view the printed sheet, the ink, the paper color, the paper quality, and
-      many more things.
-      I would suggest any one more interested in this difficult problem reads
-      <a href="http://www.amazon.co.uk/Real-World-Color-Management-Industrial-Strength/dp/0321267222">Real World Color Management</a>
-      which explains a lot of these problems better than I ever can.
-      </p>
-      <p>
-      One thing the ColorHug can do is fix your display so that at least we're
-      more in control of the display side of the equation.
-      It's not going to make the resulting edited hardcopies any <i>less</i> accurate,
-      and will hopefully be more accurate. You can be sure of one thing,
-      it's certainly never going to match perfectly. :)
-      </p>
-
-      <hr/>
-      <a name="crapcal"></a><a name="colorcast"></a><h2>Why is my screen "wrong" after calibrating?</h2>
-      <p>
-      If your screen differs much from the idealized sRGB that the ColorHug
-      is calibrated against then the calibration result may be far from ideal.
-      This may happen if you are using an expensive LED display, or a
-      miniature embedded LCD with low bit depth
-      <acronym title="Digital-to-analog converter">DAC</acronym>.
-      </p>
-      <p>
-      To fix this, you just need to load a correction matrix that's close to
-      your display technology using the <code>colorhug-ccmx</code> GUI program.
-      At the moment there are not many display types, but this will increase
-      when those in the ColorHug community with a photospectrometer start
-      contributing matrices. It's a typical chicken and egg problem, although
-      if you join the <a href="https://groups.google.com/forum/#!forum/colorhug-users" target="_blank">colorhug-users</a>
-      google group I'll announce new matrices when they are uploaded.
-      </p>
-      <p>
-      If you've already got a photospectrometer (or can borrow one for a few
-      hours) then please follow the directions <a href="calibrate.html">here</a>.
-      If you contribute the resulting
-      <acronym title="colorimeter correction matrix">CCMX</acronym> file back to us, we can share it with
-      other users and improve their calibration result too.
-      I'm especially interested in odd display types, as these will be very
-      different from the calibration target.
-      </p>
-
-      <hr/>
-      <a name="locationicc"></a><h2>Where is the .icc file stored after I've calibrated?</h2>
-      <p>
-      After calibrating with the GNOME wizard the file is saved in 
-      <code>/home/liveuser/.local/share/icc/</code> - in the next version of the
-      LiveCD we're backporting the new export window which will look like this:
-      </p>
-      <a href="img/export-icc-large.png"><img src="img/export-icc.png" class="centered" alt="[colorhug-export screenshot]"/></a>
-      <p>
-      This allows people to either upload the file to a USB drive or upload
-      it to our publicly accessible webspace where it can be stored for up to
-      7 days and then is automatically deleted.
-      </p>
-
-      <hr/>
-      <a name="bootusbdrive"></a><h2>Is there a way to boot the Live CD from an USB drive?</h2>
-      <p>
-      Just copy the CD image to the device, something like:
-      </p>
-<pre>
-sudo dd if=/dev/cdrom of=/dev/sdz bs=1024
-</pre>
-      <p>
-      The ISO in an isohybrid image and so should boot from pretty much any
-      kind of boot media.
-      Make sure <code>/dev/sdz</code> is the device you want to overwrite!
-      </p>
-
-      <hr/>
-      <a name="firmware-update-data"></a><h2>What data is transmitted to hughski.com?</h2>
-      <p>
-      If you choose to update the firmware on your device, the <code>colorhug-flash</code>
-      program contacts <code>hughski.com</code> and downloads the list of all
-      the firmware updates. When it does that, the following data is sent to
-      the server:
-      </p>
-      <ul>
-      <li>Your IP address</li>
-      <li>The current version of the firmware</li>
-      <li>The hardware version of the device</li>
-      <li>The serial number of the device (e.g. #000337)</li>
-      </ul>
-      <p>
-      We don't actually use this data for anything other than working out what
-      firmware is available to you and any logs are automatically overwritten
-      after 30 days.
-      </p>
-      <p>
-      The <b>only</b> time any data is transfered to the server is when you
-      update the firmware or download new CCMX matrices, and certainly not
-      for each calibration or sample!
-      </p>
-
-      <hr/>
-      <a name="erase-factory-cal"></a><h2>I've erased my factory calibration!</h2>
-      <p>
-      If you're got colorhug-client 0.1.4 or newer installed, just run
-      <code>colorhug-ccmx</code> and you should be presented with the following
-      dialog:
-      </p>
-      <img src="img/colorhug-ccmx-fix.png" class="centered" alt="[colorhug-ccmx screenshot]"/>
-      <p>
-      Then just click <code>Repair</code> and the device will be back to normal.
-      </p>
-
-      <hr/>
-      <a name="payment-methods"></a><h2>What payment methods are accepted?</h2>
-      <p>
-      The preferred way of paying for a device is using PayPal as it's easy
-      for me to track payments and issue refunds.
-      If you've got ideological problems with PayPal, or would rather not
-      use them, then email me when you get the offer to purchase a device
-      and I'll give you my <acronym title="International Bank Account Number">IBAN</acronym>
-      and <acronym title="Bank Identifier Code">BIC</acronym> numbers for a
-      direct bank transfer.
-      </p>
-
-      <hr/>
-      <a name="bugzilla"></a><h2>I've found a bug or missing feature, what do I do?</h2>
-      <p>
-      Just file a bug in the correct <a href="https://github.com/hughski">issue tracker</a>.
-      Be sure to write as much detail as possible in the bug report, for instance:
-      </p>
-      <ul>
-      <li><code>lsusb -v</code></li>
-      <li><code>uname -r</code></li>
-      <li><code>colorhug-cmd get-firmware-version</code></li>
-      <li><code>colorhug-cmd get-hardware-version</code></li>
-      <li><code>colorhug-cmd get-serial-number</code></li>
-      <li><code>colorhug-cmd get-calibration-map</code></li>
-      <li><code>colorhug-cmd list-calibration</code></li>
-      </ul>
-
-      <hr/>
-      <a name="shipping"></a><h2>I sent money for a device over two weeks ago, where is it?</h2>
-      <p>
-      Normally shipping parcels to Europe takes about 4 working days, but has
-      been known to take up to two weeks, especially to Italy for some reason.
-      Shipping to Africa, Brazil and Russia is meant to take about one week,
-      but it seems parcels seem to get lost for weeks at a time and then turn
-      up without explanation.
-      If the destination is the United States, then double check you've not got
-      a letter from the post office about a held package that has to pay some
-      kind of customs charge or sales tax.
-      </p>
-      <p>
-      If you've been waiting over two weeks then email me and I can confirm
-      the date I sent the parcel and the serial number.
-      Our policy on lost or missing parcels is this (which is based on how
-      quickly I can file a claim with the UK post office):
-      </p>
-      <ul>
-      <li>If the package was <i>signed-for</i> then we have to wait 6 weeks from the sent date</li>
-      <li>If the package was not <i>signed-for</i> then we have to wait 12 weeks from the sent date</li>
-      </ul>
-      <p>
-      If the parcel has not arrived in the durations above, then I can either
-      (at your choice) offer you a refund of the full amount via PayPal or
-      send another parcel <b>to a different address</b>.
-      If this second delivery also fails, then I can't attempt to send any more,
-      and only a refund will be offered.
-      </p>
-
-      <hr/>
-      <a name="flashing-failed"></a><h2>Flashing failed, is my device now a brick!?</h2>
-      <p>
-      No.
-      If the flashing failed (of if the new firmware is bad), the ColorHug
-      device reverts to a safe startup mode.
-      The bootloader is always loaded at every startup, and the firmware is
-      only bootstrapped if it is marked as valid.
-      The easiest way to tell if you are in bootloader mode is to
-      <a href="#leds">look at the LEDs</a> or search for a line like this in
-      <code>dmesg</code>:
-      </p>
-      <pre>
-      [  276.933714] generic-usb 0003:04D8:F8DA.0003:
-        hiddev0,hidraw0: USB HID v1.11 Device [Hughski Ltd. ColorHug (bootloader)]
-      </pre>
-      <p>
-      The easiest thing to do is just to reattempt to update the flash, by
-      running <code>colorhug-flash</code> again.
-      If this again fails, just manually boot the firmware like this:
-      </p>
-      <pre>
-      $ colorhug-cmd boot-flash
-      $ colorhug-cmd set-flash-success 1
-      </pre>
-
-      <hr/>
-      <a name="windows-and-osx"></a><h2>Does the device work on Windows or OS&nbsp;X?</h2>
-      <p>
-       The ColorHug can be used on Windows and Apple computers using the LiveCD
-       and then copying the <code>.icc</code> profile to the destination operating system.
-       I can't do native device drivers myself, although a few people have said
-       informally they wanted to work on them.
-       The device uses the USB <acronym title="Human interface device">HID</acronym>
-       protocol, so no <i>digitally signed</i> device drivers should be
-       required at all.
-      </p>
-
-      <hr/>
-      <a name="solaris-and-bsds"></a><h2>Does the device work on Solaris and FreeBSD?</h2>
-      <p>
-       There are no plans to support this device on any version of Unix or
-       any of the BSD variants.
-       If somebody needs this then it would be quite easy for them to port the
-       <a href="https://gitorious.org/colorhug/client/blobs/master/contrib/ch-usb.c">libusb-0.1 demo</a>
-       to another Linux-like operating system although it would not be supported by us.
-      </p>
-
-      <hr/>
-      <a name="old-mac"></a><h2>The LiveCD doesn't work on my old Mac!</h2>
-      <p>
-       If you have an Mac older than 2006 you have an old
-       <acronym title="Extensible Firmware Interface">EFI</acronym> on your system.
-       You can not upgrade this and normal Linux distribution CDs will not work.
-       Some distributions have been specially modified to work with this type
-       of system.
-       A special Ubuntu distribution exists for this hardware called
-       <a href="http://cdimage.ubuntu.com/daily-live/current/">Ubuntu x64_mac</a>
-       and you can use the
-       <a href="https://launchpad.net/~pmjdebruijn/+archive/gcm-colorhug/">Ubuntu PPA</a>
-       to update to the newest firmware.
-      </p>
-
-      <hr/>
-      <a name="projector"></a><h2>How do I use the ColorHug with a projector?</h2>
-      <p>
-      Shine the projector onto the ColorHug in a dark room from about
-      1-2&nbsp;meters away so there is no shadow.
-      Ensure the ColorHug's aperture is pointing straight towards the center
-      of the colored patches.
-      To increase the sensitivity of the ColorHug, you can remove the aperture
-      hole assembly using a fingernail tucked between the two rubber grommits,
-      although then the room will have to be completely dark.
-      </p>
-
-      <hr/>
-      <a name="need-env-var"></a><h2>Why does the ColorHug not work with ArgyllCMS?</h2>
-      <p>
-      To use the ColorHug with the ArgyllCMS tools on the command line ensure
-      you have set <code>ENABLE_COLORHUG=1</code> as an environment variable.
-      This is required because the ColorHug currently doesn't work reliably
-      across all platforms ArgyllCMS supports.
-      </p>
-      <p>
-      This is of course set automatically when using the graphical tools.
-      </p>
-      <p>
-      If you are using ArgyllCMS 1.5.0 or 1.5.1, please also see
-      <a href="faq.html#argyllcms-150">this FAQ entry</a> about firmware versions.
-      </p>
-
-      <hr/>
-      <a name="software-versions"></a><h2>What are the minimum software versions?</h2>
-      <p>
-      If you're not using the LiveCD you need at least:
-      </p>
-      <ul>
-      <li><code>argyllcms</code> (Fedora) or <code>argyll</code> (Ubuntu) >= 1.4.0</li>
-      <li><code>colord</code> >= 0.1.15</li>
-      <li><code>colorhug-client</code> >= 0.1.4</li>
-      <li><code>gusb</code> >= 0.1.2</li>
-      </ul>
-      <p>
-      If you're using GNOME, also add:
-      </p>
-      <ul>
-      <li><code>gnome-color-manager</code> >= 3.2.4</li>
-      <li><code>gnome-control-center</code> >= 3.2.2</li>
-      </ul>
-      <p>
-      If you're using KDE, also add:
-      </p>
-      <ul>
-      <li><code>colord-kde</code></li>
-      </ul>
-      <p>
-      If you're using XFCE or another desktop environment then you can of
-      course just install <code>colorhug-client</code> to update firmware
-      and load CCMX files. If you want to use the calibration wizard you can
-      either install the GNOME dependencies or install the very advanced
-      program dispcalGUI, although we can't support that ourselves.
-      </p>
-
-      <hr/>
-      <a name="red-shift"></a><h2>Why has my display got an obvious color shift after calibration?</h2>
-      <p>
-      Calibrating to a warmer temperature of D65 is going to look a lot more
-      blue than is native for some displays.
-      If the color shift is obviously really wrong, take a look at this
-      <a href="http://blog.pcode.nl/2012/06/15/colorhug-red-shift-workaround/">
-      excellent blog post</a> by Pascal.
-      Usually selecting a closer CCMX in <code>colorhug-ccmx</code> is the solution.
-      We're working on the firmware design, and the device accuracy for low
-      light is going up all the time, but this is a problem that affects all
-      colorimeter devices.
-      </p>
-
-      <hr/>
-      <a name="hugstrap"></a><h2>How can I buy a HugStrap?</h2>
-      <p>
-      HugStraps are only available to customers with order numbers less than
-      1567 and can be purchased <a href="buy-hugstrap.html">here</a>.
-      Order numbers over 1567 (or devices with serial numbers larger than 1598)
-      have a free HugStrap included in the package.
-      </p>
-
-      <hr/>
-      <a name="argyllcms-150"></a><h2>Since upgrading to ArgyllCMS 1.5.0 the device no longer works?</h2>
-      <p>
-      Due to miscommunication between myself and the ArgyllCMS maintainer,
-      ArgyllCMS 1.5.0 and 1.5.1 only works with newer versions of the firmware.
-      The 1.2.0 pre-release firmware adds Win32 and limited OS-X support to the
-      device, but to do this we had to slightly change the communication
-      protocol between the host and the device.
-      The <a href="http://www.argyllcms.com/Argyll_dev_src.zip">development release</a>
-      (what will become 1.6.0) of ArgyllCMS supports both old and new firmware
-      versions, but if you need to use the latest released version of ArgyllCMS
-      you need to do something like this:
-      </p>
-      <pre>
-wget http://hughski.com/downloads/colorhug/firmware/colorhug-1.2.0.bin
-colorhug-flash --filename colorhug-1.2.0.bin
-      </pre>
-      <table class="sample">
-      <tr><th>ArgyllCMS version</th><th>Required firmware version</th></tr>
-      <tr><td>&lt; <code>1.5.0</code></td><td><code>1.0.x</code></td></tr>
-      <tr><td><code>1.5.0</code> and <code>1.5.1</code></td><td><code>1.2.x</code></td></tr>
-      <tr><td>&gt;= <code>1.6.x</code></td><td>Any</td></tr>
-      </table>
-      <p>
-      The Fedora <code>argyllcms-1.5.1-1.fc19</code> package contains a backported fix,
-      and this means any version of firmware can be used.
-      </p>
-      <p>
-      The 1.2.0 firmware also changes the default device measure-mode of the device
-      (see <a href="faq.html#measure-modes">here</a> for more details, so we'd
-      love to hear any reports of results being more accurate or any problems.
-      </p>
-
-      <hr/>
-      <a name="gasket"></a><h2>How can I buy the gasket upgrade?</h2>
-      <p>
-      The gasket upgrade is only available to customers with order numbers less than
-      1856 and can be purchased <a href="buy-gasket.html">here</a>.
-      Order numbers over 1856 (or device serial numbers greater than 1800) are already
-      using the new design and do not need upgrading.
-      </p>
-
-      <hr/>
-      <a name="measure-modes"></a><h2>What's the difference between measurement modes?</h2>
-      <p>
-      There are only two ways of measuring the output of a light-to-frequency
-      device, measuring the pulse width or measuring the number of pulses over
-      a set time.
-      </p>
-      <p>
-      The simplest way is to measure the number of pulses in a set time interval.
-      This works well when the light level is high so that the quantisation
-      noise is small but does not work well for very dark patches.
-      Although an adaptive algorithm is used (giving dark patches more time),
-      this sample speed is typically half of the pulse-width mode.
-      This mode is the only available mode on firmware versions 1.1.x.
-      </p>
-      <p>
-      Averaging several pulse durations has the advantage that it can work
-      down to 0.5&nbsp;Hz, but as the reading gets high (0.5&nbsp;KHz and above)
-      the measured readings begin to have small aliasing errors introduced.
-      This mode is default on firmware 1.2.0 and newer, although the modes can
-      be switched at runtime.
-      In all tests so far, the 'duration' mode has outperformed the 'frequency'
-      mode when building profiles.
-      </p>
-      <p>
-      The two modes produce the same absolute readings and should not alter
-      the reported absolute XYZ readings.
-      </p>
-      <p>
-      <table>
-       <tr>
-        <td>
-         <a href="img/measure-0-256-large.png">
-          <img src="img/measure-0-256.png" class="centered" alt="[measure graph 0-256]"/>
-         </a>
-        </td>
-        <td>
-         <a href="img/measure-0-32-large.png">
-          <img src="img/measure-0-32.png" class="centered" alt="[measure graph 0-32]"/>
-         </a>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <a href="img/measure-228-256-large.png">
-          <img src="img/measure-228-256.png" class="centered" alt="[measure-graph 228-256]"/>
-         </a>
-        </td>
-        <td>
-         <a href="img/measure-sample-speed-large.png">
-          <img src="img/measure-sample-speed.png" class="centered" alt="[sample speed graph]"/>
-         </a>
-        </td>
-       </tr>
-      </table>
+     <!-- Logo -->
+     <div id="logo">
+      <img src="img/logo.png"/>
+      <h1>Hughski.com</h1>
      </div>
+
+     <!-- Nav -->
+     <nav id="nav">
+      <ul>
+       <li><a href="index.html">Welcome</a></li>
+       <li><a href="colorhug2.html">ColorHug2</a></li>
+       <li><a href="colorhugals.html">ColorHugALS</a></li>
+       <li><a href="colorhugplus.html">ColorHug+</a></li>
+       <li class="current"><a href="faq.html">Questions</a></li>
+      </ul>
+     </nav>
+
+    </header>
+   </div>
+
+   <!-- Main -->
+   <div id="main-wrapper">
+    <div class="container">
+     <div id="content">
+
+      <!-- Content -->
+      <article>
+
+       <h2>Frequently Asked Questions</h2>
+
+       <hr/>
+       <a name="compare"></a><h3>How do the different models compare?</h3>
+       <table class="default">
+       <tr>
+        <th>&nbsp;</th>
+        <th>ColorHug</td>
+        <th>ColorHug2</td>
+        <th>ColorHug+</th>
+       </tr>
+       <tr>
+        <td>Display Calibration</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/><sup>[1]</sup></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Printer Calibration</td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Spot Measurements</td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Latency Measurements</td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+       </tr>
+       <tr>
+        <td>Output</td>
+        <td>deviceRGB, absXYZ</td>
+        <td>deviceRGB, absXYZ, temperature</td>
+        <td>Full 400-780 nm spectra, temperature</td>
+       </tr>
+       <tr>
+        <td>Included accessories</td>
+        <td>LiveCD, USB cable, HugStrap<sup>[2]</sup></td>
+        <td>4G LiveUSB, USB cable, HugStrap</td>
+        <td>4G LiveUSB, USB cable, HugStrap</td>
+       </tr>
+       <tr>
+        <td>Technology</td>
+        <td>Tristimulus primary-adapted colorimeter</td>
+        <td>Tristimulus JENCOLOR colorimeter</td>
+        <td>Linear spectrograph</td>
+       </tr>
+       <tr>
+        <td>Price</td>
+        <td>&pound;60 + postage</td>
+        <td>&pound;85 (free worldwide signed-for postage included)</td>
+        <td>&pound;300 (free worldwide signed-for postage included)</td>
+       </tr>
+       <tr>
+        <td>Size</td>
+        <td>32x43x21 mm</td>
+        <td>32x43x21 mm</td>
+        <td>32x43x32 mm</td>
+       </tr>
+       <tr>
+        <td>Expected User</td>
+        <td>Consumer artists and photographers</td>
+        <td>Consumer artists and photographers</td>
+        <td>Professional artists, prosumer photographers and color scientists</td>
+       </tr>
+       <tr>
+        <td>Availability</td>
+        <td>Over 2200 sold, 0 available</td>
+        <td>Over 1100 sold, ~300 available</td>
+        <td>A prototype exists</td>
+       </tr>
+       </table>
+       <p>
+       <sup>[1]</sup> Only devices with primaries close to sRGB, or with a CCMX file.
+       </p>
+       <p>
+       <sup>[2]</sup> Early devices did not include this, and can be upgraded for free.
+       </p>
+
+       <hr/>
+       <a name="openhardware"></a><h3>Is the ColorHug OpenHardware?</h3>
+       <p>
+       Yes! ColorHug is now officially certified open source hardware by
+       <a href="http://certificate.oshwa.org/certification-directory/">OSHWA</a>.
+       Our UID is <code>UK000001</code>.
+       </p>
+       <p>
+       The licences chosen for the different parts of the project allow you to copy,
+       remix, redesign or repurpose the hardware or even build a device from scratch
+       from the hardware plans and the freely downloadable firmware.
+       There are no patents or design registrations, nor any intellectual property
+       that has to be licenced.
+       </p>
+       <p>
+       There is one small limitation. You can build your own ColorHug device
+       and call it a <i>ColorHug</i>, but you cannot use the three color logo as it is a
+       trademark of Hughski Limited.
+       This was done after taking legal advice to help preserve the community, and to
+       stop a company selling a substandard <i>official</i> device that would tarnish
+       the brand and make Hughski Limited look bad.
+       </p>
+       <p>
+       Licences used in the project:
+       </p>
+       <table class="default">
+       <tr><td>Schematic:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
+       <tr><td>PCB:</td><td><a href="http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt">CERNv1.1+</a></td></tr>
+       <tr><td>Housing:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
+       <tr><td>Documentation:</td><td><a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a></td></tr>
+       <tr><td>Firmware:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.htmlq">GPLv2+</a></td></tr>
+       <tr><td>Client tools:</td><td><a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2+</a></td></tr>
+       </table>
+
+       <hr/>
+       <a name="other-products"></a><h3>How other products compare?</h3>
+       <p></p>
+       <table class="default">
+       <tr>
+        <th>&nbsp;</th>
+        <th>Hughski ColorHug</th>
+        <th>Datacolor Spyder Pro</th>
+        <th>Pantone Huey</th>
+        <th>X-Rite ColorMunki</th>
+       </tr>
+       <tr>
+        <td>Screen calibration</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Printer calibration</td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Self calibration mode</td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-no.png" alt="[no]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Ambient capture</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/>(Just Lux)</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/>(Lux and XYZ)</td>
+       </tr>
+       <tr>
+        <td>Supported calibration matrices</td>
+        <td>64 flash (LCD, CRT, Projector + 5 reserved types)</td>
+        <td>2 fixed (LCD and CRT)</td>
+        <td>2 fixed (LCD and CRT)</td>
+        <td>n/a</td>
+       </tr>
+       <tr>
+        <td>Compatible display technologies</td>
+        <td>LCD, LED</td>
+        <td>LCD, LED, CRT</td>
+        <td>LCD, LED, CRT</td>
+        <td>LCD, LED, CRT, Projector</td>
+       </tr>
+       <tr>
+        <td>IR filtered</td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+        <td><img src="img/emblem-yes.png" alt="[yes]"/></td>
+       </tr>
+       <tr>
+        <td>Licencing</td>
+        <td>Open source</td>
+        <td>Proprietary</td>
+        <td>Proprietary</td>
+        <td>Proprietary</td>
+       </tr>
+       <tr>
+        <td>Speed to measure 200 samples</td>
+        <td>6 minutes</td>
+        <td>5 minutes</td>
+        <td>5 minutes</td>
+        <td>3 minutes</td>
+       </tr>
+       <tr>
+        <td>Client software support</td>
+        <td>Linux</td>
+        <td>Microsoft Windows</td>
+        <td>Microsoft Windows, Apple OS&nbsp;X</td>
+        <td>Microsoft Windows, Apple OS&nbsp;X</td>
+       </tr>
+       <tr>
+        <td>Price (including tax)</td>
+        <td>&pound;85</td>
+        <td>&pound;90</td>
+        <td>&pound;115</td>
+        <td>&pound;280</td>
+       </tr>
+       </table>
+       <p>
+       The above table demonstrates how the Hughski ColorHug compares to other
+       similar products on the market.
+       The key advantages are the open source licences and open hardware design
+       which means you can review and modify all aspects of the product,
+       and of course the low price.
+       </p>
+
+       <hr/>
+       <a name="device-not-working"></a><h3>What do I do if the device stops working?</h3>
+       <ul class="default">
+        <li>Check the device is plugged in!</li>
+        <li>Check <code>dmesg</code> to see if the device is detected, if so check the permissions on the USB device.</li>
+        <li>Check the LEDs briefly flash when the device is plugged in.</li>
+        <li>Use a different USB cable to the one supplied in order to check whether the cable is at fault.</li>
+       </ul>
+       <p>
+        If the device does not work, or is otherwise faulty please
+        <a href="mailto:colorhug@hughski.com">email us</a> for advice.
+        If we agree that the ColorHug is faulty and you return it to us then you
+        can request a full refund or a replacement device.
+       </p>
+
+       <hr/>
+       <a name="shipping-cost"></a><h3>How much is shipping?</h3>
+       <p>
+       For ColorHug2 and ColorHug+ worldwide tracked/signed-for
+       postage is included in the cost of the device.
+       </p>
+       <p>
+       Normally shipping parcels to Europe takes about 4 working days, but has
+       been known to take up to two weeks, especially to Italy for some reason.
+       Shipping to Africa, Brazil and Russia is meant to take about one week,
+       but it seems parcels seem to get lost for weeks at a time and then turn
+       up without explanation.
+       If the destination is the United States, then double check you've not got
+       a letter from the post office about a held package that has to pay some
+       kind of customs charge or sales tax.
+       </p>
+       <p>
+       If you've been waiting over two weeks then email me and I can confirm
+       the date I sent the parcel and the serial number.
+       Our policy on lost or missing parcels is this (which is based on how
+       quickly I can file a claim with the UK post office):
+       </p>
+       <ul class="default">
+       <li>If the package was <i>signed-for</i> then we have to wait 6 weeks from the sent date</li>
+       <li>If the package was not <i>signed-for</i> then we have to wait 12 weeks from the sent date</li>
+       </ul>
+       <p>
+       If the parcel has not arrived in the durations above, then I can either
+       (at your choice) offer you a refund of the full amount via PayPal or
+       send another parcel <b>to a different address</b>.
+       If this second delivery also fails, then I can't attempt to send any more,
+       and only a refund will be offered.
+       </p>
+
+       <hr/>
+       <a name="leds"></a><h3>What do the LEDs mean?</h3>
+       <p>
+       There are two LEDs in the ColorHug, one green and one red.
+       The LEDs are used in the following way:
+       </p>
+       <ul class="default">
+       <li>Both LEDs flash on then off for a split second when the hardware is plugged in.</li>
+       <li>The green LED flashes quickly three times when the sensor is locked.</li>
+       <li>The red and green LEDs flash slowly alternately when the device is in bootloader mode and needs reflashing with new firmware.</li>
+       <li>The red LED displays morse code in the event of a fatal device error.</li>
+       </ul>
+
+       <hr/>
+       <a name="matching-displays"></a><h3>Can I make my external display match my laptop screen?</h3>
+       <p>
+       You can certainly get close, but you really don't want to if you don't have to.
+       Imagine buying a $45,000 Ferrari with a 2 liter engine, and another $70,000
+       Ferrari with a 4 liter engine.
+       You want <i>the performance to match between the two cars</i>.
+       The only way to do this would be to make the 4 liter car much less powerful
+       so that it matches the performance of the 2 liter car.
+       In the context of display calibration you would be limiting the better screen to the
+       range of colors the less expensive screen can display.
+       </p>
+       <p>
+       There are also other issues for making the displays "match".
+       Imagine if the laptop screen ouput approximately a red primary of 620nm,
+       and the external screen output a primary of 630nm.
+       You can't change the primary as it's due to the chemical composition of screen hardware.
+       You can emulate different XYZ colors using color mixed from other channels,
+       but you can mix colors to make a pink red a deep red.
+       </p>
+       <p>
+       What you can do with a colorimeter is give each screen a similar whitepoint value,
+       which gets you 90% the way there as your eyes are very sensitive to
+       whitepoint <i>differences</i> (but not absolute values).
+       The ColorHug software defauts to a D65 whitepoint, although you can choose
+       a custom whitepoint using dispcalGUI.
+       </p>
+
+       <hr/>
+       <a name="display-printer"></a><h3>Can I make my display match what is printed?</h3>
+       <p>
+       This is a complex problem indeed, and design companies pay tens of
+       thousands of pounds trying to make this a reality.
+       From a technical level, it's really really hard.
+       Screens are outputting photons (additive, emissive), and the color is affected by
+       things like the ambient level of lighting the room and even the color the
+       room is painted affects the color you see.
+       Paper depends on the color and spectra of the lighting you are using (subtractive, reflective) to
+       view the printed sheet, the ink, the paper color, the paper quality, and
+       many more things.
+       I would suggest any one more interested in this difficult problem reads
+       <a href="http://www.amazon.co.uk/Real-World-Color-Management-Industrial-Strength/dp/0321267222">Real World Color Management</a>
+       which explains a lot of these problems better than I ever can.
+       </p>
+       <p>
+       One thing the ColorHug can do is fix your display so that at least we're
+       more in control of the display side of the equation.
+       It's not going to make the resulting edited hardcopies any <i>less</i> accurate,
+       and will hopefully be more accurate. You can be sure of one thing,
+       it's certainly never going to match perfectly. :)
+       </p>
+
+       <hr/>
+       <a name="crapcal"></a><a name="colorcast"></a><h3>Why is my screen "wrong" after calibrating?</h3>
+       <p>
+       If your screen differs much from the idealized sRGB that the ColorHug
+       is calibrated against then the calibration result may be far from ideal.
+       This may happen if you are using an expensive LED display, or a
+       miniature embedded LCD with low bit depth
+       <acronym title="Digital-to-analog converter">DAC</acronym>.
+       </p>
+       <p>
+       To fix this, you just need to load a correction matrix that's close to
+       your display technology using the <code>colorhug-ccmx</code> GUI program.
+       At the moment there are not many display types, but this will increase
+       when those in the ColorHug community with a photospectrometer start
+       contributing matrices. It's a typical chicken and egg problem, although
+       if you join the <a href="https://groups.google.com/forum/#!forum/colorhug-users" target="_blank">colorhug-users</a>
+       google group I'll announce new matrices when they are uploaded.
+       </p>
+       <p>
+       If you've already got a photospectrometer (or can borrow one for a few
+       hours) then please follow the directions <a href="calibrate.html">here</a>.
+       If you contribute the resulting
+       <acronym title="colorimeter correction matrix">CCMX</acronym> file back to us, we can share it with
+       other users and improve their calibration result too.
+       I'm especially interested in odd display types, as these will be very
+       different from the calibration target.
+       </p>
+
+       <hr/>
+       <a name="locationicc"></a><h3>Where is the .icc file stored after I've calibrated?</h3>
+       <p>
+       After calibrating with the GNOME wizard the file is saved in 
+       <code>/home/liveuser/.local/share/icc/</code> - in the next version of the
+       LiveUSB we're going to add the ability to save to the LiveUSB device itself.
+       </p>
+
+       <hr/>
+       <a name="firmware-update-data"></a><h3>What data is transmitted to hughski.com?</h3>
+       <p>
+       If you choose to update the firmware on your device, the <code>fwupd</code>
+       program contacts the LVFS and downloads the list of all the firmware updates.
+       Only your IP address is sent to the server, no hardware details are sent at all.
+       The <b>only</b> time any other data is transfered to the server is when you
+       update the firmware or download new CCMX matrices.
+       </p>
+
+       <hr/>
+       <a name="erase-factory-cal"></a><h3>I've erased my factory calibration!</h3>
+       <p>
+       If you're got colorhug-client 0.1.4 or newer installed, just run
+       <code>colorhug-ccmx</code> and you should be presented with the following
+       dialog:
+       </p>
+       <img src="img/colorhug-ccmx-fix.png" class="centered" alt="[colorhug-ccmx screenshot]"/>
+       <p>
+       Then just click <code>Repair</code> and the device will be back to normal.
+       </p>
+
+       <hr/>
+       <a name="bugzilla"></a><h3>I've found a bug or missing feature, what do I do?</h3>
+       <p>
+       Just file a bug in the correct <a href="https://github.com/hughski">issue tracker</a>.
+       Be sure to write as much detail as possible in the bug report, for instance:
+       </p>
+       <ul class="default">
+       <li><code>lsusb -v</code></li>
+       <li><code>uname -r</code></li>
+       <li><code>colorhug-cmd get-firmware-version</code></li>
+       <li><code>colorhug-cmd get-hardware-version</code></li>
+       <li><code>colorhug-cmd get-serial-number</code></li>
+       <li><code>colorhug-cmd get-calibration-map</code></li>
+       <li><code>colorhug-cmd list-calibration</code></li>
+       </ul>
+
+       <hr/>
+       <a name="flashing-failed"></a><h3>Flashing failed, is my device now a brick!?</h3>
+       <p>
+       No.
+       If the flashing failed (of if the new firmware is bad), the ColorHug
+       device reverts to a safe startup mode.
+       The bootloader is always loaded at every startup, and the firmware is
+       only bootstrapped if it is marked as valid.
+       The easiest way to tell if you are in bootloader mode is to
+       <a href="#leds">look at the LEDs</a> or search for a line like this in
+       <code>dmesg</code>:
+       </p>
+<pre>
+[  276.933714] generic-usb 0003:04D8:F8DA.0003:
+  hiddev0,hidraw0: USB HID v1.11 Device [Hughski Ltd. ColorHug (bootloader)]
+</pre>
+       <p>
+       The easiest thing to do is just to reattempt to update the flash, by
+       running <code>colorhug-flash</code> again.
+       If this again fails, just manually boot the firmware like this:
+       </p>
+<pre>
+$ colorhug-cmd boot-flash
+$ colorhug-cmd set-flash-success 1
+</pre>
+
+       <hr/>
+       <a name="windows-and-osx"></a><h3>Does the device work on Windows or OS&nbsp;X?</h3>
+       <p>
+        The ColorHug can be used on Windows and Apple computers using the LiveCD
+        and then copying the <code>.icc</code> profile to the destination operating system.
+        I can't do native device drivers myself, although a few people have said
+        informally they wanted to work on them.
+        The device uses the USB <acronym title="Human interface device">HID</acronym>
+        protocol, so no <i>digitally signed</i> device drivers should be
+        required at all.
+       </p>
+
+       <hr/>
+       <a name="solaris-and-bsds"></a><h3>Does the device work on Solaris and FreeBSD?</h3>
+       <p>
+        There are no plans to support this device on any version of Unix or
+        any of the BSD variants.
+       </p>
+
+       <hr/>
+       <a name="old-mac"></a><h3>The LiveCD doesn't work on my old Mac!</h3>
+       <p>
+        If you have an Mac older than 2006 you have an old
+        <acronym title="Extensible Firmware Interface">EFI</acronym> on your system.
+        You can not upgrade this and normal Linux distribution CDs will not work.
+        Some distributions have been specially modified to work with this type
+        of system.
+        A special Ubuntu distribution exists for this hardware called
+        <a href="http://cdimage.ubuntu.com/daily-live/current/">Ubuntu x64_mac</a>
+        and you can use the
+        <a href="https://launchpad.net/~pmjdebruijn/+archive/gcm-colorhug/">Ubuntu PPA</a>
+        to update to the newest firmware.
+       </p>
+
+       <hr/>
+       <a name="projector"></a><h3>How do I use the ColorHug with a projector?</h3>
+       <p>
+       Shine the projector onto the ColorHug in a dark room from about
+       1-2&nbsp;meters away so there is no shadow.
+       Ensure the ColorHug's aperture is pointing straight towards the center
+       of the colored patches.
+       To increase the sensitivity of the ColorHug, you can remove the aperture
+       hole assembly using a fingernail tucked between the two rubber grommits,
+       although then the room will have to be completely dark.
+       </p>
+
+       <hr/>
+       <a name="need-env-var"></a><h3>Why does the ColorHug not work with ArgyllCMS?</h3>
+       <p>
+       To use the ColorHug with the ArgyllCMS tools on the command line ensure
+       you have set <code>ENABLE_COLORHUG=1</code> as an environment variable.
+       This is required because the ColorHug currently doesn't work reliably
+       across all platforms ArgyllCMS supports.
+       This is of course set automatically when using the graphical tools.
+       </p>
+
+       <hr/>
+       <a name="software-versions"></a><h3>What are the minimum software versions?</h3>
+       <p>
+       If you're not using the LiveCD you need at least:
+       </p>
+       <ul class="default">
+       <li><code>argyllcms</code> (Fedora) or <code>argyll</code> (Ubuntu) >= 1.4.0</li>
+       <li><code>colord</code> >= 0.1.15</li>
+       <li><code>colorhug-client</code> >= 0.1.4</li>
+       <li><code>gusb</code> >= 0.1.2</li>
+       </ul>
+       <p>
+       If you're using GNOME, also add:
+       </p>
+       <ul class="default">
+       <li><code>gnome-color-manager</code> >= 3.2.4</li>
+       <li><code>gnome-control-center</code> >= 3.2.2</li>
+       </ul>
+       <p>
+       If you're using KDE, also add:
+       </p>
+       <ul class="default">
+       <li><code>colord-kde</code></li>
+       </ul>
+       <p>
+       If you're using XFCE or another desktop environment then you can of
+       course just install <code>colorhug-client</code> to update firmware
+       and load CCMX files. If you want to use the calibration wizard you can
+       either install the GNOME dependencies or install the very advanced
+       program dispcalGUI, although we can't support that ourselves.
+       </p>
+
+       <hr/>
+       <a name="red-shift"></a><h3>Why has my display got an obvious color shift after calibration?</h3>
+       <p>
+       Calibrating to a warmer temperature of D65 is going to look a lot more
+       blue than is native for some displays.
+       If the color shift is obviously really wrong, take a look at this
+       <a href="http://blog.pcode.nl/2012/06/15/colorhug-red-shift-workaround/">
+       excellent blog post</a> by Pascal.
+       Usually selecting a closer CCMX in <code>colorhug-ccmx</code> is the solution.
+       We're working on the firmware design, and the device accuracy for low
+       light is going up all the time, but this is a problem that affects all
+       colorimeter devices.
+       </p>
+
+      </article>
+
      </div>
     </div>
-    <div id="rightcol">
-     <div class="roundedbox">
-      <h3 class="blueback">What's included</h3>
-      <div class="standardlist">
-       <a href="buy.html" class="inccolorhug" title="tooltip">ColorHug2 device</a>
-       <a href="buy.html" class="incliveusb" title="tooltip">Linux 4GB LiveUSB</a>
-       <a href="buy.html" class="incusbcable" title="tooltip">1.8 meter USB cable</a>
-       <a href="buy.html" class="inchugstrap" title="tooltip">Elasticated velcro strap</a>
-       <div class="button fr" style="margin-left:5px;">
-        <a href="buy.html">Buy now!</a>
-       </div>
-       <div class="clear"></div>
+   </div>
+
+   <!-- Footer -->
+   <div id="footer-wrapper">
+    <footer id="footer" class="container">
+     <div class="row">
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>About Us</h3>
+        <p>
+         We are a small company founded in 2011 and owned by Ania and Richard Hughes.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>From the UK</h3>
+        <p>
+         All the ColorHug hardware is designed and built in London, UK.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u(medium) 12u$(small)">
+
+       <!-- Contact -->
+       <section class="widget contact">
+        <h3>Contact Us</h3>
+        <ul>
+         <li><a href="mailto:info@hughski.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://plus.google.com/105567799795872309840" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>
+       </section>
+
       </div>
      </div>
-    </div>
+     <div class="row">
+      <div class="12u">
+       <div id="copyright">
+        <ul class="menu">
+         <li>&copy; Richard Hughes</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </footer>
    </div>
-   <div class="clear"></div>
-  </div>
- </div>
 
- <div id="footer">
-  <div class="content">
-   <div id="backtotop">
-    <a href="index.html#top" title="Back To The Top"><span>Back To Top</span></a>
-   </div>
-   <div class="footercol">
-    <p>
-     Hughski.com is managed by <a href="mailto:richard@hughsie.com">Richard Hughes</a>
-     and is <a href="http://validator.w3.org/check/referer" target="_blank">optimized</a>
-     for <a href="http://www.w3.org/" target="_blank">standards</a>.
-    </p>
-   </div>
   </div>
- </div>
-</div>
-</body>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="assets/js/main.js"></script>
+
+ </body>
 </html>

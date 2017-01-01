@@ -1,12 +1,210 @@
+
 <!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="1;url=http://www.hughski.com/buy.html">
-<script type="text/javascript">window.location.href = "http://www.hughski.com/buy.html"</script>
-<title>Page Redirection</title>
-</head>
-<body>
-If you are not redirected automatically, follow the <a href='http://www.hughski.com/buy.html'>link</a>.
-</body>
+<html>
+ <head>
+  <title>Hughski - ColorHug</title>
+  <meta charset="utf-8" />
+  <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <link rel="shortcut icon" href="favicon.ico"/>
+ </head>
+ <body class="right-sidebar">
+  <div id="page-wrapper">
+
+   <!-- Header -->
+   <div id="header-wrapper">
+    <header id="header" class="container">
+
+     <!-- Logo -->
+     <div id="logo">
+      <img src="img/logo.png"/>
+      <h1>Hughski.com</h1>
+     </div>
+
+     <!-- Nav -->
+     <nav id="nav">
+      <ul>
+       <li><a href="index.html">Welcome</a></li>
+       <li class="current"><a href="colorhug2.html">ColorHug2</a></li>
+       <li><a href="colorhugals.html">ColorHugALS</a></li>
+       <li><a href="colorhugplus.html">ColorHug+</a></li>
+       <li><a href="faq.html">Questions</a></li>
+      </ul>
+     </nav>
+
+    </header>
+   </div>
+
+   <!-- Main -->
+   <div id="main-wrapper">
+    <div class="container">
+     <div class="row 200%">
+      <div class="8u 12u$(medium)">
+       <div id="content">
+
+        <!-- Content -->
+        <article>
+
+         <h2>ColorHug2</h2>
+         <p>
+          The ColorHug is an open source display colorimeter. It allows you to
+          calibrate your screen so it can display accurate colors.
+          By buying OpenHardware like the ColorHug you can be sure you are supporting
+          an ecosystem of people who want to create open source products that are
+          even better then their proprietary counterparts.
+          ColorHug2 was built as an upgrade to the original ColorHug device that
+          was only capable of profiling some types of display.
+         </p>
+         <p>
+          The XYZ color values measured using the ColorHug are processed into a
+          <acronym title="International Color Consortium">ICC</acronym> file which
+          can be used in Windows, OS X and Linux.
+          The supplied LiveUSB disk contains all the required software, or you can
+          use your existing Linux installation.
+         </p>
+         <p>
+          As the developer of all the ColorHug products I believe strongly in
+          creating open source software and open hardware.
+          I have spent the last 10 years of my life making hardware <i>Just Work</i>
+          on Linux and I now believe that the ability to build, adapt and remix
+          hardware is just as important as it is with software.
+          You are free to <a href="https://github.com/hughski/colorhug2-firmware">
+          compile your own firmware</a> with extra features, or even change the
+          shape of the PCB or enclosure to make it work with your product.
+          You can build command line or graphical tools using the supplied
+          <a href="https://github.com/hughsie/colord/tree/master/lib/colorhug">library</a>
+          or just drive the hardware directly from
+          <a href="https://github.com/hughski/colorhug-client/tree/master/contrib">
+          a number of languages</a>.
+          Or, just use the LiveUSB and ColorHug2 as supplied for a no-hassle
+          <i>Just Works</i> calibration experience; no screwdriver required.
+         </p>
+         <ul class="default">
+         <li>
+           The primary sensor has been upgraded from a $1 TAOS sensor to a $30
+           <a href="http://www.mazet.de/en/products/jencolor">JENCOLOR</a> sensor
+           from <a href="http://www.mazet.de/">MAZeT</a>.
+           This produces a true XYZ reading and typically doesn't need a CCMX to
+           get good results on most consumer hardware.
+         </li>
+         <li>
+           ColorHug2 contains on-board SRAM so it can do latency, rise-fall and
+           fall-rise measurements.
+           This means we can do things like measuring the <b>true</b> latency delays
+           on real CPU+GPU+display combinations.
+         </li>
+         <li>
+           ColorHug2 contains a temperature sensor to be able to compensate outside
+           of the 20-40 &deg;C calibrated range.
+         </li>
+         <li>
+           Microsoft Windows is now a supported platform, with the flash, CCMX and
+           latency tools working as well there as they do in Linux.
+           Please note, calibration still has to be done in Linux.
+         </li>
+         </ul>
+
+         <div class="grid">
+          <div class="row 50%">
+           <div class="6u"><a href="img/colorhug1-large.jpg" class="image fit"><img src="img/colorhug1-large.jpg" alt="" /></a></div>
+           <div class="6u"><a href="img/colorhug3-large.jpg" class="image fit"><img src="img/colorhug3-large.jpg" alt="" /></a></div>
+           <div class="6u"><a href="img/colorhug4-large.jpg" class="image fit"><img src="img/colorhug4-large.jpg" alt="" /></a></div>
+           <div class="6u"><a href="img/colorhug5-large.jpg" class="image fit"><img src="img/colorhug5-large.jpg" alt="" /></a></div>
+          </div>
+
+         <div class="grid">
+          <div class="row 50%">
+           <div class="6u"><a href="img/colorhug2-analysis-large.png" class="image fit"><img src="img/colorhug2-analysis.png" alt="" /></a></div>
+           <div class="6u"><a href="img/colorhug2-large.jpg" class="image fit"><img src="img/colorhug2-large.jpg" alt="" /></a></div>
+          </div>
+
+        </article>
+
+       </div>
+      </div>
+      <div class="4u 12u$(medium)">
+       <div id="sidebar">
+
+        <!-- Sidebar -->
+        <section>
+         <h3>What's included?</h3>
+         <ul class="included">
+          <li class="inc-colorhug">ColorHug2 device</li>
+          <li class="inc-liveusb">Linux 4GB LiveUSB</li>
+          <li class="inc-usbcable">1.8 meter USB cable</li>
+          <li class="inc-hugstrap">Elasticated velcro strap</li>
+          <li class="inc-postage">Worldwide delivery</li>
+         </ul>
+         <footer>
+          <a href="colorhug2-buy.html" class="button icon fa-info-circle">Buy now</a>
+         </footer>
+        </section>
+
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <!-- Footer -->
+   <div id="footer-wrapper">
+    <footer id="footer" class="container">
+     <div class="row">
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>About Us</h3>
+        <p>
+         We are a small company founded in 2011 and owned by Ania and Richard Hughes.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>From the UK</h3>
+        <p>
+         All the ColorHug hardware is designed and built in London, UK.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u(medium) 12u$(small)">
+
+       <!-- Contact -->
+       <section class="widget contact">
+        <h3>Contact Us</h3>
+        <ul>
+         <li><a href="mailto:info@hughski.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://plus.google.com/105567799795872309840" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>
+       </section>
+
+      </div>
+     </div>
+     <div class="row">
+      <div class="12u">
+       <div id="copyright">
+        <ul class="menu">
+         <li>&copy; Richard Hughes</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+
+   </div>
+
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.dropotron.min.js"></script>
+   <script src="assets/js/skel.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+   <script src="assets/js/main.js"></script>
+
+ </body>
 </html>

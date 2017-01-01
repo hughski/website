@@ -3,6 +3,7 @@
  <head>
   <title>Hughski - ColorHug</title>
   <meta charset="utf-8" />
+  <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -26,7 +27,7 @@
      <nav id="nav">
       <ul>
        <li><a href="index.html">Welcome</a></li>
-       <li><a href="colorhug2.html">ColorHug2</a></li>
+       <li class="current"><a href="colorhug2.html">ColorHug2</a></li>
        <li><a href="colorhugals.html">ColorHugALS</a></li>
        <li><a href="colorhugplus.html">ColorHug+</a></li>
        <li><a href="faq.html">Questions</a></li>
@@ -44,61 +45,51 @@
       <!-- Content -->
       <article>
 
-       <h2>You bought a ColorHug!</h2>
+       <h2>Paying using BACS</h2>
        <p>
-        First, thanks. I really appreciate you giving Open Hardware a try.
-        Second, please join the <a href="https://groups.google.com/group/colorhug-users">colorhug-users group</a> and tell us what you think.
-        All announcements about new firmware updates and new client code will also be
-        done on the mailing list.
+        PayPal isn't for everyone, for numerous reasons.
        </p>
-
-       <h3>Check the hardware</h3>
+       <table cellpadding="10px">
+        <tr>
+         <td><acronym title="International Bank Account Number">IBAN</acronym></td>
+         <td><b>GB02MIDL40250202492628</b></td>
+        </tr>
+        <tr>
+         <td><acronym title="Bank Identifier Codes">BIC</acronym></td>
+         <td><b>MIDLGB2111F</b></td>
+        </tr>
+        <tr>
+         <td>Sort Code</td>
+         <td><b>40-25-02</b></td>
+        </tr>
+        <tr>
+         <td>Account number</td>
+         <td><b>02492628</b></td>
+        </tr>
+        <tr>
+         <td>Account holder</td>
+         <td><b>Hughski Limited</b></td>
+        </tr>
+        <tr>
+         <td>Registered address</td>
+         <td><b>9 Sidmouth Avenue, Isleworth, Middlesex, TW7 4DW, UK</b></td>
+        </tr>
+       </table>
        <p>
-        First, we check the hardware can be accessed.
-        Insert the LiveCD and reboot, making sure you boot the CD when the BIOS screen shows.
-        Then, connect the ColorHug and run:
-       </p>
-<pre>
-$ colorhug-cmd set-leds green 5 200 200
-</pre>
-       <p>
-        This should flash the green LED 5 times.
-       </p>
-
-       <h3>Get latest firmware</h3>
-<pre>
-$ /usr/bin/colorhug-flash
-</pre>
-       <a href="#" class="image centered"><img src="img/colorhug-flash.png" alt="flash program" /></a>
-
-       <h3>Get up to date calibration matrices</h3>
-<pre>
-$ /usr/bin/colorhug-ccmx
-</pre>
-       <a href="#" class="image centered"><img src="img/colorhug-ccmx.png" alt="ccmx program" /></a>
-       <p>
-        Then click <code>Refresh</code> and select calibration matrices for each
-        display type that match your display kind (using the default calibration
-        is usually good enough for most people).
-       </p>
-
-       <h3>Measuring a test patch</h3>
-<pre>
-$ /usr/bin/gcm-picker
-</pre>
-       <p>
-        Hold the device against the screen and click the <code>Measure</code> button.
-        Hopefully the color on the screen will roughtly match the sample color.
+        For the amount, just use google to do the conversion rate of 85 GBP to
+        your local currency.
+        The bank fee is normally about the same as I would get charged by
+        PayPal anyway.
+        Please send us an email with your shipping address. We'll dispatch your
+        order as soon as we get a notice saying your payment has cleared.
+        Thanks.
        </p>
 
        <p>
-        Then we can create a ICC profile.
-       </p>
-<pre>
-$ /usr/bin/gnome-control-center color
-</pre>
-       <p>
-        <b>Good luck!</b>
+        <b>
+         ATTENTION: Refunds can only be done using PayPal as it costs me too much
+         to process worldwide IBAN transfers. Thank you for understanding.
+        </b>
        </p>
 
       </article>

@@ -1,141 +1,215 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
- <meta name="description" content="We appreciate your support." />
- <meta name="author" content="Richard Hughes" />
- <title>ColorHug+ Specification</title>
- <link rel="shortcut icon" href="favicon.ico"/>
- <link href="css/reset.css" rel="stylesheet" type="text/css" />
- <link href="css/master.css" rel="stylesheet" type="text/css" />
-</head>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Hughski - ColorHug</title>
+  <meta charset="utf-8" />
+  <meta name="keywords" content="hughsie, Richard Hughes, Hughski Limited, ColorHug, colorimeters, color matching, open hardware" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <link rel="shortcut icon" href="favicon.ico"/>
+ </head>
+ <body class="right-sidebar">
+  <div id="page-wrapper">
 
-<body>
-  <a name="top" id="top"></a>
+   <!-- Header -->
+   <div id="header-wrapper">
+    <header id="header" class="container">
 
- <div id="header">
-  <div id="headercont">
-   <div id="logo">
-    <a href="index.html"><img src="img/logo.png" alt="tooltip" title="[Logo]" /></a>
-   </div>
-   <div id="contactdetails" style="padding:45px 0 0 10px;">
-    <p>Get in touch: info@hughski.com</p>
-   </div>
-   <div class="clear"></div>
-   <div id="nav">
-    <a href="index.html">Home</a>
-    <a href="buy.html">Buy</a>
-    <a href="downloads.html">Downloads</a>
-    <a href="faq.html">FAQ</a>
-    <a href="about.html">About Us</a>
-    <div class="clear"></div>
-   </div>
-  </div>
- </div>
- <div id="wrapper">
-  <div id="container">
-   <div class="content">
-    <div id="centercol">
-     <div class="roundedbox">
-      <h1 class="headerlineunder">ColorHug+ Introduction</h1>
-      <p>
-       For artists, photographers and animators it's often essential to be
-       working with an accurately color calibrated screen.
-       It's also important to be able to print accurate colors being sure the
-       hard copy matches what is shown on the display.
-      </p>
-      <p>
-       The original OpenHardware ColorHug and ColorHug2 devices provided an inexpensive way
-       to calibrate most types of screen, and are now being used by over 3000 people.
-       Due to limitations because of the low cost hardware, it does not work
-       well on high-gamut or LED screen technologies which are now becoming more
-       common.
-       ColorHug+ is a new device designed as an upgrade to the ColorHug2.
-       This new device features a mini-spectroraph with UV switched illuminants.
-       This means it can take spot measurements of paper or ink which allows us
-       to profile printers and ensure we have a complete story for color
-       management on Linux.
-      </p>
-      <p>
-       I've been working on-and-off on the ColorHug+ for the last year
-       in my spare time (and those with young children know why I'm so behind
-       schedule...).
-       I'm now at a point where the device specification is more-or-less defined,
-       sensors chosen, and I've got a space model <b>and</b> electrical prototype. 
-       We need to work out if there is significant demand for the ColorHug+.
-       If I don't get at least 100 pre-orders it's not going to be economically
-       viable to continue development.
-       I posted a longer cost analysis to the
-       <a href="https://groups.google.com/d/msg/colorhug-users/YkoPo5b05e0/fl1Khu2wq4gJ">mailing list</a>
-       if you're curious for the need of 100 pre-orders before proceeding.
-      </p>
-      <p>
-       We don't have any glossy renders of the finished designs but this will
-       hopefully come in due time.
-       I'll post a lot more photos of the prototypes when I'm not ashamed of
-       how hacky everything looks, but the device is likely to look very similar
-       to the original ColorHug albeit twice the size.
-      </p>
+     <!-- Logo -->
+     <div id="logo">
+      <img src="img/logo.png"/>
+      <h1>Hughski.com</h1>
+     </div>
 
-      <br/>
-      <h1 class="headerlineunder">Specification so far</h1>
-      <ul class="fancylist">
-      <li>5nm optical resolution</li>
-      <li>2nm electrical resolution</li>
-      <li>High CRI user-replaceable "burnt-in" tungsten illuminant</li>
-      <li>DAC controlled UV LED user-replaceable illuminant (for FWA measurements)</li>
-      <li>0.125 degree temperature compensation</li>
-      <li>Fixed slit size (exact specification tbd)</li>
-      <li>Black ABS box with gaskets suitable for display, paper and printer calibration (ambient add-on to be designed later)</li>
-      <li>Individually calibrated CT spectrograph with spectral peak data and wavelength absorption</li>
-      <li>A RGB status LED that shows status and optionally the approximate color of the measured sample (for a visual indication only)</li>
-      <li>A USB protocol that allows you to access the realtime spectra, or just a simple absolute XYZ value for a swatch</li>
-      <li>Support in libcolorhug and colord, and hopefully also ArgyllCMS</li>
-      <li>HugStrap for display measurements</li>
-      <li>4GB LiveUSB</li>
-      <li>Bi-monthly firmware updates with new features and bugfixes</li>
-      <li>Access to upgrades for early adopters like before. (This is likely to involve "better" illuminants, perhaps an upgraded PCB, case etc.)</li>
-      <li>A cardboard shipping box with free worldwide signed-for shipping</li>
+     <!-- Nav -->
+     <nav id="nav">
+      <ul>
+       <li><a href="index.html">Welcome</a></li>
+       <li><a href="colorhug2.html">ColorHug2</a></li>
+       <li><a href="colorhugals.html">ColorHugALS</a></li>
+       <li class="current"><a href="colorhugplus.html">ColorHug+</a></li>
+       <li><a href="faq.html">Questions</a></li>
       </ul>
+     </nav>
 
-      <br/>
-      <h1 class="headerlineunder">A chance to preorder</h1>
-      <p>
-       At this point I am asking people to preorder for the ColorHug+
-       with a suggested RRP of maximum £300.
-      </p>
-      <p>
-       So, if you are fairly sure you'll want to buy a ColorHug+ in about
-       9 months time (although it's not legally binding, and you can cancel whenever)
-       then could you please send an email to
-       <code><a href="mailto:info@hughski.com?subject=[preorder]">info@hughski.com</a></code>
-       with <code>[preorder]</code> in the subject.
-       Please note if you preorder - we DO NOT want any payment or your
-       address/phone number.
-       If you've got any questions, concerns or are just delighted beyond words,
-       please send an email to the <a href="https://groups.google.com/forum/#!forum/colorhug-users">colorhug-users mailing list</a>.
-      </p>
+    </header>
+   </div>
+
+   <!-- Main -->
+   <div id="main-wrapper">
+    <div class="container">
+     <div class="row 200%">
+      <div class="8u 12u$(medium)">
+       <div id="content">
+
+        <!-- Content -->
+        <article>
+
+         <h2>ColorHug+</h2>
+         <p>
+          For artists, photographers and animators it's often essential to be
+          working with an accurately color calibrated screen.
+          It's also important to be able to print accurate colors being sure the
+          hard copy matches what is shown on the display.
+         </p>
+         <p>
+          The original OpenHardware ColorHug and ColorHug2 devices provided an inexpensive way
+          to calibrate most types of screen, and are now being used by over 3000 people.
+          Due to limitations because of the low cost hardware, it does not work
+          well on high-gamut or LED screen technologies which are now becoming more
+          common.
+          ColorHug+ is a new device designed as an upgrade to the ColorHug2.
+          This new device features a mini-spectroraph with UV switched illuminants.
+          This means it can take spot measurements of paper or ink which allows us
+          to profile printers and ensure we have a complete story for color
+          management on Linux.
+         </p>
+         <p>
+          I've been working on-and-off on the ColorHug+ for the last year
+          in my spare time (and those with young children know why I'm so behind
+          schedule).
+          I'm now at a point where the device specification is more-or-less defined,
+          sensors chosen, and I've got a space model <b>and</b> electrical prototype. 
+          We need to work out if there is significant demand for the ColorHug+.
+          If I don't get at least 100 pre-orders it's not going to be economically
+          viable to continue development.
+          I posted a longer cost analysis to the
+          <a href="https://groups.google.com/d/msg/colorhug-users/YkoPo5b05e0/fl1Khu2wq4gJ">mailing list</a>
+          if you're curious for the need of 100 pre-orders before proceeding.
+         </p>
+         <figure>
+          <img class="centered" src="img/colorhugplus-render.png" alt="ColorHugPlus Render"/>
+          <figcaption>The prototype</figcaption>
+         </figure>
+         <p>
+          I'll post a lot more photos of the prototypes when I'm not ashamed of
+          how hacky everything looks, but the device is likely to look very similar
+          to the original ColorHug albeit twice the size.
+         </p>
+
+         <h3>Specification so far</h3>
+         <ul class="default">
+         <li>~5nm optical resolution</li>
+         <li>~2nm electrical resolution</li>
+         <li>High CRI user-replaceable "burnt-in" tungsten illuminant</li>
+         <li>UV LED user-replaceable illuminant (for FWA measurements)</li>
+         <li>0.125 degree temperature compensation</li>
+         <li>Black ABS box with gaskets suitable for display, paper and printer calibration (ambient add-on to be designed later)</li>
+         <li>Individually calibrated spectrograph</li>
+         <li>A USB protocol that allows you to access the realtime spectra, or just a simple absolute XYZ value for a swatch</li>
+         <li>Support in libcolorhug and colord, and hopefully also ArgyllCMS</li>
+         <li>HugStrap for display measurements</li>
+         <li>4GB LiveUSB</li>
+         <li>Bi-monthly firmware updates with new features and bugfixes</li>
+         <li>Access to upgrades for early adopters like before. (This is likely to involve "better" illuminants, perhaps an upgraded PCB, case etc.)</li>
+         <li>A cardboard shipping box with free worldwide signed-for shipping</li>
+         </ul>
+
+         <h3>A chance to preorder</h3>
+         <p>
+          At this point I am asking people to preorder for the ColorHug+
+          with a suggested RRP of around £300.
+         </p>
+         <p>
+          So, if you are fairly sure you'll want to buy a ColorHug+
+          (although it's not legally binding, and you can cancel whenever)
+          then could you please send an email to
+          <code><a href="mailto:info@hughski.com?subject=[preorder]">info@hughski.com</a></code>
+          with <code>[preorder]</code> in the subject.
+          Please note if you preorder - we DO NOT want any payment or your
+          address/phone number.
+          If you've got any questions, concerns or are just delighted beyond words,
+          please send an email to the <a href="https://groups.google.com/forum/#!forum/colorhug-users">colorhug-users mailing list</a>.
+         </p>
+
+        </article>
+
+       </div>
+      </div>
+      <div class="4u 12u$(medium)">
+       <div id="sidebar">
+
+        <!-- Sidebar -->
+        <section>
+         <h3>What's included?</h3>
+         <ul class="included">
+          <li class="inc-colorhug">ColorHug+ device</li>
+          <li class="inc-liveusb">Linux 4GB LiveUSB</li>
+          <li class="inc-usbcable">1.8 meter USB cable</li>
+          <li class="inc-hugstrap">Elasticated velcro strap</li>
+          <li class="inc-postage">Worldwide delivery</li>
+         </ul>
+         <!--
+         <footer>
+          <a href="colorhugplus-buy.html" class="button icon fa-info-circle">Buy now</a>
+         </footer>
+         -->
+        </section>
+
+       </div>
+      </div>
      </div>
     </div>
    </div>
-   <div class="clear"></div>
-  </div>
- </div>
 
- <div id="footer">
-  <div class="content">
-   <div id="backtotop">
-    <a href="index.html#top" title="Back To The Top"><span>Back To Top</span></a>
+   <!-- Footer -->
+   <div id="footer-wrapper">
+    <footer id="footer" class="container">
+     <div class="row">
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>About Us</h3>
+        <p>
+         We are a small company founded in 2011 and owned by Ania and Richard Hughes.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u$(medium) 12u$(small)">
+       <section class="widget links">
+        <h3>From the UK</h3>
+        <p>
+         All the ColorHug hardware is designed and built in London, UK.
+        </p>
+       </section>
+      </div>
+
+      <div class="3u 6u(medium) 12u$(small)">
+
+       <!-- Contact -->
+       <section class="widget contact">
+        <h3>Contact Us</h3>
+        <ul>
+         <li><a href="mailto:info@hughski.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+         <li><a href="https://plus.google.com/105567799795872309840" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>
+       </section>
+
+      </div>
+     </div>
+     <div class="row">
+      <div class="12u">
+       <div id="copyright">
+        <ul class="menu">
+         <li>&copy; Richard Hughes</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </footer>
    </div>
-   <div class="footercol">
-    <p>
-     Hughski.com is managed by <a href="mailto:richard@hughsie.com">Richard Hughes</a>
-     and is <a href="http://validator.w3.org/check/referer" target="_blank">optimized</a>
-     for <a href="http://www.w3.org/" target="_blank">standards</a>.
-    </p>
+
    </div>
-  </div>
- </div>
-</body>
+
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.dropotron.min.js"></script>
+   <script src="assets/js/skel.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+   <script src="assets/js/main.js"></script>
+
+ </body>
 </html>
